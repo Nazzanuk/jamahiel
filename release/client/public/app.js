@@ -66,6 +66,17 @@ app.factory('Post', function ($timeout, $rootScope) {
     return Post;
 });
 
+app.controller('ScreenCtrl', function ($element, $timeout, State, $state) {
+
+    var init = function init() {
+        $timeout(function () {
+            return $element.find('[screen]').addClass('active');
+        }, 50);
+    };
+
+    init();
+});
+
 app.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
 
     var resolve = {
@@ -94,17 +105,6 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
 
     //$locationProvider.html5Mode(true);
 });
-app.controller('ScreenCtrl', function ($element, $timeout, State, $state) {
-
-    var init = function init() {
-        $timeout(function () {
-            return $element.find('[screen]').addClass('active');
-        }, 50);
-    };
-
-    init();
-});
-
 'use strict';
 
 app.factory('Alert', function ($timeout, $rootScope) {
@@ -345,6 +345,26 @@ app.directive('heading', function () {
 
 'use strict';
 
+app.directive('imageItem', function () {
+    return {
+        templateUrl: 'image-item.html',
+        scope: {
+            src: '='
+        },
+
+        link: function link(scope, element, attrs) {
+
+            var init = function init() {};
+
+            init();
+
+            scope = _.assign(scope, {});
+        }
+    };
+});
+
+'use strict';
+
 app.directive('hero', function (API, Post) {
     return {
         templateUrl: 'hero.html',
@@ -381,11 +401,11 @@ app.directive('hero', function (API, Post) {
 
 'use strict';
 
-app.directive('imageItem', function () {
+app.directive('paragraph', function () {
     return {
-        templateUrl: 'image-item.html',
+        templateUrl: 'paragraph.html',
         scope: {
-            src: '='
+            text: '='
         },
 
         link: function link(scope, element, attrs) {
@@ -436,26 +456,6 @@ app.directive('preview', function (API, Post) {
 
             scope.getReverseClass = getReverseClass;
             scope.getPost = getPost;
-        }
-    };
-});
-
-'use strict';
-
-app.directive('paragraph', function () {
-    return {
-        templateUrl: 'paragraph.html',
-        scope: {
-            text: '='
-        },
-
-        link: function link(scope, element, attrs) {
-
-            var init = function init() {};
-
-            init();
-
-            scope = _.assign(scope, {});
         }
     };
 });

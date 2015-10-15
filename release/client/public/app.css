@@ -187,9 +187,6 @@ p {
     color: #ffffff;
     transition: .3s;
     cursor: pointer; }
-    [template=header] .header .logo:hover {
-      background: rgba(255, 255, 255, 0.95);
-      color: #333; }
     @media (max-width: 767px) {
       [template=header] .header .logo {
         line-height: 20px;
@@ -238,6 +235,20 @@ p {
     [template=heading] .heading h2 {
       font-size: 40px; }
 
+[template=image-item] {
+  background: #ffffff;
+  padding: 0 30px; }
+  [template=image-item] .image-item {
+    max-width: 1000px;
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border-radius: 4px; }
+    [template=image-item] .image-item img {
+      width: 100%; }
+    [template=image-item] .image-item h2 {
+      font-size: 40px; }
+
 [template=hero] .hero {
   height: 800px;
   position: relative;
@@ -271,19 +282,15 @@ p {
   [template=hero] .hero .hero-content {
     flex: 1; }
 
-[template=image-item] {
+[template=paragraph] {
   background: #ffffff;
   padding: 0 30px; }
-  [template=image-item] .image-item {
-    max-width: 1000px;
-    margin: auto;
-    margin-top: 30px;
-    margin-bottom: 30px;
-    border-radius: 4px; }
-    [template=image-item] .image-item img {
-      width: 100%; }
-    [template=image-item] .image-item h2 {
-      font-size: 40px; }
+  [template=paragraph] .paragraph {
+    max-width: 700px;
+    margin: auto; }
+    [template=paragraph] .paragraph p {
+      font-size: 20px;
+      line-height: 40px; }
 
 [template=preview] .preview {
   background: white;
@@ -333,16 +340,6 @@ p {
           border-color: #ffffff; }
           [template=preview] .preview.reverse .butn:hover {
             background: rgba(255, 255, 255, 0.1); } }
-
-[template=paragraph] {
-  background: #ffffff;
-  padding: 0 30px; }
-  [template=paragraph] .paragraph {
-    max-width: 700px;
-    margin: auto; }
-    [template=paragraph] .paragraph p {
-      font-size: 20px;
-      line-height: 40px; }
 
 [template=vid] {
   background: #ffffff;

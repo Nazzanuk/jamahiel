@@ -23,8 +23,9 @@
       cursor: pointer;
 
       &:hover {
-        background: rgba(255, 255, 255, 0.95);
-        color: $body;
+//        background: rgba(255, 255, 255, 0.95);
+//        color: $body;
+
       }
 
       @media (max-width: 767px) {

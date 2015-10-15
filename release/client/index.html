@@ -75,17 +75,6 @@
 
     </div>
 </script>
-<script type="text/ng-template" id="image-item.html">
-    <div template="image-item">
-        <div class="image-item">
-            <p>
-                <img src="{{src}}"/>
-            </p>
-
-        </div>
-
-    </div>
-</script>
 <script type="text/ng-template" id="heading.html">
     <div template="heading">
         <div class="heading">
@@ -115,10 +104,13 @@
         </div>
     </div>
 </script>
-<script type="text/ng-template" id="paragraph.html">
-    <div template="paragraph">
-        <div class="paragraph">
-            <p>{{text}}</p>
+<script type="text/ng-template" id="image-item.html">
+    <div template="image-item">
+        <div class="image-item">
+            <p>
+                <img src="{{src}}"/>
+            </p>
+
         </div>
 
     </div>
@@ -135,6 +127,14 @@
                 <div class="butn" ng-if="!post" ui-sref="post({ id: postId })">Get Reading &nbsp; <i class="fa fa-angle-right"></i></div>
             </div>
         </div>
+    </div>
+</script>
+<script type="text/ng-template" id="paragraph.html">
+    <div template="paragraph">
+        <div class="paragraph">
+            <p>{{text}}</p>
+        </div>
+
     </div>
 </script>
 <script type="text/ng-template" id="vid.html">

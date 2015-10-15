@@ -325,26 +325,6 @@ app.directive('header', function () {
 
 'use strict';
 
-app.directive('imageItem', function () {
-    return {
-        templateUrl: 'image-item.html',
-        scope: {
-            src: '='
-        },
-
-        link: function link(scope, element, attrs) {
-
-            var init = function init() {};
-
-            init();
-
-            scope = _.assign(scope, {});
-        }
-    };
-});
-
-'use strict';
-
 app.directive('heading', function () {
     return {
         templateUrl: 'heading.html',
@@ -401,11 +381,11 @@ app.directive('hero', function (API, Post) {
 
 'use strict';
 
-app.directive('paragraph', function () {
+app.directive('imageItem', function () {
     return {
-        templateUrl: 'paragraph.html',
+        templateUrl: 'image-item.html',
         scope: {
-            text: '='
+            src: '='
         },
 
         link: function link(scope, element, attrs) {
@@ -456,6 +436,26 @@ app.directive('preview', function (API, Post) {
 
             scope.getReverseClass = getReverseClass;
             scope.getPost = getPost;
+        }
+    };
+});
+
+'use strict';
+
+app.directive('paragraph', function () {
+    return {
+        templateUrl: 'paragraph.html',
+        scope: {
+            text: '='
+        },
+
+        link: function link(scope, element, attrs) {
+
+            var init = function init() {};
+
+            init();
+
+            scope = _.assign(scope, {});
         }
     };
 });

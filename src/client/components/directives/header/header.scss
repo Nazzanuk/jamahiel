@@ -50,7 +50,12 @@
       font-size: 20px;
       position: absolute;
       text-align: center;
+      display: none;
 
+
+      @media (max-width: 767px) {
+        display: block;
+      }
     }
 
     .menu {

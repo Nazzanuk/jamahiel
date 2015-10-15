@@ -213,7 +213,11 @@ p {
     width: 50px;
     font-size: 20px;
     position: absolute;
-    text-align: center; }
+    text-align: center;
+    display: none; }
+    @media (max-width: 767px) {
+      [template=header] .header .menu-icon {
+        display: block; } }
   [template=header] .header .menu {
     position: absolute;
     right: 15px;
@@ -233,23 +237,6 @@ p {
     @media (max-width: 767px) {
       [template=header] .header .menu {
         display: none; } }
-
-[template=image-item] {
-  background: #ffffff;
-  padding: 0 30px; }
-  @media (max-width: 767px) {
-    [template=image-item] {
-      padding: 0; } }
-  [template=image-item] .image-item {
-    max-width: 1000px;
-    margin: auto;
-    margin-top: 30px;
-    margin-bottom: 30px;
-    border-radius: 4px; }
-    [template=image-item] .image-item img {
-      width: 100%; }
-    [template=image-item] .image-item h2 {
-      font-size: 40px; }
 
 [template=heading] {
   background: #ffffff;
@@ -291,19 +278,22 @@ p {
   [template=hero] .hero .hero-content {
     flex: 1; }
 
-[template=paragraph] {
+[template=image-item] {
   background: #ffffff;
   padding: 0 30px; }
-  [template=paragraph] .paragraph {
-    max-width: 700px;
-    margin: auto; }
-    [template=paragraph] .paragraph p {
-      font-size: 20px;
-      line-height: 40px; }
-      @media (max-width: 767px) {
-        [template=paragraph] .paragraph p {
-          font-size: 17px;
-          line-height: 35px; } }
+  @media (max-width: 767px) {
+    [template=image-item] {
+      padding: 0; } }
+  [template=image-item] .image-item {
+    max-width: 1000px;
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border-radius: 4px; }
+    [template=image-item] .image-item img {
+      width: 100%; }
+    [template=image-item] .image-item h2 {
+      font-size: 40px; }
 
 [template=preview] .preview {
   background: white;
@@ -353,6 +343,20 @@ p {
           border-color: #ffffff; }
           [template=preview] .preview.reverse .butn:hover {
             background: rgba(255, 255, 255, 0.1); } }
+
+[template=paragraph] {
+  background: #ffffff;
+  padding: 0 30px; }
+  [template=paragraph] .paragraph {
+    max-width: 700px;
+    margin: auto; }
+    [template=paragraph] .paragraph p {
+      font-size: 20px;
+      line-height: 40px; }
+      @media (max-width: 767px) {
+        [template=paragraph] .paragraph p {
+          font-size: 17px;
+          line-height: 35px; } }
 
 [template=vid] {
   background: #ffffff;

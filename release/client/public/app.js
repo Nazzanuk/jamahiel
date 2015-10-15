@@ -84,6 +84,17 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
 
     //$locationProvider.html5Mode(true);
 });
+app.controller('ScreenCtrl', function ($element, $timeout, State, $state) {
+
+    var init = function init() {
+        $timeout(function () {
+            return $element.find('[screen]').addClass('active');
+        }, 50);
+    };
+
+    init();
+});
+
 'use strict';
 
 app.factory('Alert', function ($timeout, $rootScope) {
@@ -252,17 +263,6 @@ app.factory('State', function ($rootScope, $http, $state) {
         setLoggedIn: setStateAttr('loggedIn')
     };
 });
-app.controller('ScreenCtrl', function ($element, $timeout, State, $state) {
-
-    var init = function init() {
-        $timeout(function () {
-            return $element.find('[screen]').addClass('active');
-        }, 50);
-    };
-
-    init();
-});
-
 'use strict';
 
 app.directive('about', function () {
@@ -315,41 +315,6 @@ app.directive('header', function () {
 
 'use strict';
 
-app.directive('hero', function (API, Post) {
-    return {
-        templateUrl: 'hero.html',
-        scope: {
-            'postId': '='
-        },
-
-        link: function link(scope, element, attrs) {
-
-            var post = {};
-
-            var getPost = function getPost() {
-                return post;
-            };
-
-            var loadPost = function loadPost() {
-                return API.getPostById(scope.postId).then(function (response) {
-                    post = new Post(response);
-                });
-            };
-
-            var init = function init() {
-                console.log(scope);
-                loadPost();
-            };
-
-            init();
-
-            scope.getPost = getPost;
-        }
-    };
-});
-
-'use strict';
-
 app.directive('preview', function (API, Post) {
     return {
         templateUrl: 'preview.html',
@@ -384,6 +349,41 @@ app.directive('preview', function (API, Post) {
             init();
 
             scope.getReverseClass = getReverseClass;
+            scope.getPost = getPost;
+        }
+    };
+});
+
+'use strict';
+
+app.directive('hero', function (API, Post) {
+    return {
+        templateUrl: 'hero.html',
+        scope: {
+            'postId': '='
+        },
+
+        link: function link(scope, element, attrs) {
+
+            var post = {};
+
+            var getPost = function getPost() {
+                return post;
+            };
+
+            var loadPost = function loadPost() {
+                return API.getPostById(scope.postId).then(function (response) {
+                    post = new Post(response);
+                });
+            };
+
+            var init = function init() {
+                console.log(scope);
+                loadPost();
+            };
+
+            init();
+
             scope.getPost = getPost;
         }
     };

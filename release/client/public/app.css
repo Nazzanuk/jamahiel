@@ -179,6 +179,27 @@ p {
       letter-spacing: 1px;
       text-transform: uppercase; }
 
+[template=preview] .preview {
+  background: white;
+  position: relative; }
+  [template=preview] .preview .preview-hero {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    width: 50%;
+    float: left; }
+  [template=preview] .preview .preview-content {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    padding: 60px;
+    width: 50%;
+    float: left; }
+  [template=preview] .preview.reverse .preview-hero, [template=preview] .preview.reverse .preview-content {
+    float: right; }
+
 [template=hero] .hero {
   height: 800px;
   position: relative;
@@ -212,24 +233,3 @@ p {
     [template=hero] .hero .hero-summary p {
       margin: auto;
       color: #ffffff; }
-
-[template=preview] .preview {
-  background: white;
-  position: relative; }
-  [template=preview] .preview .preview-hero {
-    position: relative;
-    background-size: cover;
-    background-position: center;
-    height: 400px;
-    width: 50%;
-    float: left; }
-  [template=preview] .preview .preview-content {
-    position: relative;
-    background-size: cover;
-    background-position: center;
-    height: 400px;
-    padding: 60px;
-    width: 50%;
-    float: left; }
-  [template=preview] .preview.reverse .preview-hero, [template=preview] .preview.reverse .preview-content {
-    float: right; }

@@ -69,6 +69,21 @@
 
     </div>
 </script>
+<script type="text/ng-template" id="preview.html">
+    <div template="preview">
+        <div class="preview clearfix {{getReverseClass()}}">
+            <div class="preview-hero" style="background-image: url('{{getPost().getImage()}}')"></div>
+            <div class="preview-content">
+                <h2><i class="fa fa-{{getPost().getIcon()}}"></i> {{getPost().getTitle()}}</h2>
+
+                <p>{{getPost().getSummary()}}</p>
+                <br/>
+
+                <div class="butn">Get Reading &nbsp; <i class="fa fa-angle-right"></i></div>
+            </div>
+        </div>
+    </div>
+</script>
 <script type="text/ng-template" id="hero.html">
     <div template="hero">
         <div class="hero" style="background-image: url('{{getPost().getImage()}}')">
@@ -83,21 +98,6 @@
                 <p>{{getPost().getSummary()}}</p>
 
                 <div class="butn light">Get Reading &nbsp; <i class="fa fa-angle-right"></i></div>
-            </div>
-        </div>
-    </div>
-</script>
-<script type="text/ng-template" id="preview.html">
-    <div template="preview">
-        <div class="preview clearfix {{getReverseClass()}}">
-            <div class="preview-hero" style="background-image: url('{{getPost().getImage()}}')"></div>
-            <div class="preview-content">
-                <h2><i class="fa fa-{{getPost().getIcon()}}"></i> {{getPost().getTitle()}}</h2>
-
-                <p>{{getPost().getSummary()}}</p>
-                <br/>
-
-                <div class="butn">Get Reading &nbsp; <i class="fa fa-angle-right"></i></div>
             </div>
         </div>
     </div>

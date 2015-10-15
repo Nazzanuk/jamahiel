@@ -94,6 +94,17 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
 
     $locationProvider.html5Mode(true);
 });
+app.controller('ScreenCtrl', function ($element, $timeout, State, $state) {
+
+    var init = function init() {
+        $timeout(function () {
+            return $element.find('[screen]').addClass('active');
+        }, 50);
+    };
+
+    init();
+});
+
 'use strict';
 
 app.factory('Alert', function ($timeout, $rootScope) {
@@ -262,17 +273,6 @@ app.factory('State', function ($rootScope, $http, $state) {
         setLoggedIn: setStateAttr('loggedIn')
     };
 });
-app.controller('ScreenCtrl', function ($element, $timeout, State, $state) {
-
-    var init = function init() {
-        $timeout(function () {
-            return $element.find('[screen]').addClass('active');
-        }, 50);
-    };
-
-    init();
-});
-
 'use strict';
 
 app.directive('about', function () {
@@ -319,6 +319,26 @@ app.directive('header', function () {
             var init = function init() {};
 
             init();
+        }
+    };
+});
+
+'use strict';
+
+app.directive('imageItem', function () {
+    return {
+        templateUrl: 'image-item.html',
+        scope: {
+            src: '='
+        },
+
+        link: function link(scope, element, attrs) {
+
+            var init = function init() {};
+
+            init();
+
+            scope = _.assign(scope, {});
         }
     };
 });
@@ -375,26 +395,6 @@ app.directive('hero', function (API, Post) {
             init();
 
             scope.getPost = getPost;
-        }
-    };
-});
-
-'use strict';
-
-app.directive('imageItem', function () {
-    return {
-        templateUrl: 'image-item.html',
-        scope: {
-            src: '='
-        },
-
-        link: function link(scope, element, attrs) {
-
-            var init = function init() {};
-
-            init();
-
-            scope = _.assign(scope, {});
         }
     };
 });
@@ -492,6 +492,34 @@ app.directive('vid', function () {
     };
 });
 
+app.controller('HomeCtrl', function ($element, $timeout, API, $scope) {
+
+    var posts = [];
+    $scope.ready = false;
+
+    var getPosts = function getPosts() {
+        return posts;
+    };
+
+    var loadPosts = function loadPosts() {
+        return API.getPosts().then(function (response) {
+            posts = response;
+            $scope.ready = true;
+        });
+    };
+
+    var init = function init() {
+        $timeout(function () {
+            return $element.find('[screen]').addClass('active');
+        }, 50);
+        loadPosts();
+    };
+
+    init();
+
+    $scope.getPosts = getPosts;
+});
+
 app.controller('PostCtrl', function ($element, $timeout, API, $scope, Post, $stateParams) {
 
     var post = {};
@@ -520,32 +548,4 @@ app.controller('PostCtrl', function ($element, $timeout, API, $scope, Post, $sta
 
     $scope.getPost = getPost;
     $scope.getId = getId;
-});
-
-app.controller('HomeCtrl', function ($element, $timeout, API, $scope) {
-
-    var posts = [];
-    $scope.ready = false;
-
-    var getPosts = function getPosts() {
-        return posts;
-    };
-
-    var loadPosts = function loadPosts() {
-        return API.getPosts().then(function (response) {
-            posts = response;
-            $scope.ready = true;
-        });
-    };
-
-    var init = function init() {
-        $timeout(function () {
-            return $element.find('[screen]').addClass('active');
-        }, 50);
-        loadPosts();
-    };
-
-    init();
-
-    $scope.getPosts = getPosts;
 });

@@ -5,7 +5,10 @@
     background: black;
     background-size: cover;
     background-position: center;
-    max-height: 90vh;
+
+    @media (max-width: 767px) {
+      height: 500px;
+    }
 
     .hero-back {
       background: rgba(0, 0, 0, 0.4);
@@ -28,14 +31,7 @@
       text-align: center;
       padding: 0 30px;
 
-      @media (max-width: 767px) {
-        h1 {
-          font-size: 40px;
-        }
-        h2 {
-          font-size: 25px;
-        }
-      }
+
     }
 
     .hero-content {

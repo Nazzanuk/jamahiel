@@ -75,6 +75,17 @@
 
     </div>
 </script>
+<script type="text/ng-template" id="image-item.html">
+    <div template="image-item">
+        <div class="image-item">
+            <p>
+                <img src="{{src}}"/>
+            </p>
+
+        </div>
+
+    </div>
+</script>
 <script type="text/ng-template" id="heading.html">
     <div template="heading">
         <div class="heading">
@@ -102,17 +113,6 @@
 
             </div>
         </div>
-    </div>
-</script>
-<script type="text/ng-template" id="image-item.html">
-    <div template="image-item">
-        <div class="image-item">
-            <p>
-                <img src="{{src}}"/>
-            </p>
-
-        </div>
-
     </div>
 </script>
 <script type="text/ng-template" id="paragraph.html">
@@ -148,23 +148,6 @@
 
     </div>
 </script>
-<script type="text/ng-template" id="post-screen.html">
-    <div screen>
-        <hero post-id="getId()" post="true"></hero>
-
-        <div style="background: #ffffff;padding: 30px 0">
-            <div ng-repeat="content in getPost().getContent() track by $index">
-                <heading ng-if="content.type == 'heading'" text="content.text"></heading>
-                <paragraph ng-if="content.type == 'paragraph'" text="content.text"></paragraph>
-                <vid ng-if="content.type == 'vid'" src="content.src"></vid>
-                <image-item ng-if="content.type == 'image'" src="content.src"></image-item>
-            </div>
-
-
-        </div>
-
-    </div>
-</script>
 <script type="text/ng-template" id="home-screen.html">
     <div screen>
         <div class="clearfix">
@@ -182,6 +165,23 @@
 
 
         <preview ng-if="$index != 0" ng-repeat="post in getPosts() track by $index" post-id="post" reverse="($index + 1) % 2"></preview>
+
+    </div>
+</script>
+<script type="text/ng-template" id="post-screen.html">
+    <div screen>
+        <hero post-id="getId()" post="true"></hero>
+
+        <div style="background: #ffffff;padding: 30px 0">
+            <div ng-repeat="content in getPost().getContent() track by $index">
+                <heading ng-if="content.type == 'heading'" text="content.text"></heading>
+                <paragraph ng-if="content.type == 'paragraph'" text="content.text"></paragraph>
+                <vid ng-if="content.type == 'vid'" src="content.src"></vid>
+                <image-item ng-if="content.type == 'image'" src="content.src"></image-item>
+            </div>
+
+
+        </div>
 
     </div>
 </script>

@@ -66,6 +66,10 @@
                 <div class="menu-item"><i class="fa fa-microphone fw"></i> &nbsp;Talk</div>
                 <div class="menu-item"><i class="fa fa-cutlery fw"></i> &nbsp;Diet</div>
             </div>
+
+            <div class="menu-icon">
+                <i class="fa fa-bars"></i>
+            </div>
         </div>
 
 
@@ -111,14 +115,6 @@
 
     </div>
 </script>
-<script type="text/ng-template" id="paragraph.html">
-    <div template="paragraph">
-        <div class="paragraph">
-            <p>{{text}}</p>
-        </div>
-
-    </div>
-</script>
 <script type="text/ng-template" id="preview.html">
     <div template="preview">
         <div class="preview clearfix {{getReverseClass()}}">
@@ -131,6 +127,14 @@
                 <div class="butn" ng-if="!post" ui-sref="post({ id: postId })">Get Reading &nbsp; <i class="fa fa-angle-right"></i></div>
             </div>
         </div>
+    </div>
+</script>
+<script type="text/ng-template" id="paragraph.html">
+    <div template="paragraph">
+        <div class="paragraph">
+            <p>{{text}}</p>
+        </div>
+
     </div>
 </script>
 <script type="text/ng-template" id="vid.html">

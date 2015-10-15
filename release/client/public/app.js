@@ -401,26 +401,6 @@ app.directive('imageItem', function () {
 
 'use strict';
 
-app.directive('paragraph', function () {
-    return {
-        templateUrl: 'paragraph.html',
-        scope: {
-            text: '='
-        },
-
-        link: function link(scope, element, attrs) {
-
-            var init = function init() {};
-
-            init();
-
-            scope = _.assign(scope, {});
-        }
-    };
-});
-
-'use strict';
-
 app.directive('preview', function (API, Post) {
     return {
         templateUrl: 'preview.html',
@@ -456,6 +436,26 @@ app.directive('preview', function (API, Post) {
 
             scope.getReverseClass = getReverseClass;
             scope.getPost = getPost;
+        }
+    };
+});
+
+'use strict';
+
+app.directive('paragraph', function () {
+    return {
+        templateUrl: 'paragraph.html',
+        scope: {
+            text: '='
+        },
+
+        link: function link(scope, element, attrs) {
+
+            var init = function init() {};
+
+            init();
+
+            scope = _.assign(scope, {});
         }
     };
 });

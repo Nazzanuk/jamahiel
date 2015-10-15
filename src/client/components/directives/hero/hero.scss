@@ -5,6 +5,7 @@
     background: black;
     background-size: cover;
     background-position: center;
+    max-height: 90vh;
 
     .hero-back {
       background: rgba(0, 0, 0, 0.4);
@@ -26,24 +27,23 @@
       z-index: 1;
       text-align: center;
       padding: 0 30px;
+
+      @media (max-width: 767px) {
+        h1 {
+          font-size: 40px;
+        }
+        h2 {
+          font-size: 25px;
+        }
+      }
     }
 
     .hero-content {
       flex: 1;
     }
 
-    .hero-title {
-      font-weight: 100;
-      line-height: 50px;
-      letter-spacing: 1px;
-      font-size: 50px;
-      width: 100%;
-      text-align: center;
-      margin-bottom: 20px;
-    }
-
     p {
-//      margin-bottom: 50px;
+      //      margin-bottom: 50px;
     }
   }
 }

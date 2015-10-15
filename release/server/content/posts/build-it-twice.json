@@ -13,16 +13,52 @@
       "text": "I was sat there gazing out the window, 8am and the sky was clear blue. These crisp clear autumn mornings might be pretty chilly, but they do possess a rare clean beauty you can only get at this time of year. So why did I feel so down? I slowly recoiled and looked down towards my screen, oh yes… another mess of a codebase. It’s groundhog day again."
     },
     {
+      "type": "image",
+      "src": "/public/img/sunrise-in-london.jpg"
+    },
+    {
       "type": "paragraph",
       "text": "How the hell does this keep happening? The architecture never seems to scale properly. Scope creep, that what it was -  these damn analysts don’t know what they are doing, they never consider the 100 or so permutations that are possible in the product. If only I was told what I was building at the beginning we wouldn’t be in this accursed mess."
     },
     {
       "type": "heading",
-      "text": "Sound familiar?"
+      "text": "Sound Familiar?"
     },
     {
       "type": "paragraph",
-      "text": "It’s pretty much every project I’ve ever been involved in to some degree or another. How does this happen? Well for one it’s practically impossible to gather all of the requirements for any application in advance of it being built. There are logic nuances you haven’t or couldn’t have considered, technical limitations, 3rd party integration and dependency headaches that are just waiting to blow your initial assumptions and timelines to pieces."
+      "text": "It’s pretty much every project I’ve ever been involved in to some degree or another. How does this happen? Well for one it’s practically impossible to gather all of the requirements for any application in advance of it being built. There are logic nuances you haven’t or couldn’t have considered, technical unknowns and limitations, 3rd party integrations and dependency headaches - all of which are just waiting to blow your initial assumptions and timelines to pieces."
+    },
+    {
+      "type": "paragraph",
+      "text": "This is where I start to miss the logic of Scrum and it’s low-level, ticket based approach to everything. If every feature is built continuously in small increments one after the other, at what point do you turn around and look at the application and architecture as a whole and decide if it is actually working for you? In the environment of a methodology that prides itself on measuring teams by ‘velocity’ and gathering ‘empirical data’ for middle managers, who is going to turn around and say - “well actually we need time, simply to fix what we have done so far.”"
+    },
+    {
+      "type": "paragraph",
+      "text": "Nobody."
+    },
+    {
+      "type": "paragraph",
+      "text": "Sequentially building any application feature by feature builds up technical debt. Debt that, in my experience, is never fully repaid - always a slap on the wrist with the result being that application has some weird behaviour that was built in 5 sprints ago that we just live with now."
+    },
+    {
+      "type": "heading",
+      "text": "Don’t Duct Tape It, Rebuild It"
+    },
+    {
+      "type": "image",
+      "src": "https://robertacucchiaro.files.wordpress.com/2014/06/img_9485.jpg"
+    },
+    {
+      "type": "paragraph",
+      "text": "So what’s the solution? We simply accept that we have limited understanding as to what we are doing the first time round. Build a feature, monitor the issues that will naturally manifest, and if we do realise that there is simply too much that we didn’t take into consideration initially - we don’t continue to work with a fundamentally flawed architecture."
+    },
+    {
+      "type": "paragraph",
+      "text": "We scrap it, and start again."
+    },
+    {
+      "type": "paragraph",
+      "text": "I guarantee the second time round you will absolutely race through the implementation. Why? Because you are totally acquainted with the all of the requisite information. You understand the scope, the dependencies, the output. No more stabbing in the dark. When you deliver this feature it won’t be a collection of rooms built one by one and attached to each other as you needed them. It will be a house, fully planned, blueprinted and executed."
     },
     {
       "type": "paragraph",

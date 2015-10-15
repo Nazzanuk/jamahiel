@@ -1,0 +1,28 @@
+<script type="text/ng-template" id="home-screen.html">
+    <div screen>
+        <div class="col-sm-7">
+            <div class="row">
+                <hero ng-if="getPosts()[0]" post-id="getPosts()[0]"></hero>
+            </div>
+
+        </div>
+        <div class="col-sm-5">
+            <div class="row">
+                <about></about>
+            </div>
+        </div>
+
+        <div class="col-sm-12">
+            <div class="row">
+                <preview ng-if="$index != 0" ng-repeat="post in getPosts() track by $index" post-id="post" reverse="($index + 1) % 2"></preview>
+                <!--<preview post-id="'build-it-twice'" reverse="true"></preview>-->
+            </div>
+
+        </div>
+        <div class="col-sm-3">
+            <div class="row">
+            </div>
+        </div>
+
+    </div>
+</script>

@@ -1,0 +1,20 @@
+[template=about] {
+  .about {
+    background: #000000;
+    height: 400px;
+
+    padding: 60px;
+
+    h2, p {
+      color: #ffffff;
+    }
+  }
+
+  .about-image {
+    height: 400px;
+    position: relative;
+    background: #f7f7f7;
+    background-size: cover;
+    background-position: center;
+  }
+}

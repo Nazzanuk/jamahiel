@@ -26,5 +26,5 @@ app.config(($stateProvider, $urlRouterProvider, $locationProvider) => {
             resolve: resolve
         });
 
-    //$locationProvider.html5Mode(true);
+    $locationProvider.html5Mode(true);
 });

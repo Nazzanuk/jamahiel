@@ -38,6 +38,23 @@
 
 <!--<alert></alert>-->
 
+<script type="text/ng-template" id="about.html">
+    <div template="about">
+        <div class="about-container">
+            <div class="about">
+                <div class="about-content">
+                    <h2>Who Am I?</h2>
+
+                    <p>I'm Nathan-Jamahiel Nelson, a full-stack designer/developer with a passion for powerful, minimal code and efficient living.</p>
+                    <p>I've learnt the importance of simply building, and I believe that full immersion is the best (only) way to learn anything.</p>
+                    <p>Intermittent fasting and LCHF are fun topics of mine and am always happy to debate what exactly efficient living means.</p>
+                </div>
+            </div>
+            <div class="about-image" style="background-image: url('/public/img/hero-india.jpg')"></div>
+        </div>
+
+    </div>
+</script>
 <script type="text/ng-template" id="header.html">
     <div template="header">
         <div class="header">
@@ -55,23 +72,6 @@
             </div>
         </div>
 
-
-    </div>
-</script>
-<script type="text/ng-template" id="about.html">
-    <div template="about">
-        <div class="about-container">
-            <div class="about">
-                <div class="about-content">
-                    <h2>Who Am I?</h2>
-
-                    <p>I'm Nathan-Jamahiel Nelson, a full-stack designer/developer with a passion for powerful, minimal code and efficient living.</p>
-                    <p>I've learnt the importance of simply building, and I believe that full immersion is the best (only) way to learn anything.</p>
-                    <p>Intermittent fasting and LCHF are fun topics of mine and am always happy to debate what exactly efficient living means.</p>
-                </div>
-            </div>
-            <div class="about-image" style="background-image: url('/public/img/hero-india.jpg')"></div>
-        </div>
 
     </div>
 </script>
@@ -148,6 +148,23 @@
 
     </div>
 </script>
+<script type="text/ng-template" id="post-screen.html">
+    <div screen>
+        <hero post-id="getId()" post="true"></hero>
+
+        <div style="background: #ffffff;padding: 30px 0">
+            <div ng-repeat="content in getPost().getContent() track by $index">
+                <heading ng-if="content.type == 'heading'" text="content.text"></heading>
+                <paragraph ng-if="content.type == 'paragraph'" text="content.text"></paragraph>
+                <vid ng-if="content.type == 'vid'" src="content.src"></vid>
+                <image-item ng-if="content.type == 'image'" src="content.src"></image-item>
+            </div>
+
+
+        </div>
+
+    </div>
+</script>
 <script type="text/ng-template" id="home-screen.html">
     <div screen>
         <div class="clearfix">
@@ -165,23 +182,6 @@
 
 
         <preview ng-if="$index != 0" ng-repeat="post in getPosts() track by $index" post-id="post" reverse="($index + 1) % 2"></preview>
-
-    </div>
-</script>
-<script type="text/ng-template" id="post-screen.html">
-    <div screen>
-        <hero post-id="getId()" post="true"></hero>
-
-        <div style="background: #ffffff;padding: 30px 0">
-            <div ng-repeat="content in getPost().getContent() track by $index">
-                <heading ng-if="content.type == 'heading'" text="content.text"></heading>
-                <paragraph ng-if="content.type == 'paragraph'" text="content.text"></paragraph>
-                <vid ng-if="content.type == 'vid'" src="content.src"></vid>
-                <image-item ng-if="content.type == 'image'" src="content.src"></image-item>
-            </div>
-
-
-        </div>
 
     </div>
 </script>

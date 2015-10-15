@@ -4,7 +4,8 @@ app.directive('hero', (API, Post) => {
     return {
         templateUrl: 'hero.html',
         scope: {
-            'postId':'='
+            'postId':'=',
+            'post':'='
         },
 
         link(scope, element, attrs) {

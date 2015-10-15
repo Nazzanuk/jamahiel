@@ -1,7 +1,54 @@
 {
-  "image":"http://blogs.metageek.net/wp-content/uploads/2015/04/IMG_6967.jpg",
-  "title": "The Scrum Fallacies",
-  "summary" : "How can the most popular agile process be so rigid and inflexible?",
-  "icon" : "code",
-  "content" : ""
+  "image": "https://picjumbo.imgix.net/HNCK2131.jpg?q=40&w=2650&sharp=40",
+  "title": "4 Day Working Week",
+  "summary": "Work Hard. Play Hard. Perfected.",
+  "icon": "briefcase",
+  "content": [
+    {
+      "type": "heading",
+      "text": "4 Days On, 4 Days Off"
+    },
+    {
+      "type": "paragraph",
+      "text": "“You’re going to be living the dream!” My colleague Zander has been regularly telling me about just how amazing a position I’ll have forged for myself in a few short months."
+    },
+    {
+      "type": "paragraph",
+      "text": "When I was locked into negotiations with my soon to be employer shortening my work week wasn’t something I had in mind. As I was sat there asking for an ambitious new salary, my opposite number was doing the maths in his head trying to figure out just how expensive this venture would be. He then proposed four days simply as a cost saving mechanism."
+    },
+    {
+      "type": "paragraph",
+      "text": "I agreed reluctantly, thinking solely of the financial implications. But as I started to deliver the news to my other half and my friends, they were wondering at how I pulled off such a coup!"
+    },
+    {
+      "type": "heading",
+      "text": "Why Work Anyway?"
+    },
+    {
+      "type": "paragraph",
+      "text": "As I get older I’m slowly starting to figure out what the important things in life are. It’s easy to get into a seamless cadence of work and lose awareness of the amount of time you spend at in the office, on the laptop fixing the people problems of other people."
+    },
+    {
+      "type": "paragraph",
+      "text": "Why the hell are we at work anyway? Often, the answer is to earn more - in order to work less. So we work to… not work so much. Why not take a shortcut and just work less up front? Provided the pay is good, there’s no reason to wait till middle age to decide to both earn and follow your dreams at the same time. My personality type simply wants to work less for other people."
+    },
+    {
+      "type": "image",
+      "src": "/public/img/wfh.jpg"
+    },
+    {
+      "type": "paragraph",
+      "text": "This is the first iteration of my new work/life balance but I’m optimistic that the result is means more time spent on a beach in Spain taking selfies, more time creating and eradicating startup ideas in a matter of days, more time to enjoy my girlfriend and much more time simply living and creating memories."
+    },
+    {
+      "type": "paragraph",
+      "text": ""
+    }
+  ],
+  "unused": [
+    {
+      "type": "vid",
+      "src": "/public/img/laptop.mov"
+    }
+  ]
 }

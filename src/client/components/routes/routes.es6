@@ -18,6 +18,12 @@ app.config(($stateProvider, $urlRouterProvider, $locationProvider) => {
             templateUrl: "home-screen.html",
             controller: "HomeCtrl",
             resolve: resolve
+        })
+        .state('post', {
+            url: "/post/:id",
+            templateUrl: "post-screen.html",
+            controller: "PostCtrl",
+            resolve: resolve
         });
 
     //$locationProvider.html5Mode(true);

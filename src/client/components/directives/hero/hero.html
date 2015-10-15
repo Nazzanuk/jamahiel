@@ -2,16 +2,19 @@
     <div template="hero">
         <div class="hero" style="background-image: url('{{getPost().getImage()}}')">
             <div class="hero-back"></div>
-            <div class="hero-title">
-                <small>
-                    <i class="fa fa-{{getPost().getIcon()}}"></i>
-                </small>
-                {{getPost().getTitle()}}
-            </div>
-            <div class="hero-summary">
-                <p>{{getPost().getSummary()}}</p>
+            <div class="hero-text">
+                <h1>
+                    <i class="fa fa-{{getPost().getIcon()}}"></i>&nbsp;
+                    {{getPost().getTitle()}}
+                </h1>
 
-                <div class="butn light">Get Reading &nbsp; <i class="fa fa-angle-right"></i></div>
+                <p ng-if="!post">{{getPost().getSummary()}}</p>
+                <h2 ng-if="post">{{getPost().getSummary()}}</h2>
+
+                <br/>
+
+                <div class="butn light" ng-if="!post" ui-sref="post({ id: postId })">Get Reading &nbsp; <i class="fa fa-angle-right"></i></div>
+
             </div>
         </div>
     </div>

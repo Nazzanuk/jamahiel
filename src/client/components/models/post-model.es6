@@ -22,8 +22,11 @@ app.factory('Post', function ($timeout, $rootScope) {
         getIcon() {
             return this.icon;
         }
-    }
 
+        getContent() {
+            return this.content;
+        }
+    }
 
     return Post;
 });

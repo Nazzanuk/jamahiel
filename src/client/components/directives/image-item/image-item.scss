@@ -1,0 +1,25 @@
+[template=image-item] {
+  background: #ffffff;
+  padding: 0 30px;
+
+  .image-item {
+    max-width: 1000px;
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border-radius: 4px;
+
+    img {
+
+      width: 100%;
+
+      &:hover {
+
+      }
+    }
+
+    h2 {
+      font-size: 40px;
+    }
+  }
+}

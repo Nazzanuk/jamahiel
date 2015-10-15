@@ -53,6 +53,11 @@ app.factory('Post', function ($timeout, $rootScope) {
             value: function getIcon() {
                 return this.icon;
             }
+        }, {
+            key: 'getContent',
+            value: function getContent() {
+                return this.content;
+            }
         }]);
 
         return Post;
@@ -79,6 +84,11 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
         url: "/",
         templateUrl: "home-screen.html",
         controller: "HomeCtrl",
+        resolve: resolve
+    }).state('post', {
+        url: "/post/:id",
+        templateUrl: "post-screen.html",
+        controller: "PostCtrl",
         resolve: resolve
     });
 
@@ -315,6 +325,102 @@ app.directive('header', function () {
 
 'use strict';
 
+app.directive('hero', function (API, Post) {
+    return {
+        templateUrl: 'hero.html',
+        scope: {
+            'postId': '=',
+            'post': '='
+        },
+
+        link: function link(scope, element, attrs) {
+
+            var post = {};
+
+            var getPost = function getPost() {
+                return post;
+            };
+
+            var loadPost = function loadPost() {
+                return API.getPostById(scope.postId).then(function (response) {
+                    post = new Post(response);
+                });
+            };
+
+            var init = function init() {
+                console.log(scope);
+                loadPost();
+            };
+
+            init();
+
+            scope.getPost = getPost;
+        }
+    };
+});
+
+'use strict';
+
+app.directive('heading', function () {
+    return {
+        templateUrl: 'heading.html',
+        scope: {
+            text: '='
+        },
+
+        link: function link(scope, element, attrs) {
+
+            var init = function init() {};
+
+            init();
+
+            scope = _.assign(scope, {});
+        }
+    };
+});
+
+'use strict';
+
+app.directive('imageItem', function () {
+    return {
+        templateUrl: 'image-item.html',
+        scope: {
+            src: '='
+        },
+
+        link: function link(scope, element, attrs) {
+
+            var init = function init() {};
+
+            init();
+
+            scope = _.assign(scope, {});
+        }
+    };
+});
+
+'use strict';
+
+app.directive('paragraph', function () {
+    return {
+        templateUrl: 'paragraph.html',
+        scope: {
+            text: '='
+        },
+
+        link: function link(scope, element, attrs) {
+
+            var init = function init() {};
+
+            init();
+
+            scope = _.assign(scope, {});
+        }
+    };
+});
+
+'use strict';
+
 app.directive('preview', function (API, Post) {
     return {
         templateUrl: 'preview.html',
@@ -356,35 +462,32 @@ app.directive('preview', function (API, Post) {
 
 'use strict';
 
-app.directive('hero', function (API, Post) {
+app.directive('vid', function () {
     return {
-        templateUrl: 'hero.html',
+        templateUrl: 'vid.html',
         scope: {
-            'postId': '='
+            src: '='
         },
 
         link: function link(scope, element, attrs) {
 
-            var post = {};
-
-            var getPost = function getPost() {
-                return post;
+            var play = function play($event) {
+                $($event.currentTarget).find('video')[0].play();
             };
 
-            var loadPost = function loadPost() {
-                return API.getPostById(scope.postId).then(function (response) {
-                    post = new Post(response);
-                });
+            var pause = function pause($event) {
+                $($event.currentTarget).find('video')[0].pause();
             };
 
-            var init = function init() {
-                console.log(scope);
-                loadPost();
-            };
+            var init = function init() {};
 
             init();
 
-            scope.getPost = getPost;
+            scope = _.assign(scope, {
+                play: play,
+                pause: pause
+
+            });
         }
     };
 });
@@ -415,4 +518,34 @@ app.controller('HomeCtrl', function ($element, $timeout, API, $scope) {
     init();
 
     $scope.getPosts = getPosts;
+});
+
+app.controller('PostCtrl', function ($element, $timeout, API, $scope, Post, $stateParams) {
+
+    var post = {};
+
+    var getPost = function getPost() {
+        return post;
+    };
+
+    var getId = function getId() {
+        return $stateParams.id;
+    };
+
+    var loadPost = function loadPost() {
+        return API.getPostById($stateParams.id).then(function (response) {
+            post = new Post(response);
+            $element.find('[screen]').addClass('active');
+        });
+    };
+
+    var init = function init() {
+        console.log($stateParams);
+        loadPost();
+    };
+
+    init();
+
+    $scope.getPost = getPost;
+    $scope.getId = getId;
 });

@@ -1,0 +1,11 @@
+<script type="text/ng-template" id="vid.html">
+    <div template="vid">
+        <div class="vid" ng-mouseover="play($event)" ng-mouseleave="pause($event)">
+            <p>
+                <video src="{{src}}" loop="loop"  muted="muted" ng-attr-autoplay="{{play}}"></video>
+            </p>
+
+        </div>
+
+    </div>
+</script>

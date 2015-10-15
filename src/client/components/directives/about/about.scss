@@ -1,7 +1,13 @@
 [template=about] {
+  .about-container {
+    height: 800px;
+    display: flex;
+    flex-direction: column;
+  }
+
   .about {
+    flex: 1 0 auto;
     background: #000000;
-    height: 400px;
 
     padding: 60px;
 
@@ -11,7 +17,7 @@
   }
 
   .about-image {
-    height: 400px;
+    flex: 1 1 100%;
     position: relative;
     background: #f7f7f7;
     background-size: cover;

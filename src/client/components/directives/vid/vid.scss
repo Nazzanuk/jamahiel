@@ -1,0 +1,24 @@
+[template=vid] {
+  background: #ffffff;
+  padding: 0 30px;
+
+  .vid {
+    max-width: 1000px;
+    margin: auto;
+    margin-top: 30px;
+    border-radius: 4px;
+
+    video {
+
+      width: 100%;
+
+      &:hover {
+
+      }
+    }
+
+    h2 {
+      font-size: 40px;
+    }
+  }
+}

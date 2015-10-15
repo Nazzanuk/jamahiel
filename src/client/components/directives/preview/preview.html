@@ -3,7 +3,7 @@
         <div class="preview clearfix {{getReverseClass()}}">
             <div class="preview-hero" ui-sref="post({ id: postId })" style="background-image: url('{{getPost().getImage()}}')"></div>
             <div class="preview-content">
-                <h2><i class="fa fa-{{getPost().getIcon()}}"></i> {{getPost().getTitle()}}</h2>
+                <h2 ui-sref="post({ id: postId })"><i class="fa fa-{{getPost().getIcon()}}"></i> {{getPost().getTitle()}}</h2>
 
                 <p>{{getPost().getSummary()}}</p>
                 <br/>

@@ -19,6 +19,34 @@ app.directive('ngEnter', function () {
         });
     };
 });
+app.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
+
+    var resolve = {
+        timeout: function timeout($timeout) {
+            $('[screen]').removeClass('active');
+            //$('.loading-logo').addClass('active');
+            return $timeout(300);
+        }
+    };
+
+    // For any unmatched url, redirect to /
+    $urlRouterProvider.otherwise("/");
+
+    // Now set up the states
+    $stateProvider.state('home', {
+        url: "/",
+        templateUrl: "home-screen.html",
+        controller: "HomeCtrl",
+        resolve: resolve
+    }).state('post', {
+        url: "/post/:id",
+        templateUrl: "post-screen.html",
+        controller: "PostCtrl",
+        resolve: resolve
+    });
+
+    $locationProvider.html5Mode(true);
+});
 'use strict';
 
 app.factory('Post', function ($timeout, $rootScope) {
@@ -66,34 +94,6 @@ app.factory('Post', function ($timeout, $rootScope) {
     return Post;
 });
 
-app.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
-
-    var resolve = {
-        timeout: function timeout($timeout) {
-            $('[screen]').removeClass('active');
-            //$('.loading-logo').addClass('active');
-            return $timeout(300);
-        }
-    };
-
-    // For any unmatched url, redirect to /
-    $urlRouterProvider.otherwise("/");
-
-    // Now set up the states
-    $stateProvider.state('home', {
-        url: "/",
-        templateUrl: "home-screen.html",
-        controller: "HomeCtrl",
-        resolve: resolve
-    }).state('post', {
-        url: "/post/:id",
-        templateUrl: "post-screen.html",
-        controller: "PostCtrl",
-        resolve: resolve
-    });
-
-    $locationProvider.html5Mode(true);
-});
 app.controller('ScreenCtrl', function ($element, $timeout, State, $state) {
 
     var init = function init() {
@@ -309,22 +309,6 @@ app.directive('about', function () {
 
 'use strict';
 
-app.directive('header', function () {
-    return {
-        templateUrl: 'header.html',
-        scope: {},
-
-        link: function link(scope, element, attrs) {
-
-            var init = function init() {};
-
-            init();
-        }
-    };
-});
-
-'use strict';
-
 app.directive('heading', function () {
     return {
         templateUrl: 'heading.html',
@@ -381,11 +365,47 @@ app.directive('hero', function (API, Post) {
 
 'use strict';
 
+app.directive('header', function () {
+    return {
+        templateUrl: 'header.html',
+        scope: {},
+
+        link: function link(scope, element, attrs) {
+
+            var init = function init() {};
+
+            init();
+        }
+    };
+});
+
+'use strict';
+
 app.directive('imageItem', function () {
     return {
         templateUrl: 'image-item.html',
         scope: {
             src: '='
+        },
+
+        link: function link(scope, element, attrs) {
+
+            var init = function init() {};
+
+            init();
+
+            scope = _.assign(scope, {});
+        }
+    };
+});
+
+'use strict';
+
+app.directive('paragraph', function () {
+    return {
+        templateUrl: 'paragraph.html',
+        scope: {
+            text: '='
         },
 
         link: function link(scope, element, attrs) {
@@ -436,26 +456,6 @@ app.directive('preview', function (API, Post) {
 
             scope.getReverseClass = getReverseClass;
             scope.getPost = getPost;
-        }
-    };
-});
-
-'use strict';
-
-app.directive('paragraph', function () {
-    return {
-        templateUrl: 'paragraph.html',
-        scope: {
-            text: '='
-        },
-
-        link: function link(scope, element, attrs) {
-
-            var init = function init() {};
-
-            init();
-
-            scope = _.assign(scope, {});
         }
     };
 });

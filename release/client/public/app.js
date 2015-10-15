@@ -66,17 +66,6 @@ app.factory('Post', function ($timeout, $rootScope) {
     return Post;
 });
 
-app.controller('ScreenCtrl', function ($element, $timeout, State, $state) {
-
-    var init = function init() {
-        $timeout(function () {
-            return $element.find('[screen]').addClass('active');
-        }, 50);
-    };
-
-    init();
-});
-
 app.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
 
     var resolve = {
@@ -105,6 +94,17 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
 
     //$locationProvider.html5Mode(true);
 });
+app.controller('ScreenCtrl', function ($element, $timeout, State, $state) {
+
+    var init = function init() {
+        $timeout(function () {
+            return $element.find('[screen]').addClass('active');
+        }, 50);
+    };
+
+    init();
+});
+
 'use strict';
 
 app.factory('Alert', function ($timeout, $rootScope) {
@@ -275,6 +275,22 @@ app.factory('State', function ($rootScope, $http, $state) {
 });
 'use strict';
 
+app.directive('header', function () {
+    return {
+        templateUrl: 'header.html',
+        scope: {},
+
+        link: function link(scope, element, attrs) {
+
+            var init = function init() {};
+
+            init();
+        }
+    };
+});
+
+'use strict';
+
 app.directive('about', function () {
     return {
         templateUrl: 'about.html',
@@ -309,47 +325,11 @@ app.directive('about', function () {
 
 'use strict';
 
-app.directive('header', function () {
-    return {
-        templateUrl: 'header.html',
-        scope: {},
-
-        link: function link(scope, element, attrs) {
-
-            var init = function init() {};
-
-            init();
-        }
-    };
-});
-
-'use strict';
-
 app.directive('heading', function () {
     return {
         templateUrl: 'heading.html',
         scope: {
             text: '='
-        },
-
-        link: function link(scope, element, attrs) {
-
-            var init = function init() {};
-
-            init();
-
-            scope = _.assign(scope, {});
-        }
-    };
-});
-
-'use strict';
-
-app.directive('imageItem', function () {
-    return {
-        templateUrl: 'image-item.html',
-        scope: {
-            src: '='
         },
 
         link: function link(scope, element, attrs) {
@@ -395,6 +375,26 @@ app.directive('hero', function (API, Post) {
             init();
 
             scope.getPost = getPost;
+        }
+    };
+});
+
+'use strict';
+
+app.directive('imageItem', function () {
+    return {
+        templateUrl: 'image-item.html',
+        scope: {
+            src: '='
+        },
+
+        link: function link(scope, element, attrs) {
+
+            var init = function init() {};
+
+            init();
+
+            scope = _.assign(scope, {});
         }
     };
 });

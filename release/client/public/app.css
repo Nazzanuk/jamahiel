@@ -144,28 +144,6 @@ p {
       font-weight: 700;
       background-color: #f7f7f7; }
 
-[template=about] .about-container {
-  height: 800px;
-  display: flex;
-  flex-direction: column; }
-
-[template=about] .about {
-  flex: 1 0 auto;
-  background: #000000;
-  padding: 60px; }
-  [template=about] .about h2, [template=about] .about p {
-    color: #ffffff; }
-  @media (max-width: 767px) {
-    [template=about] .about {
-      padding: 30px; } }
-
-[template=about] .about-image {
-  flex: 1 1 100%;
-  position: relative;
-  background: #f7f7f7;
-  background-size: cover;
-  background-position: center; }
-
 [template=header] .header {
   top: 0;
   left: 0;
@@ -225,6 +203,28 @@ p {
       [template=header] .header .menu {
         display: none; } }
 
+[template=about] .about-container {
+  height: 800px;
+  display: flex;
+  flex-direction: column; }
+
+[template=about] .about {
+  flex: 1 0 auto;
+  background: #000000;
+  padding: 60px; }
+  [template=about] .about h2, [template=about] .about p {
+    color: #ffffff; }
+  @media (max-width: 767px) {
+    [template=about] .about {
+      padding: 30px; } }
+
+[template=about] .about-image {
+  flex: 1 1 100%;
+  position: relative;
+  background: #f7f7f7;
+  background-size: cover;
+  background-position: center; }
+
 [template=heading] {
   background: #ffffff;
   padding: 0 30px; }
@@ -233,20 +233,6 @@ p {
     margin: auto;
     margin-top: 30px; }
     [template=heading] .heading h2 {
-      font-size: 40px; }
-
-[template=image-item] {
-  background: #ffffff;
-  padding: 0 30px; }
-  [template=image-item] .image-item {
-    max-width: 1000px;
-    margin: auto;
-    margin-top: 30px;
-    margin-bottom: 30px;
-    border-radius: 4px; }
-    [template=image-item] .image-item img {
-      width: 100%; }
-    [template=image-item] .image-item h2 {
       font-size: 40px; }
 
 [template=hero] .hero {
@@ -281,6 +267,23 @@ p {
         font-size: 25px; } }
   [template=hero] .hero .hero-content {
     flex: 1; }
+
+[template=image-item] {
+  background: #ffffff;
+  padding: 0 30px; }
+  @media (max-width: 767px) {
+    [template=image-item] {
+      padding: 0; } }
+  [template=image-item] .image-item {
+    max-width: 1000px;
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border-radius: 4px; }
+    [template=image-item] .image-item img {
+      width: 100%; }
+    [template=image-item] .image-item h2 {
+      font-size: 40px; }
 
 [template=paragraph] {
   background: #ffffff;

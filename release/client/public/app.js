@@ -309,22 +309,6 @@ app.directive('about', function () {
 
 'use strict';
 
-app.directive('header', function () {
-    return {
-        templateUrl: 'header.html',
-        scope: {},
-
-        link: function link(scope, element, attrs) {
-
-            var init = function init() {};
-
-            init();
-        }
-    };
-});
-
-'use strict';
-
 app.directive('heading', function () {
     return {
         templateUrl: 'heading.html',
@@ -339,6 +323,22 @@ app.directive('heading', function () {
             init();
 
             scope = _.assign(scope, {});
+        }
+    };
+});
+
+'use strict';
+
+app.directive('header', function () {
+    return {
+        templateUrl: 'header.html',
+        scope: {},
+
+        link: function link(scope, element, attrs) {
+
+            var init = function init() {};
+
+            init();
         }
     };
 });

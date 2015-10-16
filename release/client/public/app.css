@@ -175,6 +175,16 @@ p {
   background-size: cover;
   background-position: center; }
 
+[template=heading] {
+  background: #ffffff;
+  padding: 0 30px; }
+  [template=heading] .heading {
+    max-width: 700px;
+    margin: auto;
+    margin-top: 30px; }
+    [template=heading] .heading h2 {
+      font-size: 40px; }
+
 [template=header] .header {
   top: 0;
   left: 0;
@@ -237,16 +247,6 @@ p {
     @media (max-width: 767px) {
       [template=header] .header .menu {
         display: none; } }
-
-[template=heading] {
-  background: #ffffff;
-  padding: 0 30px; }
-  [template=heading] .heading {
-    max-width: 700px;
-    margin: auto;
-    margin-top: 30px; }
-    [template=heading] .heading h2 {
-      font-size: 40px; }
 
 [template=hero] .hero {
   height: 800px;

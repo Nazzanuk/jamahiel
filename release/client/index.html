@@ -141,20 +141,6 @@
         </div>
     </div>
 </script>
-<script type="text/ng-template" id="quote-item.html">
-    <div template="quote-item">
-        <div class="quote-item">
-            <div class="quote-text">
-                <i class="fa fa-quote-left"></i>
-                {{content.text}}
-                <!--<i class="fa fa-quote-right"></i>-->
-            </div>
-            <div class="quote-by" ng-bind="content.by"></div>
-
-        </div>
-
-    </div>
-</script>
 <script type="text/ng-template" id="vid.html">
     <div template="vid">
         <div class="vid" ng-mouseover="play($event)" ng-mouseleave="pause($event)">
@@ -166,19 +152,15 @@
 
     </div>
 </script>
-<script type="text/ng-template" id="post-screen.html">
-    <div screen>
-        <hero post-id="getId()" post="true"></hero>
-
-        <div style="background: #ffffff;padding: 30px 0">
-            <div ng-repeat="content in getPost().getContent() track by $index">
-                <heading ng-if="content.type == 'heading'" text="content.text"></heading>
-                <paragraph ng-if="content.type == 'paragraph'" text="content.text"></paragraph>
-                <vid ng-if="content.type == 'vid'" src="content.src"></vid>
-                <image-item ng-if="content.type == 'image'" content="content"></image-item>
-                <quote-item ng-if="content.type == 'quote'" content="content"></quote-item>
+<script type="text/ng-template" id="quote-item.html">
+    <div template="quote-item">
+        <div class="quote-item">
+            <div class="quote-text">
+                <i class="fa fa-quote-left"></i>
+                {{content.text}}
+                <!--<i class="fa fa-quote-right"></i>-->
             </div>
-
+            <div class="quote-by" ng-bind="content.by"></div>
 
         </div>
 
@@ -201,6 +183,24 @@
 
 
         <preview ng-if="$index != 0" ng-repeat="post in getPosts() track by $index" post-id="post" reverse="($index + 1) % 2"></preview>
+
+    </div>
+</script>
+<script type="text/ng-template" id="post-screen.html">
+    <div screen>
+        <hero post-id="getId()" post="true"></hero>
+
+        <div style="background: #ffffff;padding: 30px 0">
+            <div ng-repeat="content in getPost().getContent() track by $index">
+                <heading ng-if="content.type == 'heading'" text="content.text"></heading>
+                <paragraph ng-if="content.type == 'paragraph'" text="content.text"></paragraph>
+                <vid ng-if="content.type == 'vid'" src="content.src"></vid>
+                <image-item ng-if="content.type == 'image'" content="content"></image-item>
+                <quote-item ng-if="content.type == 'quote'" content="content"></quote-item>
+            </div>
+
+
+        </div>
 
     </div>
 </script>

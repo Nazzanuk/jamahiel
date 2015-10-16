@@ -27,7 +27,7 @@
       }
 
       opacity:0;
-      transition: .9s opacity, .9s transform;
+      transition: .9s opacity;
       will-change:opacity;
 
       &.active {
@@ -52,7 +52,7 @@
       }
 
       opacity:0;
-      transition: .9s opacity, .9s transform;
+      transition: .9s opacity;
       will-change:opacity;
 
       &.active {

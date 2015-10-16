@@ -4,9 +4,11 @@ var _createClass = (function () { function defineProperties(target, props) { for
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 
-var app = angular.module('app', ['ui.router']).run(function () {
-    FastClick.attach(document.body);
-});;
+var app = angular.module('app', ['ui.router']);
+
+//.run(function() {
+//    FastClick.attach(document.body);
+//});;
 
 app.directive('ngEnter', function () {
     return function (scope, element, attrs) {
@@ -326,26 +328,6 @@ app.directive('hero', function (API, Post, $timeout) {
 
 'use strict';
 
-app.directive('imageItem', function () {
-    return {
-        templateUrl: 'image-item.html',
-        scope: {
-            content: '='
-        },
-
-        link: function link(scope, element, attrs) {
-
-            var init = function init() {};
-
-            init();
-
-            scope = _.assign(scope, {});
-        }
-    };
-});
-
-'use strict';
-
 app.directive('paragraph', function ($sce) {
     return {
         templateUrl: 'paragraph.html',
@@ -366,6 +348,26 @@ app.directive('paragraph', function ($sce) {
             scope = _.assign(scope, {
                 getText: getText
             });
+        }
+    };
+});
+
+'use strict';
+
+app.directive('imageItem', function () {
+    return {
+        templateUrl: 'image-item.html',
+        scope: {
+            content: '='
+        },
+
+        link: function link(scope, element, attrs) {
+
+            var init = function init() {};
+
+            init();
+
+            scope = _.assign(scope, {});
         }
     };
 });
@@ -419,6 +421,26 @@ app.directive('preview', function (API, Post, $timeout) {
 
 'use strict';
 
+app.directive('quoteItem', function () {
+    return {
+        templateUrl: 'quote-item.html',
+        scope: {
+            content: '='
+        },
+
+        link: function link(scope, element, attrs) {
+
+            var init = function init() {};
+
+            init();
+
+            scope = _.assign(scope, {});
+        }
+    };
+});
+
+'use strict';
+
 app.directive('vid', function () {
     return {
         templateUrl: 'vid.html',
@@ -445,26 +467,6 @@ app.directive('vid', function () {
                 pause: pause
 
             });
-        }
-    };
-});
-
-'use strict';
-
-app.directive('quoteItem', function () {
-    return {
-        templateUrl: 'quote-item.html',
-        scope: {
-            content: '='
-        },
-
-        link: function link(scope, element, attrs) {
-
-            var init = function init() {};
-
-            init();
-
-            scope = _.assign(scope, {});
         }
     };
 });

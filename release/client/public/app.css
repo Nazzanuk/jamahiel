@@ -301,6 +301,20 @@ p {
   [template=hero] .hero .hero-content {
     flex: 1; }
 
+[template=paragraph] {
+  background: #ffffff;
+  padding: 0 30px; }
+  [template=paragraph] .paragraph {
+    max-width: 700px;
+    margin: auto; }
+    [template=paragraph] .paragraph p {
+      font-size: 20px;
+      line-height: 40px; }
+      @media (max-width: 767px) {
+        [template=paragraph] .paragraph p {
+          font-size: 17px;
+          line-height: 35px; } }
+
 [template=image-item] {
   background: #ffffff;
   padding: 0 30px; }
@@ -319,20 +333,6 @@ p {
       width: 100%; }
     [template=image-item] .image-item h2 {
       font-size: 40px; }
-
-[template=paragraph] {
-  background: #ffffff;
-  padding: 0 30px; }
-  [template=paragraph] .paragraph {
-    max-width: 700px;
-    margin: auto; }
-    [template=paragraph] .paragraph p {
-      font-size: 20px;
-      line-height: 40px; }
-      @media (max-width: 767px) {
-        [template=paragraph] .paragraph p {
-          font-size: 17px;
-          line-height: 35px; } }
 
 [template=preview] .preview {
   background: white;
@@ -393,19 +393,6 @@ p {
           [template=preview] .preview.reverse .butn:hover {
             background: rgba(255, 255, 255, 0.1); } }
 
-[template=vid] {
-  background: #ffffff;
-  padding: 0 30px; }
-  [template=vid] .vid {
-    max-width: 1000px;
-    margin: auto;
-    margin-top: 30px;
-    border-radius: 4px; }
-    [template=vid] .vid video {
-      width: 100%; }
-    [template=vid] .vid h2 {
-      font-size: 40px; }
-
 [template=quote-item] {
   background: #ffffff;
   padding: 0 30px; }
@@ -432,3 +419,16 @@ p {
     [template=quote-item] .quote-item .quote-by {
       color: #999;
       text-transform: uppercase; }
+
+[template=vid] {
+  background: #ffffff;
+  padding: 0 30px; }
+  [template=vid] .vid {
+    max-width: 1000px;
+    margin: auto;
+    margin-top: 30px;
+    border-radius: 4px; }
+    [template=vid] .vid video {
+      width: 100%; }
+    [template=vid] .vid h2 {
+      font-size: 40px; }

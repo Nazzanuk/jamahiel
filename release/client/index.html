@@ -105,6 +105,14 @@
         </div>
     </div>
 </script>
+<script type="text/ng-template" id="paragraph.html">
+    <div template="paragraph">
+        <div class="paragraph">
+            <p ng-bind-html="getText()"></p>
+        </div>
+
+    </div>
+</script>
 <script type="text/ng-template" id="image-item.html">
     <div template="image-item">
         <div class="image-item">
@@ -115,14 +123,6 @@
 
             </p>
 
-        </div>
-
-    </div>
-</script>
-<script type="text/ng-template" id="paragraph.html">
-    <div template="paragraph">
-        <div class="paragraph">
-            <p ng-bind-html="getText()"></p>
         </div>
 
     </div>
@@ -141,17 +141,6 @@
         </div>
     </div>
 </script>
-<script type="text/ng-template" id="vid.html">
-    <div template="vid">
-        <div class="vid" ng-mouseover="play($event)" ng-mouseleave="pause($event)">
-            <p>
-                <video src="{{src}}" loop="loop"  muted="muted" ng-attr-autoplay="{{play}}"></video>
-            </p>
-
-        </div>
-
-    </div>
-</script>
 <script type="text/ng-template" id="quote-item.html">
     <div template="quote-item">
         <div class="quote-item">
@@ -161,6 +150,17 @@
                 <!--<i class="fa fa-quote-right"></i>-->
             </div>
             <div class="quote-by" ng-bind="content.by"></div>
+
+        </div>
+
+    </div>
+</script>
+<script type="text/ng-template" id="vid.html">
+    <div template="vid">
+        <div class="vid" ng-mouseover="play($event)" ng-mouseleave="pause($event)">
+            <p>
+                <video src="{{src}}" loop="loop"  muted="muted" ng-attr-autoplay="{{play}}"></video>
+            </p>
 
         </div>
 

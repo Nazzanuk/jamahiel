@@ -250,6 +250,26 @@ app.directive('about', function ($timeout) {
 
 'use strict';
 
+app.directive('heading', function () {
+    return {
+        templateUrl: 'heading.html',
+        scope: {
+            text: '='
+        },
+
+        link: function link(scope, element, attrs) {
+
+            var init = function init() {};
+
+            init();
+
+            scope = _.assign(scope, {});
+        }
+    };
+});
+
+'use strict';
+
 app.directive('header', function () {
     return {
         templateUrl: 'header.html',
@@ -266,11 +286,11 @@ app.directive('header', function () {
 
 'use strict';
 
-app.directive('heading', function () {
+app.directive('imageItem', function () {
     return {
-        templateUrl: 'heading.html',
+        templateUrl: 'image-item.html',
         scope: {
-            text: '='
+            content: '='
         },
 
         link: function link(scope, element, attrs) {
@@ -320,52 +340,6 @@ app.directive('hero', function (API, Post, $timeout) {
             init();
 
             scope.getPost = getPost;
-        }
-    };
-});
-
-'use strict';
-
-app.directive('imageItem', function () {
-    return {
-        templateUrl: 'image-item.html',
-        scope: {
-            content: '='
-        },
-
-        link: function link(scope, element, attrs) {
-
-            var init = function init() {};
-
-            init();
-
-            scope = _.assign(scope, {});
-        }
-    };
-});
-
-'use strict';
-
-app.directive('paragraph', function ($sce) {
-    return {
-        templateUrl: 'paragraph.html',
-        scope: {
-            text: '='
-        },
-
-        link: function link(scope, element, attrs) {
-
-            var getText = function getText() {
-                return $sce.trustAsHtml(scope.text);
-            };
-
-            var init = function init() {};
-
-            init();
-
-            scope = _.assign(scope, {
-                getText: getText
-            });
         }
     };
 });
@@ -464,6 +438,32 @@ app.directive('vid', function () {
                 play: play,
                 pause: pause
 
+            });
+        }
+    };
+});
+
+'use strict';
+
+app.directive('paragraph', function ($sce) {
+    return {
+        templateUrl: 'paragraph.html',
+        scope: {
+            text: '='
+        },
+
+        link: function link(scope, element, attrs) {
+
+            var getText = function getText() {
+                return $sce.trustAsHtml(scope.text);
+            };
+
+            var init = function init() {};
+
+            init();
+
+            scope = _.assign(scope, {
+                getText: getText
             });
         }
     };

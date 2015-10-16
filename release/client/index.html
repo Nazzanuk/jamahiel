@@ -55,6 +55,14 @@
 
     </div>
 </script>
+<script type="text/ng-template" id="heading.html">
+    <div template="heading">
+        <div class="heading">
+            <h2>{{text}}</h2>
+        </div>
+
+    </div>
+</script>
 <script type="text/ng-template" id="header.html">
     <div template="header">
         <div class="header">
@@ -75,10 +83,16 @@
 
     </div>
 </script>
-<script type="text/ng-template" id="heading.html">
-    <div template="heading">
-        <div class="heading">
-            <h2>{{text}}</h2>
+<script type="text/ng-template" id="image-item.html">
+    <div template="image-item">
+        <div class="image-item">
+            <p>
+                <img src="{{content.src}}"/>
+            </p>
+            <p ng-if="content.caption" ng-bind="content.caption">
+
+            </p>
+
         </div>
 
     </div>
@@ -102,28 +116,6 @@
 
             </div>
         </div>
-    </div>
-</script>
-<script type="text/ng-template" id="image-item.html">
-    <div template="image-item">
-        <div class="image-item">
-            <p>
-                <img src="{{content.src}}"/>
-            </p>
-            <p ng-if="content.caption" ng-bind="content.caption">
-
-            </p>
-
-        </div>
-
-    </div>
-</script>
-<script type="text/ng-template" id="paragraph.html">
-    <div template="paragraph">
-        <div class="paragraph">
-            <p ng-bind-html="getText()"></p>
-        </div>
-
     </div>
 </script>
 <script type="text/ng-template" id="preview.html">
@@ -161,6 +153,14 @@
                 <video src="{{src}}" loop="loop"  muted="muted" ng-attr-autoplay="{{play}}"></video>
             </p>
 
+        </div>
+
+    </div>
+</script>
+<script type="text/ng-template" id="paragraph.html">
+    <div template="paragraph">
+        <div class="paragraph">
+            <p ng-bind-html="getText()"></p>
         </div>
 
     </div>

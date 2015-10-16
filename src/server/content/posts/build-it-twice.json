@@ -15,7 +15,9 @@
     },
     {
       "src": "/public/img/sunrise-in-london.jpg",
-      "type": "image"
+      "type": "image",
+      "caption":"Gotta love London"
+
     },
     {
       "type": "paragraph",
@@ -23,15 +25,23 @@
     },
     {
       "type": "paragraph",
-      "text": "I slowly recoiled and looked down towards my screen. Suddenly the feelings all came flooding back. Another mess of a codebase. It’s groundhog day again."
+      "text": "I slowly recoiled and looked down towards my screen. Suddenly the feelings all came flooding back."
     },
     {
       "type": "paragraph",
-      "text": "The architecture never seems to <strong>scale</strong> properly. <strong>Scope creep</strong>, that what it was -  these <strong>damn analysts</strong> don’t know what they are doing, they never consider the 300 or so permutations that are possible in the product. If only I was told what I was building at the <strong>beginning</strong> we wouldn’t be in this accursed mess."
+      "text": "Another mess of a codebase. It’s groundhog day again."
+    },
+    {
+      "type": "paragraph",
+      "text": "The architecture never seems to <strong><em>scale</em></strong> properly. <strong><em>Scope creep</em></strong>, that what it was -  these <strong><em>damn analysts</em></strong> don’t know what they are doing, they never consider the 300 or so permutations that are possible in the product. If only I was told what I was building at the <strong><em>beginning</em></strong> we wouldn’t be in this accursed mess."
     },
     {
       "type": "heading",
       "text": "Sound Familiar?"
+    },
+    {
+      "type": "paragraph",
+      "text": "How does this happen?"
     },
     {
       "type": "paragraph",
@@ -55,19 +65,24 @@
     },
     {
       "type": "image",
-      "src": "https://robertacucchiaro.files.wordpress.com/2014/06/img_9485.jpg"
+      "src": "https://robertacucchiaro.files.wordpress.com/2014/06/img_9485.jpg",
+      "caption":"Done, next story!"
     },
     {
       "type": "paragraph",
-      "text": "So what’s the solution? We simply accept that we have limited understanding as to what we are doing the first time round. Build a feature, monitor the issues that will naturally manifest, and if we do realise that there is simply too much that we didn’t take into consideration initially - we don’t continue to work with a fundamentally flawed architecture."
+      "text": "So what’s the solution?"
     },
     {
       "type": "paragraph",
-      "text": "We scrap it, and start again."
+      "text": "We can simply accept that we have limited understanding as to what we are doing the first time round. Build a feature, monitor the issues that will naturally manifest, and if we do realise that there is simply too much that we didn’t take into consideration initially - we don’t continue to work with a fundamentally flawed architecture."
     },
     {
       "type": "paragraph",
-      "text": "I guarantee the second time round you will absolutely race through the implementation. Why? Because you are totally acquainted with the all of the requisite information. You understand the scope, the dependencies, the output. No more stabbing in the dark. When you deliver this feature it won’t be a collection of rooms built one by one and attached to each other as you needed them. It will be a house, fully planned, blueprinted and executed."
+      "text": "Scrap it, and start again."
+    },
+    {
+      "type": "paragraph",
+      "text": "I guarantee the second time round you will absolutely race through the implementation. Why? Because you are <strong>totally acquainted</strong> with the all of the requisite information. You understand the scope, the dependencies, the output. No more stabbing in the dark. When you deliver this feature it won’t be a collection of rooms built one by one and attached to each other as you needed them. It will be a house, fully planned, blueprinted and executed."
     },
     {
       "type": "paragraph",

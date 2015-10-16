@@ -102,6 +102,10 @@ app.controller('ScreenCtrl', function ($element, $timeout, State, $state) {
         }, 50);
     };
 
+    $rootScope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams) {
+        $(document).scrollTop(0);
+    });
+
     init();
 });
 
@@ -205,77 +209,7 @@ app.factory('API', function ($rootScope, $http) {
 });
 'use strict';
 
-app.factory('State', function ($rootScope, $http, $state) {
-
-    var state = {
-        currentNav: "groups",
-        currentGroupNav: "leaderboard",
-        loggedIn: false,
-        menuVisible: false,
-        currentGroup: ""
-    };
-
-    $rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromParams) {
-
-        if (state.loggedIn && toState.name == 'splash') {
-            event.preventDefault();
-        }
-
-        if (!state.loggedIn && toState.name != 'splash') {
-            event.preventDefault();
-            $state.go('splash');
-        }
-    });
-
-    var logOut = function logOut() {
-        state.loggedIn = false;
-        $state.go('splash');
-    };
-
-    var isCurrentNav = function isCurrentNav(name) {
-        return state.currentNav == name;
-    };
-
-    var isCurrentGroupNav = function isCurrentGroupNav(name) {
-        return state.currentGroupNav == name;
-    };
-
-    var getStateAttr = function getStateAttr(attr) {
-        return function () {
-            return state[attr];
-        };
-    };
-
-    var setStateAttr = function setStateAttr(attr) {
-        return function (value) {
-            state[attr] = value;
-            console.log('set state[' + attr + '] = ' + value);
-        };
-    };
-
-    return {
-        isCurrentNav: isCurrentNav,
-        isCurrentGroupNav: isCurrentGroupNav,
-        isLoggedIn: getStateAttr('loggedIn'),
-        logOut: logOut,
-
-        getCurrentNav: getStateAttr('currentNav'),
-        setCurrentNav: setStateAttr('currentNav'),
-
-        getCurrentGroupNav: getStateAttr('currentGroupNav'),
-        setCurrentGroupNav: setStateAttr('currentGroupNav'),
-
-        setCurrentGroup: setStateAttr('currentGroup'),
-
-        isMenuVisible: getStateAttr('menuVisible'),
-        setMenuVisible: setStateAttr('menuVisible'),
-
-        setLoggedIn: setStateAttr('loggedIn')
-    };
-});
-'use strict';
-
-app.directive('about', function () {
+app.directive('about', function ($timeout) {
     return {
         templateUrl: 'about.html',
         scope: {
@@ -294,7 +228,14 @@ app.directive('about', function () {
                 return random;
             };
 
-            var init = function init() {};
+            var init = function init() {
+                $timeout(function () {
+                    return scope.ready = true;
+                }, _.random(500));
+                $timeout(function () {
+                    return scope.ready2 = true;
+                }, _.random(500));
+            };
 
             init();
 
@@ -303,58 +244,6 @@ app.directive('about', function () {
                 getRandom: getRandom
 
             });
-        }
-    };
-});
-
-'use strict';
-
-app.directive('header', function () {
-    return {
-        templateUrl: 'header.html',
-        scope: {},
-
-        link: function link(scope, element, attrs) {
-
-            var init = function init() {};
-
-            init();
-        }
-    };
-});
-
-'use strict';
-
-app.directive('hero', function (API, Post) {
-    return {
-        templateUrl: 'hero.html',
-        scope: {
-            'postId': '=',
-            'post': '='
-        },
-
-        link: function link(scope, element, attrs) {
-
-            var post = {};
-
-            var getPost = function getPost() {
-                return post;
-            };
-
-            var loadPost = function loadPost() {
-                return API.getPostById(scope.postId).then(function (response) {
-                    post = new Post(response);
-                });
-            };
-
-            var init = function init() {
-                console.log(scope);
-                loadPost();
-            };
-
-            init();
-
-            scope.getPost = getPost;
         }
     };
 });
@@ -381,6 +270,62 @@ app.directive('heading', function () {
 
 'use strict';
 
+app.directive('header', function () {
+    return {
+        templateUrl: 'header.html',
+        scope: {},
+
+        link: function link(scope, element, attrs) {
+
+            var init = function init() {};
+
+            init();
+        }
+    };
+});
+
+'use strict';
+
+app.directive('hero', function (API, Post, $timeout) {
+    return {
+        templateUrl: 'hero.html',
+        scope: {
+            'postId': '=',
+            'post': '='
+        },
+
+        link: function link(scope, element, attrs) {
+
+            var post = {};
+            scope.ready = false;
+
+            var getPost = function getPost() {
+                return post;
+            };
+
+            var loadPost = function loadPost() {
+                return API.getPostById(scope.postId).then(function (response) {
+                    post = new Post(response);
+                    $timeout(function () {
+                        return scope.ready = true;
+                    }, _.random(500));
+                });
+            };
+
+            var init = function init() {
+                console.log(scope);
+                loadPost();
+            };
+
+            init();
+
+            scope.getPost = getPost;
+        }
+    };
+});
+
+'use strict';
+
 app.directive('imageItem', function () {
     return {
         templateUrl: 'image-item.html',
@@ -395,6 +340,53 @@ app.directive('imageItem', function () {
             init();
 
             scope = _.assign(scope, {});
+        }
+    };
+});
+
+'use strict';
+
+app.directive('preview', function (API, Post, $timeout) {
+    return {
+        templateUrl: 'preview.html',
+        scope: {
+            reverse: '=',
+            'postId': '='
+        },
+
+        link: function link(scope, element, attrs) {
+
+            var post = {};
+
+            var getReverseClass = function getReverseClass() {
+                return scope.reverse ? 'reverse' : '';
+            };
+
+            var getPost = function getPost() {
+                return post;
+            };
+
+            var loadPost = function loadPost() {
+                return API.getPostById(scope.postId).then(function (response) {
+                    post = new Post(response);
+                    $timeout(function () {
+                        return scope.ready = true;
+                    }, _.random(500));
+                    $timeout(function () {
+                        return scope.ready2 = true;
+                    }, _.random(500));
+                });
+            };
+
+            var init = function init() {
+                console.log(scope);
+                loadPost();
+            };
+
+            init();
+
+            scope.getReverseClass = getReverseClass;
+            scope.getPost = getPost;
         }
     };
 });
@@ -421,47 +413,6 @@ app.directive('paragraph', function ($sce) {
             scope = _.assign(scope, {
                 getText: getText
             });
-        }
-    };
-});
-
-'use strict';
-
-app.directive('preview', function (API, Post) {
-    return {
-        templateUrl: 'preview.html',
-        scope: {
-            reverse: '=',
-            'postId': '='
-        },
-
-        link: function link(scope, element, attrs) {
-
-            var post = {};
-
-            var getReverseClass = function getReverseClass() {
-                return scope.reverse ? 'reverse' : '';
-            };
-
-            var getPost = function getPost() {
-                return post;
-            };
-
-            var loadPost = function loadPost() {
-                return API.getPostById(scope.postId).then(function (response) {
-                    post = new Post(response);
-                });
-            };
-
-            var init = function init() {
-                console.log(scope);
-                loadPost();
-            };
-
-            init();
-
-            scope.getReverseClass = getReverseClass;
-            scope.getPost = getPost;
         }
     };
 });

@@ -41,7 +41,7 @@
 <script type="text/ng-template" id="about.html">
     <div template="about">
         <div class="about-container">
-            <div class="about">
+            <div class="about" ng-class="{active:ready}">
                 <div class="about-content">
                     <h2>Who Am I?</h2>
 
@@ -50,7 +50,15 @@
                     <p>Intermittent fasting and LCHF are fun topics of mine and am always happy to debate what exactly efficient living means.</p>
                 </div>
             </div>
-            <div class="about-image" style="background-image: url('/public/img/hero-india.jpg')"></div>
+            <div class="about-image" ng-class="{active:ready2}" style="background-image: url('/public/img/hero-india.jpg')"></div>
+        </div>
+
+    </div>
+</script>
+<script type="text/ng-template" id="heading.html">
+    <div template="heading">
+        <div class="heading">
+            <h2>{{text}}</h2>
         </div>
 
     </div>
@@ -76,8 +84,8 @@
     </div>
 </script>
 <script type="text/ng-template" id="hero.html">
-    <div template="hero" ng-if="getPost()">
-        <div class="hero" style="background-image: url('{{getPost().getImage()}}')">
+    <div template="hero">
+        <div class="hero" ng-class="{active:ready}" style="background-image: url('{{getPost().getImage()}}')">
             <div class="hero-back"></div>
             <div class="hero-text">
                 <h1>
@@ -96,14 +104,6 @@
         </div>
     </div>
 </script>
-<script type="text/ng-template" id="heading.html">
-    <div template="heading">
-        <div class="heading">
-            <h2>{{text}}</h2>
-        </div>
-
-    </div>
-</script>
 <script type="text/ng-template" id="image-item.html">
     <div template="image-item">
         <div class="image-item">
@@ -118,19 +118,11 @@
 
     </div>
 </script>
-<script type="text/ng-template" id="paragraph.html">
-    <div template="paragraph">
-        <div class="paragraph">
-            <p ng-bind-html="getText()"></p>
-        </div>
-
-    </div>
-</script>
 <script type="text/ng-template" id="preview.html">
     <div template="preview">
         <div class="preview clearfix {{getReverseClass()}}">
-            <div class="preview-hero" ui-sref="post({ id: postId })" style="background-image: url('{{getPost().getImage()}}')"></div>
-            <div class="preview-content">
+            <div class="preview-hero" ng-class="{active:ready}" ui-sref="post({ id: postId })" style="background-image: url('{{getPost().getImage()}}')"></div>
+            <div class="preview-content" ng-class="{active:ready2}">
                 <h2 ui-sref="post({ id: postId })"><i class="fa fa-{{getPost().getIcon()}}"></i> {{getPost().getTitle()}}</h2>
 
                 <p>{{getPost().getSummary()}}</p>
@@ -138,6 +130,14 @@
                 <div class="butn" ng-if="!post" ui-sref="post({ id: postId })">Get Reading &nbsp; <i class="fa fa-angle-right"></i></div>
             </div>
         </div>
+    </div>
+</script>
+<script type="text/ng-template" id="paragraph.html">
+    <div template="paragraph">
+        <div class="paragraph">
+            <p ng-bind-html="getText()"></p>
+        </div>
+
     </div>
 </script>
 <script type="text/ng-template" id="quote-item.html">

@@ -1,8 +1,8 @@
 <script type="text/ng-template" id="preview.html">
     <div template="preview">
         <div class="preview clearfix {{getReverseClass()}}">
-            <div class="preview-hero" ui-sref="post({ id: postId })" style="background-image: url('{{getPost().getImage()}}')"></div>
-            <div class="preview-content">
+            <div class="preview-hero" ng-class="{active:ready}" ui-sref="post({ id: postId })" style="background-image: url('{{getPost().getImage()}}')"></div>
+            <div class="preview-content" ng-class="{active:ready2}">
                 <h2 ui-sref="post({ id: postId })"><i class="fa fa-{{getPost().getIcon()}}"></i> {{getPost().getTitle()}}</h2>
 
                 <p>{{getPost().getSummary()}}</p>

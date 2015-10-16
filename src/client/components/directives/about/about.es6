@@ -1,6 +1,6 @@
 'use strict';
 
-app.directive('about', () => {
+app.directive('about', ($timeout) => {
     return {
         templateUrl: 'about.html',
         scope: {
@@ -20,6 +20,8 @@ app.directive('about', () => {
             };
 
             var init = () => {
+                $timeout(() => scope.ready = true, _.random(500));
+                $timeout(() => scope.ready2 = true, _.random(500));
             };
 
             init();

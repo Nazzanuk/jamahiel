@@ -8,16 +8,22 @@
   .about {
     flex: 1 0 auto;
     background: #000000;
-
     padding: 60px;
 
     h2, p {
       color: #ffffff;
     }
 
-
     @media (max-width: 767px) {
       padding: 30px;
+    }
+
+    opacity:0;
+    transition: .9s opacity, .6s transform;
+    will-change:opacity;
+
+    &.active {
+      opacity: 1;
     }
   }
 
@@ -27,5 +33,13 @@
     background: #f7f7f7;
     background-size: cover;
     background-position: center;
+
+    opacity:0;
+    transition: .9s opacity, .6s transform;
+    will-change:opacity;
+
+    &.active {
+      opacity: 1;
+    }
   }
 }

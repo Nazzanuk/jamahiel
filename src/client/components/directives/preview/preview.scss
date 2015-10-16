@@ -25,6 +25,14 @@
         height: 300px;
         border: 5px solid white;
       }
+
+      opacity:0;
+      transition: .9s opacity, .9s transform;
+      will-change:opacity;
+
+      &.active {
+        opacity: 1;
+      }
     }
 
     .preview-content {
@@ -41,6 +49,14 @@
         padding: 30px;
         height: auto;
         text-align: center;
+      }
+
+      opacity:0;
+      transition: .9s opacity, .9s transform;
+      will-change:opacity;
+
+      &.active {
+        opacity: 1;
       }
     }
 

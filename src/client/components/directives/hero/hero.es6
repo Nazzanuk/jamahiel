@@ -1,6 +1,6 @@
 'use strict';
 
-app.directive('hero', (API, Post) => {
+app.directive('hero', (API, Post, $timeout) => {
     return {
         templateUrl: 'hero.html',
         scope: {
@@ -11,6 +11,7 @@ app.directive('hero', (API, Post) => {
         link(scope, element, attrs) {
 
             var post = {};
+            scope.ready = false;
 
             var getPost = () => {
                 return post;
@@ -19,6 +20,8 @@ app.directive('hero', (API, Post) => {
             var loadPost = () => {
                 return API.getPostById(scope.postId).then((response) => {
                     post = new Post(response);
+                    $timeout(() => scope.ready = true, _.random(500));
+
                 });
             };
 

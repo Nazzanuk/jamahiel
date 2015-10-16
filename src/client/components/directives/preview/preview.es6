@@ -1,6 +1,6 @@
 'use strict';
 
-app.directive('preview', (API, Post) => {
+app.directive('preview', (API, Post, $timeout) => {
     return {
         templateUrl: 'preview.html',
         scope: {
@@ -23,6 +23,8 @@ app.directive('preview', (API, Post) => {
             var loadPost = () => {
                 return API.getPostById(scope.postId).then((response) => {
                     post = new Post(response);
+                    $timeout(() => scope.ready = true, _.random(500));
+                    $timeout(() => scope.ready2 = true, _.random(500));
                 });
             };
 

@@ -207,7 +207,7 @@ p {
     font-size: 20px;
     position: absolute;
     left: 60px;
-    background: rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, 0.8);
     color: #ffffff;
     transition: .3s;
     cursor: pointer; }
@@ -219,7 +219,7 @@ p {
         left: 0;
         text-align: center; } }
   [template=header] .header .menu-icon {
-    background: rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, 0.8);
     color: #ffffff;
     right: 0;
     height: 50px;
@@ -237,7 +237,7 @@ p {
     right: 60px;
     padding: 10px;
     line-height: 30px;
-    background: rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, 0.8);
     color: #ffffff; }
     [template=header] .header .menu .menu-item {
       float: left;

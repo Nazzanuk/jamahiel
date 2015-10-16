@@ -1,7 +1,7 @@
 [template=header] {
 
   $dark-back: transparentize($body, 0.1);
-  $light-back: transparentize($body, 0.8);
+  $light-back: transparentize($body, 0.2);
 
   .header {
     top: 0;

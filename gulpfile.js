@@ -6,6 +6,7 @@ var gulp = require('gulp'),
     babel = require("gulp-babel"),
     order = require("gulp-order"),
     sass = require("gulp-sass"),
+    autoprefixer = require('gulp-autoprefixer'),
     sourcemaps = require("gulp-sourcemaps");
 
 gulp.task("default", function () {
@@ -67,7 +68,8 @@ gulp.task('gen-client-css', function () {
         "src/client/components/**/*.scss"
     ])
         .pipe(concat('app.scss'))
-        .pipe(sass())
+        .pipe(sass({errLogToConsole: true}))
+        .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
         .pipe(gulp.dest("release/client/public"));
 });
 

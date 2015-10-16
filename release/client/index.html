@@ -55,6 +55,26 @@
 
     </div>
 </script>
+<script type="text/ng-template" id="header.html">
+    <div template="header">
+        <div class="header">
+            <div class="logo" ui-sref="home">Jamahiel</div>
+
+            <div class="menu">
+                <div class="menu-item"><i class="fa fa-code fw"></i> &nbsp;Code</div>
+                <div class="menu-item"><i class="fa fa-briefcase fw"></i> &nbsp;Work</div>
+                <div class="menu-item"><i class="fa fa-microphone fw"></i> &nbsp;Talk</div>
+                <div class="menu-item"><i class="fa fa-cutlery fw"></i> &nbsp;Diet</div>
+            </div>
+
+            <div class="menu-icon">
+                <i class="fa fa-bars"></i>
+            </div>
+        </div>
+
+
+    </div>
+</script>
 <script type="text/ng-template" id="heading.html">
     <div template="heading">
         <div class="heading">
@@ -85,40 +105,6 @@
         </div>
     </div>
 </script>
-<script type="text/ng-template" id="header.html">
-    <div template="header">
-        <div class="header">
-            <div class="logo" ui-sref="home">Jamahiel</div>
-
-            <div class="menu">
-                <div class="menu-item"><i class="fa fa-code fw"></i> &nbsp;Code</div>
-                <div class="menu-item"><i class="fa fa-briefcase fw"></i> &nbsp;Work</div>
-                <div class="menu-item"><i class="fa fa-microphone fw"></i> &nbsp;Talk</div>
-                <div class="menu-item"><i class="fa fa-cutlery fw"></i> &nbsp;Diet</div>
-            </div>
-
-            <div class="menu-icon">
-                <i class="fa fa-bars"></i>
-            </div>
-        </div>
-
-
-    </div>
-</script>
-<script type="text/ng-template" id="preview.html">
-    <div template="preview">
-        <div class="preview clearfix {{getReverseClass()}}">
-            <div class="preview-hero" ng-class="{active:ready}" ui-sref="post({ id: postId })" style="background-image: url('{{getPost().getImage()}}')"></div>
-            <div class="preview-content" ng-class="{active:ready2}">
-                <h2 ui-sref="post({ id: postId })"><i class="fa fa-{{getPost().getIcon()}}"></i> {{getPost().getTitle()}}</h2>
-
-                <p>{{getPost().getSummary()}}</p>
-                <br/>
-                <div class="butn" ng-if="!post" ui-sref="post({ id: postId })">Get Reading &nbsp; <i class="fa fa-angle-right"></i></div>
-            </div>
-        </div>
-    </div>
-</script>
 <script type="text/ng-template" id="image-item.html">
     <div template="image-item">
         <div class="image-item">
@@ -141,6 +127,20 @@
 
     </div>
 </script>
+<script type="text/ng-template" id="preview.html">
+    <div template="preview">
+        <div class="preview clearfix {{getReverseClass()}}">
+            <div class="preview-hero" ng-class="{active:ready}" ui-sref="post({ id: postId })" style="background-image: url('{{getPost().getImage()}}')"></div>
+            <div class="preview-content" ng-class="{active:ready2}">
+                <h2 ui-sref="post({ id: postId })"><i class="fa fa-{{getPost().getIcon()}}"></i> {{getPost().getTitle()}}</h2>
+
+                <p>{{getPost().getSummary()}}</p>
+                <br/>
+                <div class="butn" ng-if="!post" ui-sref="post({ id: postId })">Get Reading &nbsp; <i class="fa fa-angle-right"></i></div>
+            </div>
+        </div>
+    </div>
+</script>
 <script type="text/ng-template" id="quote-item.html">
     <div template="quote-item">
         <div class="quote-item">
@@ -150,6 +150,35 @@
                 <!--<i class="fa fa-quote-right"></i>-->
             </div>
             <div class="quote-by" ng-bind="content.by"></div>
+
+        </div>
+
+    </div>
+</script>
+<script type="text/ng-template" id="vid.html">
+    <div template="vid">
+        <div class="vid" ng-mouseover="play($event)" ng-mouseleave="pause($event)">
+            <p>
+                <video src="{{src}}" loop="loop"  muted="muted" ng-attr-autoplay="{{play}}"></video>
+            </p>
+
+        </div>
+
+    </div>
+</script>
+<script type="text/ng-template" id="post-screen.html">
+    <div screen>
+        <hero post-id="getId()" post="true"></hero>
+
+        <div style="background: #ffffff;padding: 30px 0">
+            <div ng-repeat="content in getPost().getContent() track by $index">
+                <heading ng-if="content.type == 'heading'" text="content.text"></heading>
+                <paragraph ng-if="content.type == 'paragraph'" text="content.text"></paragraph>
+                <vid ng-if="content.type == 'vid'" src="content.src"></vid>
+                <image-item ng-if="content.type == 'image'" content="content"></image-item>
+                <quote-item ng-if="content.type == 'quote'" content="content"></quote-item>
+            </div>
+
 
         </div>
 
@@ -172,35 +201,6 @@
 
 
         <preview ng-if="$index != 0" ng-repeat="post in getPosts() track by $index" post-id="post" reverse="($index + 1) % 2"></preview>
-
-    </div>
-</script>
-<script type="text/ng-template" id="post-screen.html">
-    <div screen>
-        <hero post-id="getId()" post="true"></hero>
-
-        <div style="background: #ffffff;padding: 30px 0">
-            <div ng-repeat="content in getPost().getContent() track by $index">
-                <heading ng-if="content.type == 'heading'" text="content.text"></heading>
-                <paragraph ng-if="content.type == 'paragraph'" text="content.text"></paragraph>
-                <vid ng-if="content.type == 'vid'" src="content.src"></vid>
-                <image-item ng-if="content.type == 'image'" content="content"></image-item>
-                <quote-item ng-if="content.type == 'quote'" content="content"></quote-item>
-            </div>
-
-
-        </div>
-
-    </div>
-</script>
-<script type="text/ng-template" id="vid.html">
-    <div template="vid">
-        <div class="vid" ng-mouseover="play($event)" ng-mouseleave="pause($event)">
-            <p>
-                <video src="{{src}}" loop="loop"  muted="muted" ng-attr-autoplay="{{play}}"></video>
-            </p>
-
-        </div>
 
     </div>
 </script>

@@ -8,12 +8,13 @@ $purple: #704ab6;
 $primary: #1877ae;
 $primary: #4380b9;
 
-html {
-  //  height  : 100%;
-  //  overflow: hidden;
+html, body {
+  height: 100%;
 }
 
 body {
+  overflow-y: auto;
+  overflow-y: scroll;
   background: lighten(saturate($primary, 30%), 30%);
   background: white;
 //  background: #f7f7f7;

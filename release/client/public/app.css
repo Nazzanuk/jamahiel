@@ -1,4 +1,9 @@
+html, body {
+  height: 100%; }
+
 body {
+  overflow-y: auto;
+  overflow-y: scroll;
   background: #a2ccf3;
   background: white;
   background: black;
@@ -301,20 +306,6 @@ p {
   [template=hero] .hero .hero-content {
     flex: 1; }
 
-[template=paragraph] {
-  background: #ffffff;
-  padding: 0 30px; }
-  [template=paragraph] .paragraph {
-    max-width: 700px;
-    margin: auto; }
-    [template=paragraph] .paragraph p {
-      font-size: 20px;
-      line-height: 40px; }
-      @media (max-width: 767px) {
-        [template=paragraph] .paragraph p {
-          font-size: 17px;
-          line-height: 35px; } }
-
 [template=image-item] {
   background: #ffffff;
   padding: 0 30px; }
@@ -333,6 +324,20 @@ p {
       width: 100%; }
     [template=image-item] .image-item h2 {
       font-size: 40px; }
+
+[template=paragraph] {
+  background: #ffffff;
+  padding: 0 30px; }
+  [template=paragraph] .paragraph {
+    max-width: 700px;
+    margin: auto; }
+    [template=paragraph] .paragraph p {
+      font-size: 20px;
+      line-height: 40px; }
+      @media (max-width: 767px) {
+        [template=paragraph] .paragraph p {
+          font-size: 17px;
+          line-height: 35px; } }
 
 [template=preview] .preview {
   background: white;

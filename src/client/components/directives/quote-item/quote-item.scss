@@ -1,0 +1,43 @@
+[template=quote-item] {
+  background: #ffffff;
+  padding: 0 30px;
+
+
+  @media (max-width: 767px) {
+    padding: 0 30px;
+  }
+
+  .quote-item {
+    max-width: 1000px;
+    margin: auto;
+    margin: 30px auto;
+    text-align: center;
+    line-height: 1.3;
+
+    .quote-text {
+      font-weight: 900;
+      font-size: 30px;
+      margin-bottom: 15px;
+//      color: #999;
+
+      .fa {
+        color: #ddd;
+        margin: 5px;
+//        font-size: 150%;
+        line-height: inherit;
+      }
+
+      .fa-quote-right {
+        position: relative;
+        top: 7px;
+//        line-height: inherit;
+      }
+    }
+
+    .quote-by {
+//      font-weight: 900;
+//      font-size: 30px;
+      color: #999;
+    }
+  }
+}

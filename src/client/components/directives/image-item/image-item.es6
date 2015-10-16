@@ -4,7 +4,7 @@ app.directive('imageItem', () => {
     return {
         templateUrl: 'image-item.html',
         scope: {
-            src:'='
+            content:'='
         },
 
         link(scope, element, attrs) {

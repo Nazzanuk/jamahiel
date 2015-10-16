@@ -1,0 +1,124 @@
+{
+  "image": "https://cdn-images-1.medium.com/max/2000/1*zWtO9cjO2amuXqSx_Vxp3w.jpeg",
+  "date": 20151016,
+  "title": "Defending Agile From Enterprise",
+  "summary": "Fear is the path to waterfall.",
+  "icon": "briefcase",
+  "content": [
+    {
+      "type": "paragraph",
+      "text": "For those of us lucky enough to be involved in greenfield agile projects, the lack of constraints imposed by prior work, which is often an ageing monolithic codebase, can be liberating. Greenfield projects offer a safe environment for innovation, exploration, and setting new standards of quality."
+    },
+    {
+      "type": "paragraph",
+      "text": "The unfortunate reality is that there are greenfield ideas, and there are greenfield executions. And in the context of enterprise, turning the former into the latter can feel like rubbing sandpaper across your face. If the environment isn’t right, no matter how much work you put in you will find yourself in a similar space to where you started."
+    },
+    {
+      "type": "paragraph",
+      "text": "Enterprise is the most challenging place to start a greenfield project, this is because, by in large, enterprise is the antithesis of greenfield. Large businesses are shrines to well defined and well followed processes, they are temples to red tape and hell to flexibility and dynamism. They have become large by doing things a certain way, for a long time. “It works”, they know it works and so do you. This is where conflict is inevitable, as what has worked historically simply may not be suitable or effective enough for what needs to be done now."
+    },
+    {
+      "type": "heading",
+      "text": "Get Early & Constant High Level Support"
+    },
+    {
+      "type": "paragraph",
+      "text": "Culture change can only come from the top, and an important part of implementing agile into an enterprise team is getting buy-in from the people who make the decisions. New ways of working are understandably scary for traditional IT who may feel that a bunch of cowboys have come in to meddle with the established system, and these are the people who need the strong overarching direction and goal from senior figures."
+    },
+    {
+      "type": "image",
+      "src": "https://cdn-images-1.medium.com/max/1600/1*zMmKprGVJU_-dvshLVcC3g.jpeg",
+      "caption": "The King approves"
+    },
+    {
+      "type": "paragraph",
+      "text": "There will always be those against change, and if the product team is not empowered to work in the correct way, the process will be questioned and sabotaged before it has a chance to settle in and iron out whatever kinks will inevitably arise."
+    },
+    {
+      "type": "quote",
+      "text": "Fear is the path to waterfall.",
+      "by": "Yoda"
+    },
+    {
+      "type": "paragraph",
+      "text": "This becomes especially important when things go badly or weaknesses in skills and people become exposed. When the going gets tough, people get scared and all to quickly fall back to the relative comfort of what they know best."
+    },
+    {
+      "type": "heading",
+      "text": "Question Everything"
+    },
+    {
+      "type": "paragraph",
+      "text": "Large companies have processes and routines embedded into their very core. These processes can slowly over time become standards for ways of working, which are not questioned or validated for now, even if there are more effective alternatives."
+    },
+    {
+      "type": "paragraph",
+      "text": "One of the most important aspects of any project is to be able to question all the assumptions that already exist. This is where innovation can often be cultivated, expanding the scope of smaller questions into bigger ones. Instead of asking “<em>how do we more efficiently deploy to our servers?</em>”, ask “is our server infrastructure fit for purpose?” or even “do we need to host our own servers at all?”"
+    },
+    {
+      "type": "quote",
+      "text": "If you were shrunk into the size of a pencil and put into a blender,\nhow would you get out?",
+      "by": "Goldman Sachs"
+    },
+    {
+      "type": "paragraph",
+      "text": "People and projects can work on autopilot and this can prove to be an important part of breaking the mould of same old same old."
+    },
+    {
+      "type": "heading",
+      "text": "Ring-fence The Product Team"
+    },
+    {
+      "type": "paragraph",
+      "text": "This is often a primary source of a silently expanding scope of requirements. Once the other areas of the business begin communicating requirements directly to members of the product team and not the product owner, it becomes a free for all."
+    },
+    {
+      "type": "image",
+      "src": "https://cdn-images-1.medium.com/max/1600/1*i_CK-hfkVeeWFgQrsFwOZg.jpeg"
+    },
+    {
+      "type": "paragraph",
+      "text": "This is where innocent “one off” tasks that haven’t been considered or estimated can come into play. Different members of the product team start doing odd jobs for various stakeholders and colleagues, but in the end it all adds up. And more often than not in this scenario, causes a reduction in focus and ultimately the velocity of the team."
+    },
+    {
+      "type": "heading",
+      "text": "Release A Beta First"
+    },
+    {
+      "type": "paragraph",
+      "text": "Embedded in the enterprise mentality is safety and security, large organisations are risk averse. Typically with an enterprise product, releases have to be perfect. Of course any experienced product team knows perfect is an impossible moving target to hit, but this is the reason that waterfall testing phases take so long - because bugs signify “failure”. The steps which are proactively taken to mitigate that failure can be detrimental to the product because of the lack of real user feedback driving the product development."
+    },
+    {
+      "type": "quote",
+      "text": "Done is better than perfect.",
+      "by": "Stuart Munton"
+    },
+    {
+      "type": "paragraph",
+      "text": "Having a beta is the perfect way to launch a new product or replace an existing one. It says to both the users and the business: “we understand there will be some work to get it to the right standard”, thereby defining realistic expectations and at the same time allowing for the learnings gained from user feedback to be integrated from an early stage and applied quickly."
+    },
+    {
+      "type": "heading",
+      "text": "Fail Forward"
+    },
+    {
+      "type": "paragraph",
+      "text": "Unless there is an absolutely catastrophic critical bug, don’t pull a release. Even in this instance, think long and hard about whether to give the product team some time to assess the problem and implement a hot-fix (you are continuously deploying right?)."
+    },
+    {
+      "type": "quote",
+      "text": "Do not roll-back, ever.",
+      "by": "Abraham Lincon"
+    },
+    {
+      "type": "paragraph",
+      "text": "A culture of roll-backs denies the product team a chance to learn and iterate quickly, it also breaks morale and stifles innovation as “bad” releases are seen as failure. Failure ultimately leads to fear and hesitance the next time round and this environment hinders the confidence and progress of the product team."
+    }
+  ],
+  "unused": [
+    {
+      "type": "vid",
+      "src": "/public/img/laptop.mov"
+    }
+  ]
+}

@@ -1,24 +1,33 @@
 {
-  "image":"https://picjumbo.imgix.net/HNCK8404.jpg?q=40&w=3000&sharp=40",
-  "title": "Build It, Then Build It Again",
-  "summary" : "Free yourself from pain when scaling.",
-  "icon" : "code",
+  "image": "https://picjumbo.imgix.net/HNCK8404.jpg?q=40&w=3000&sharp=40",
+  "date": 20151017,
+  "title": "Build it, then build it again.",
+  "summary": "Stop building on top of bad architecture.",
+  "icon": "code",
   "content": [
     {
       "type": "heading",
       "text": "Capturing That Feeling"
     },
     {
-      "type": "image",
-      "src": "/public/img/sunrise-in-london.jpg"
+      "type": "paragraph",
+      "text": "I was sat there gazing out the window, 8am and the sky was clear blue. These crisp clear autumn mornings might be pretty chilly, but they do possess a rare clean beauty you can only get at this time of year."
+    },
+    {
+      "src": "/public/img/sunrise-in-london.jpg",
+      "type": "image"
     },
     {
       "type": "paragraph",
-      "text": "I was sat there gazing out the window, 8am and the sky was clear blue. These crisp clear autumn mornings might be pretty chilly, but they do possess a rare clean beauty you can only get at this time of year. So why did I feel so down? I slowly recoiled and looked down towards my screen, oh yes… another mess of a codebase. It’s groundhog day again."
+      "text": "So why did I feel so down?"
     },
     {
       "type": "paragraph",
-      "text": "How the hell does this keep happening? The architecture never seems to scale properly. Scope creep, that what it was -  these damn analysts don’t know what they are doing, they never consider the 100 or so permutations that are possible in the product. If only I was told what I was building at the beginning we wouldn’t be in this accursed mess."
+      "text": "I slowly recoiled and looked down towards my screen. Suddenly the feelings all came flooding back. Another mess of a codebase. It’s groundhog day again."
+    },
+    {
+      "type": "paragraph",
+      "text": "The architecture never seems to <strong>scale</strong> properly. <strong>Scope creep</strong>, that what it was -  these <strong>damn analysts</strong> don’t know what they are doing, they never consider the 300 or so permutations that are possible in the product. If only I was told what I was building at the <strong>beginning</strong> we wouldn’t be in this accursed mess."
     },
     {
       "type": "heading",
@@ -26,7 +35,7 @@
     },
     {
       "type": "paragraph",
-      "text": "It’s pretty much every project I’ve ever been involved in to some degree or another. How does this happen? Well for one it’s practically impossible to gather all of the requirements for any application in advance of it being built. There are logic nuances you haven’t or couldn’t have considered, technical unknowns and limitations, 3rd party integrations and dependency headaches - all of which are just waiting to blow your initial assumptions and timelines to pieces."
+      "text": "Well for one it’s practically impossible to gather all of the requirements for any application in advance of it being built. There are logic nuances you haven’t or couldn’t have considered, technical unknowns and limitations, 3rd party integrations and dependency headaches - all of which are just waiting to blow your initial assumptions and timelines to pieces."
     },
     {
       "type": "paragraph",
@@ -64,5 +73,5 @@
       "type": "paragraph",
       "text": ""
     }
-    ]
+  ]
 }

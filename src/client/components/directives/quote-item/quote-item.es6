@@ -1,17 +1,13 @@
 'use strict';
 
-app.directive('paragraph', ($sce) => {
+app.directive('quoteItem', () => {
     return {
-        templateUrl: 'paragraph.html',
+        templateUrl: 'quote-item.html',
         scope: {
-            text: '='
+            content:'='
         },
 
         link(scope, element, attrs) {
-
-            var getText = () => {
-                return $sce.trustAsHtml(scope.text);
-            };
 
             var init = () => {
             };
@@ -19,7 +15,7 @@ app.directive('paragraph', ($sce) => {
             init();
 
             scope = _.assign(scope, {
-                getText: getText
+
             });
         }
     }

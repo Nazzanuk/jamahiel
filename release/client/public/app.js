@@ -381,31 +381,37 @@ app.directive('hero', function (API, Post) {
 
 'use strict';
 
-app.directive('imageItem', function () {
+app.directive('paragraph', function ($sce) {
     return {
-        templateUrl: 'image-item.html',
+        templateUrl: 'paragraph.html',
         scope: {
-            src: '='
+            text: '='
         },
 
         link: function link(scope, element, attrs) {
+
+            var getText = function getText() {
+                return $sce.trustAsHtml(scope.text);
+            };
 
             var init = function init() {};
 
             init();
 
-            scope = _.assign(scope, {});
+            scope = _.assign(scope, {
+                getText: getText
+            });
         }
     };
 });
 
 'use strict';
 
-app.directive('paragraph', function () {
+app.directive('imageItem', function () {
     return {
-        templateUrl: 'paragraph.html',
+        templateUrl: 'image-item.html',
         scope: {
-            text: '='
+            content: '='
         },
 
         link: function link(scope, element, attrs) {
@@ -456,6 +462,26 @@ app.directive('preview', function (API, Post) {
 
             scope.getReverseClass = getReverseClass;
             scope.getPost = getPost;
+        }
+    };
+});
+
+'use strict';
+
+app.directive('quoteItem', function () {
+    return {
+        templateUrl: 'quote-item.html',
+        scope: {
+            content: '='
+        },
+
+        link: function link(scope, element, attrs) {
+
+            var init = function init() {};
+
+            init();
+
+            scope = _.assign(scope, {});
         }
     };
 });

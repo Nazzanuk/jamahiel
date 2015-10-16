@@ -104,21 +104,24 @@
         </div>
     </div>
 </script>
-<script type="text/ng-template" id="image-item.html">
-    <div template="image-item">
-        <div class="image-item">
-            <p>
-                <img src="{{src}}"/>
-            </p>
-
+<script type="text/ng-template" id="paragraph.html">
+    <div template="paragraph">
+        <div class="paragraph">
+            <p ng-bind-html="getText()"></p>
         </div>
 
     </div>
 </script>
-<script type="text/ng-template" id="paragraph.html">
-    <div template="paragraph">
-        <div class="paragraph">
-            <p>{{text}}</p>
+<script type="text/ng-template" id="image-item.html">
+    <div template="image-item">
+        <div class="image-item">
+            <p>
+                <img src="{{content.src}}"/>
+            </p>
+            <p ng-if="content.caption" ng-bind="content.caption">
+
+            </p>
+
         </div>
 
     </div>
@@ -135,6 +138,20 @@
                 <div class="butn" ng-if="!post" ui-sref="post({ id: postId })">Get Reading &nbsp; <i class="fa fa-angle-right"></i></div>
             </div>
         </div>
+    </div>
+</script>
+<script type="text/ng-template" id="quote-item.html">
+    <div template="quote-item">
+        <div class="quote-item">
+            <div class="quote-text">
+                <i class="fa fa-quote-left"></i>
+                {{content.text}}
+                <!--<i class="fa fa-quote-right"></i>-->
+            </div>
+            <div class="quote-by" ng-bind="content.by"></div>
+
+        </div>
+
     </div>
 </script>
 <script type="text/ng-template" id="vid.html">
@@ -177,7 +194,8 @@
                 <heading ng-if="content.type == 'heading'" text="content.text"></heading>
                 <paragraph ng-if="content.type == 'paragraph'" text="content.text"></paragraph>
                 <vid ng-if="content.type == 'vid'" src="content.src"></vid>
-                <image-item ng-if="content.type == 'image'" src="content.src"></image-item>
+                <image-item ng-if="content.type == 'image'" content="content"></image-item>
+                <quote-item ng-if="content.type == 'quote'" content="content"></quote-item>
             </div>
 
 

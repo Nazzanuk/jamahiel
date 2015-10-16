@@ -2,7 +2,10 @@
     <div template="image-item">
         <div class="image-item">
             <p>
-                <img src="{{src}}"/>
+                <img src="{{content.src}}"/>
+            </p>
+            <p ng-if="content.caption" ng-bind="content.caption">
+
             </p>
 
         </div>

@@ -7,7 +7,8 @@
                 <heading ng-if="content.type == 'heading'" text="content.text"></heading>
                 <paragraph ng-if="content.type == 'paragraph'" text="content.text"></paragraph>
                 <vid ng-if="content.type == 'vid'" src="content.src"></vid>
-                <image-item ng-if="content.type == 'image'" src="content.src"></image-item>
+                <image-item ng-if="content.type == 'image'" content="content"></image-item>
+                <quote-item ng-if="content.type == 'quote'" content="content"></quote-item>
             </div>
 
 

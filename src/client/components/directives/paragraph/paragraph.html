@@ -1,7 +1,7 @@
 <script type="text/ng-template" id="paragraph.html">
     <div template="paragraph">
         <div class="paragraph">
-            <p>{{text}}</p>
+            <p ng-bind-html="getText()"></p>
         </div>
 
     </div>

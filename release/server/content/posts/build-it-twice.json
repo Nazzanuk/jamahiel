@@ -33,7 +33,7 @@
     },
     {
       "type": "paragraph",
-      "text": "The architecture never seems to <strong><em>scale</em></strong> properly. <strong><em>Scope creep</em></strong>, that what it was -  these <strong><em>damn analysts</em></strong> don’t know what they are doing, they never consider the 300 or so permutations that are possible in the product. If only I was told what I was building at the <strong><em>beginning</em></strong> we wouldn’t be in this accursed mess."
+      "text": "The architecture never seems to <strong><em>scale</em></strong> properly. <strong><em>Scope creep</em></strong>, that's what it was -  these <strong><em>damn analysts</em></strong> don’t know what they are doing, they never consider the 300 or so permutations that are possible in the product. If only I was told what I we were building from the <strong><em>beginning</em></strong>, we wouldn’t be in this accursed mess."
     },
     {
       "type": "heading",
@@ -49,7 +49,7 @@
     },
     {
       "type": "paragraph",
-      "text": "This is where I start to miss the logic of Scrum and it’s low-level, ticket based approach to everything. If every feature is built continuously in small increments one after the other, at what point do you turn around and look at the application and architecture as a whole and decide if it is actually working for you? In the environment of a methodology that prides itself on measuring teams by ‘velocity’ and gathering ‘empirical data’ for middle managers, who is going to turn around and say - “well actually we need time, simply to fix what we have done so far.”"
+      "text": "This is where I start to miss the logic of Scrum and its low level, ticket-based approach to everything. If every feature is built continuously in small increments one after the other, at what point do you turn around and look at the application and architecture as a whole and decide if it is actually working for you? In the environment of a methodology that prides itself on measuring teams by ‘velocity’ and gathering ‘empirical data’ for middle managers, who is going to turn around and say - “well actually we need time, simply to fix what we have done so far.”"
     },
     {
       "type": "paragraph",
@@ -57,7 +57,7 @@
     },
     {
       "type": "paragraph",
-      "text": "Sequentially building any application feature by feature builds up technical debt. Debt that, in my experience, is never fully repaid - always a slap on the wrist with the result being that application has some weird behaviour that was built in 5 sprints ago that we just live with now."
+      "text": "Sequentially building any application feature-by-feature builds up technical debt. Debt that in my experience is never fully repaid - always a slap on the wrist with the result being that the application has some weird behaviour built in 5 sprints ago, and we just live with it now <strong>*sadface*</strong>."
     },
     {
       "type": "heading",
@@ -82,7 +82,7 @@
     },
     {
       "type": "paragraph",
-      "text": "I guarantee the second time round you will absolutely race through the implementation. Why? Because you are <strong>totally acquainted</strong> with the all of the requisite information. You understand the scope, the dependencies, the output. No more stabbing in the dark. When you deliver this feature it won’t be a collection of rooms built one by one and attached to each other as you needed them. It will be a house, fully planned, blueprinted and executed."
+      "text": "I guarantee the second time round you will absolutely race through the implementation. Why? Because you are <strong>totally acquainted</strong> with the all of the requisite information. You understand the scope, the dependencies, the output. When you deliver this feature, it won’t be a collection of rooms built one-by-one and attached to each other as and when you needed them. It will be a house - fully planned, blueprinted and executed. No more stabbing in the dark."
     },
     {
       "type": "paragraph",

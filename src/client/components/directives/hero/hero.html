@@ -1,6 +1,7 @@
 <script type="text/ng-template" id="hero.html">
     <div template="hero">
-        <div class="hero" ng-class="{active:ready}" style="background-image: url('{{getPost().getImage()}}')">
+        <div class="hero" ng-class="{active:ready}">
+            <div class="hero-image" style="background-image: url('{{getPost().getImage()}}')"></div>
             <div class="hero-back"></div>
             <div class="hero-text">
                 <h1>

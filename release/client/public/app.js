@@ -250,6 +250,22 @@ app.directive('about', function ($timeout) {
 
 'use strict';
 
+app.directive('header', function () {
+    return {
+        templateUrl: 'header.html',
+        scope: {},
+
+        link: function link(scope, element, attrs) {
+
+            var init = function init() {};
+
+            init();
+        }
+    };
+});
+
+'use strict';
+
 app.directive('heading', function () {
     return {
         templateUrl: 'heading.html',
@@ -270,16 +286,20 @@ app.directive('heading', function () {
 
 'use strict';
 
-app.directive('header', function () {
+app.directive('imageItem', function () {
     return {
-        templateUrl: 'header.html',
-        scope: {},
+        templateUrl: 'image-item.html',
+        scope: {
+            content: '='
+        },
 
         link: function link(scope, element, attrs) {
 
             var init = function init() {};
 
             init();
+
+            scope = _.assign(scope, {});
         }
     };
 });
@@ -320,26 +340,6 @@ app.directive('hero', function (API, Post, $timeout) {
             init();
 
             scope.getPost = getPost;
-        }
-    };
-});
-
-'use strict';
-
-app.directive('imageItem', function () {
-    return {
-        templateUrl: 'image-item.html',
-        scope: {
-            content: '='
-        },
-
-        link: function link(scope, element, attrs) {
-
-            var init = function init() {};
-
-            init();
-
-            scope = _.assign(scope, {});
         }
     };
 });

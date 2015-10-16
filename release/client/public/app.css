@@ -155,11 +155,15 @@ p {
   height: 800px;
   display: flex;
   flex-direction: column; }
+  @media (max-width: 767px) {
+    [template=about] .about-container {
+      height: 600px; } }
 
 [template=about] .about {
   flex: 1 0 auto;
   background: #000000;
   padding: 60px;
+  order: 2;
   opacity: 0;
   transition: 0.9s opacity, 0.6s transform;
   will-change: opacity; }
@@ -172,7 +176,8 @@ p {
     opacity: 1; }
 
 [template=about] .about-image {
-  flex: 1 1 100%;
+  flex: 1 1 50%;
+  order: 1;
   position: relative;
   background: #f7f7f7;
   background-size: cover;
@@ -180,18 +185,11 @@ p {
   opacity: 0;
   transition: 0.9s opacity, 0.6s transform;
   will-change: opacity; }
+  @media (max-width: 767px) {
+    [template=about] .about-image {
+      border: 5px solid black; } }
   [template=about] .about-image.active {
     opacity: 1; }
-
-[template=heading] {
-  background: #ffffff;
-  padding: 0 30px; }
-  [template=heading] .heading {
-    max-width: 700px;
-    margin: auto;
-    margin-top: 30px; }
-    [template=heading] .heading h2 {
-      font-size: 40px; }
 
 [template=header] .header {
   top: 0;
@@ -256,6 +254,34 @@ p {
       [template=header] .header .menu {
         display: none; } }
 
+[template=heading] {
+  background: #ffffff;
+  padding: 0 30px; }
+  [template=heading] .heading {
+    max-width: 700px;
+    margin: auto;
+    margin-top: 30px; }
+    [template=heading] .heading h2 {
+      font-size: 40px; }
+
+[template=image-item] {
+  background: #ffffff;
+  padding: 0 30px; }
+  @media (max-width: 767px) {
+    [template=image-item] {
+      padding: 0; } }
+  [template=image-item] .image-item {
+    max-width: 1000px;
+    margin: auto;
+    margin-bottom: 30px;
+    border-radius: 4px;
+    text-align: center;
+    color: #999; }
+    [template=image-item] .image-item img {
+      width: 100%; }
+    [template=image-item] .image-item h2 {
+      font-size: 40px; }
+
 [template=hero] .hero {
   height: 800px;
   position: relative;
@@ -290,24 +316,6 @@ p {
     padding: 0 30px; }
   [template=hero] .hero .hero-content {
     flex: 1; }
-
-[template=image-item] {
-  background: #ffffff;
-  padding: 0 30px; }
-  @media (max-width: 767px) {
-    [template=image-item] {
-      padding: 0; } }
-  [template=image-item] .image-item {
-    max-width: 1000px;
-    margin: auto;
-    margin-bottom: 30px;
-    border-radius: 4px;
-    text-align: center;
-    color: #999; }
-    [template=image-item] .image-item img {
-      width: 100%; }
-    [template=image-item] .image-item h2 {
-      font-size: 40px; }
 
 [template=preview] .preview {
   background: white;

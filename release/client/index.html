@@ -43,7 +43,7 @@
         <div class="about-container">
             <div class="about" ng-class="{active:ready}">
                 <div class="about-content">
-                    <h2>Who Am I?</h2>
+                    <!--<h2>Hello</h2>-->
 
                     <p>I'm Nathan-Jamahiel Nelson, a full-stack designer/developer with a passion for powerful, minimal code and efficient living.</p>
                     <p>I've learnt the importance of simply building, and I believe that full immersion is the best (only) way to learn anything.</p>
@@ -51,14 +51,6 @@
                 </div>
             </div>
             <div class="about-image" ng-class="{active:ready2}" style="background-image: url('/public/img/hero-india.jpg')"></div>
-        </div>
-
-    </div>
-</script>
-<script type="text/ng-template" id="heading.html">
-    <div template="heading">
-        <div class="heading">
-            <h2>{{text}}</h2>
         </div>
 
     </div>
@@ -83,6 +75,28 @@
 
     </div>
 </script>
+<script type="text/ng-template" id="heading.html">
+    <div template="heading">
+        <div class="heading">
+            <h2>{{text}}</h2>
+        </div>
+
+    </div>
+</script>
+<script type="text/ng-template" id="image-item.html">
+    <div template="image-item">
+        <div class="image-item">
+            <p>
+                <img src="{{content.src}}"/>
+            </p>
+            <p ng-if="content.caption" ng-bind="content.caption">
+
+            </p>
+
+        </div>
+
+    </div>
+</script>
 <script type="text/ng-template" id="hero.html">
     <div template="hero">
         <div class="hero" ng-class="{active:ready}" style="background-image: url('{{getPost().getImage()}}')">
@@ -102,20 +116,6 @@
 
             </div>
         </div>
-    </div>
-</script>
-<script type="text/ng-template" id="image-item.html">
-    <div template="image-item">
-        <div class="image-item">
-            <p>
-                <img src="{{content.src}}"/>
-            </p>
-            <p ng-if="content.caption" ng-bind="content.caption">
-
-            </p>
-
-        </div>
-
     </div>
 </script>
 <script type="text/ng-template" id="preview.html">

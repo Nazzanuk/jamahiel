@@ -55,14 +55,6 @@
 
     </div>
 </script>
-<script type="text/ng-template" id="heading.html">
-    <div template="heading">
-        <div class="heading">
-            <h2>{{text}}</h2>
-        </div>
-
-    </div>
-</script>
 <script type="text/ng-template" id="header.html">
     <div template="header">
         <div class="header">
@@ -84,7 +76,7 @@
     </div>
 </script>
 <script type="text/ng-template" id="hero.html">
-    <div template="hero">
+    <div template="hero" ng-if="getPost()">
         <div class="hero" style="background-image: url('{{getPost().getImage()}}')">
             <div class="hero-back"></div>
             <div class="hero-text">
@@ -104,10 +96,10 @@
         </div>
     </div>
 </script>
-<script type="text/ng-template" id="paragraph.html">
-    <div template="paragraph">
-        <div class="paragraph">
-            <p ng-bind-html="getText()"></p>
+<script type="text/ng-template" id="heading.html">
+    <div template="heading">
+        <div class="heading">
+            <h2>{{text}}</h2>
         </div>
 
     </div>
@@ -122,6 +114,14 @@
 
             </p>
 
+        </div>
+
+    </div>
+</script>
+<script type="text/ng-template" id="paragraph.html">
+    <div template="paragraph">
+        <div class="paragraph">
+            <p ng-bind-html="getText()"></p>
         </div>
 
     </div>

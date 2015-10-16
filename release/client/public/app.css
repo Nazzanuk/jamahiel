@@ -175,16 +175,6 @@ p {
   background-size: cover;
   background-position: center; }
 
-[template=heading] {
-  background: #ffffff;
-  padding: 0 30px; }
-  [template=heading] .heading {
-    max-width: 700px;
-    margin: auto;
-    margin-top: 30px; }
-    [template=heading] .heading h2 {
-      font-size: 40px; }
-
 [template=header] .header {
   top: 0;
   left: 0;
@@ -278,19 +268,15 @@ p {
   [template=hero] .hero .hero-content {
     flex: 1; }
 
-[template=paragraph] {
+[template=heading] {
   background: #ffffff;
   padding: 0 30px; }
-  [template=paragraph] .paragraph {
+  [template=heading] .heading {
     max-width: 700px;
-    margin: auto; }
-    [template=paragraph] .paragraph p {
-      font-size: 20px;
-      line-height: 40px; }
-      @media (max-width: 767px) {
-        [template=paragraph] .paragraph p {
-          font-size: 17px;
-          line-height: 35px; } }
+    margin: auto;
+    margin-top: 30px; }
+    [template=heading] .heading h2 {
+      font-size: 40px; }
 
 [template=image-item] {
   background: #ffffff;
@@ -309,6 +295,20 @@ p {
       width: 100%; }
     [template=image-item] .image-item h2 {
       font-size: 40px; }
+
+[template=paragraph] {
+  background: #ffffff;
+  padding: 0 30px; }
+  [template=paragraph] .paragraph {
+    max-width: 700px;
+    margin: auto; }
+    [template=paragraph] .paragraph p {
+      font-size: 20px;
+      line-height: 40px; }
+      @media (max-width: 767px) {
+        [template=paragraph] .paragraph p {
+          font-size: 17px;
+          line-height: 35px; } }
 
 [template=preview] .preview {
   background: white;

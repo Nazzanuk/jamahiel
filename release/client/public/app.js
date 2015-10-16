@@ -309,26 +309,6 @@ app.directive('about', function () {
 
 'use strict';
 
-app.directive('heading', function () {
-    return {
-        templateUrl: 'heading.html',
-        scope: {
-            text: '='
-        },
-
-        link: function link(scope, element, attrs) {
-
-            var init = function init() {};
-
-            init();
-
-            scope = _.assign(scope, {});
-        }
-    };
-});
-
-'use strict';
-
 app.directive('header', function () {
     return {
         templateUrl: 'header.html',
@@ -381,26 +361,20 @@ app.directive('hero', function (API, Post) {
 
 'use strict';
 
-app.directive('paragraph', function ($sce) {
+app.directive('heading', function () {
     return {
-        templateUrl: 'paragraph.html',
+        templateUrl: 'heading.html',
         scope: {
             text: '='
         },
 
         link: function link(scope, element, attrs) {
 
-            var getText = function getText() {
-                return $sce.trustAsHtml(scope.text);
-            };
-
             var init = function init() {};
 
             init();
 
-            scope = _.assign(scope, {
-                getText: getText
-            });
+            scope = _.assign(scope, {});
         }
     };
 });
@@ -421,6 +395,32 @@ app.directive('imageItem', function () {
             init();
 
             scope = _.assign(scope, {});
+        }
+    };
+});
+
+'use strict';
+
+app.directive('paragraph', function ($sce) {
+    return {
+        templateUrl: 'paragraph.html',
+        scope: {
+            text: '='
+        },
+
+        link: function link(scope, element, attrs) {
+
+            var getText = function getText() {
+                return $sce.trustAsHtml(scope.text);
+            };
+
+            var init = function init() {};
+
+            init();
+
+            scope = _.assign(scope, {
+                getText: getText
+            });
         }
     };
 });
@@ -521,7 +521,6 @@ app.directive('vid', function () {
 app.controller('HomeCtrl', function ($element, $timeout, API, $scope) {
 
     var posts = [];
-    $scope.ready = false;
 
     var getPosts = function getPosts() {
         return posts;
@@ -530,14 +529,11 @@ app.controller('HomeCtrl', function ($element, $timeout, API, $scope) {
     var loadPosts = function loadPosts() {
         return API.getPosts().then(function (response) {
             posts = response;
-            $scope.ready = true;
+            $element.find('[screen]').addClass('active');
         });
     };
 
     var init = function init() {
-        $timeout(function () {
-            return $element.find('[screen]').addClass('active');
-        }, 50);
         loadPosts();
     };
 

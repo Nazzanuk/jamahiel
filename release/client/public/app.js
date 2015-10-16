@@ -250,22 +250,6 @@ app.directive('about', function ($timeout) {
 
 'use strict';
 
-app.directive('header', function () {
-    return {
-        templateUrl: 'header.html',
-        scope: {},
-
-        link: function link(scope, element, attrs) {
-
-            var init = function init() {};
-
-            init();
-        }
-    };
-});
-
-'use strict';
-
 app.directive('heading', function () {
     return {
         templateUrl: 'heading.html',
@@ -320,6 +304,22 @@ app.directive('hero', function (API, Post, $timeout) {
             init();
 
             scope.getPost = getPost;
+        }
+    };
+});
+
+'use strict';
+
+app.directive('header', function () {
+    return {
+        templateUrl: 'header.html',
+        scope: {},
+
+        link: function link(scope, element, attrs) {
+
+            var init = function init() {};
+
+            init();
         }
     };
 });

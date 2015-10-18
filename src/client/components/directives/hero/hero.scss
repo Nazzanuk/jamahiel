@@ -44,12 +44,99 @@
       justify-content: center;
       height: 100%;
       color: #ffffff;
-      position: relative;
+      position: absolute;
+      width: 100%;
       z-index: 3;
       text-align: center;
       padding: 0 30px;
+      transform: translateY(-50px) scale(1.4);
+      opacity: 0;
+      transition: 3s;
+      will-change:opacity, transform;
+//      transition-delay: 0.5s;
+
+      &.active {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+
+      }
+
+      &.post {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+        transition: 0s;
+
+      }
+    }
+
+    .hero-profile {
+      bottom: 125px;
+      left: 0;
+      right: 0;
+      position: absolute;
+      z-index: 200;
 
 
+      @media (max-width: 767px) {
+        bottom: 55px;
+      }
+
+
+      .profile-container {
+        margin: auto;
+        max-width: 1060px;
+        padding: 0 30px;
+      }
+
+      .profile-image {
+        height: 150px;
+        width: 150px;
+//        background: #fff;
+        background-size: cover;
+        background-position: center;
+        float: left;
+        border: 2px solid white;
+        border-radius: 10000px;
+        position: absolute;
+        left: 50%;
+        margin-left: -75px;
+        transform: rotate(300deg) scale(0.5);
+        transition: 2s;
+        will-change:transform;
+
+        &.active {
+          transform: rotate(360deg) scale(1);
+        }
+
+
+        @media (max-width: 767px) {
+          height: 80px;
+          width: 80px;
+          margin-left: -40px;
+        }
+      }
+
+      .profile-name {
+        width: 320px;
+        position: absolute;
+        left: 50%;
+        margin-left: -160px;
+        margin-top: -45px;
+        text-align: center;
+        line-height: 45px;
+        color: white;
+        font-weight: 900;
+//        letter-spacing: 1px;
+        transform: translateY(50px);
+        transition: 2s;
+        text-transform: uppercase;
+//        font-size: 17px;
+        will-change:transform;
+
+        &.active {
+          transform: translateY(0);
+        }
+      }
     }
 
     .hero-content {

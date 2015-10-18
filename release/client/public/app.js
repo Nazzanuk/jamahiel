@@ -209,6 +209,22 @@ app.factory('API', function ($rootScope, $http) {
 });
 'use strict';
 
+app.directive('header', function () {
+    return {
+        templateUrl: 'header.html',
+        scope: {},
+
+        link: function link(scope, element, attrs) {
+
+            var init = function init() {};
+
+            init();
+        }
+    };
+});
+
+'use strict';
+
 app.directive('about', function ($timeout) {
     return {
         templateUrl: 'about.html',
@@ -264,22 +280,6 @@ app.directive('heading', function () {
             init();
 
             scope = _.assign(scope, {});
-        }
-    };
-});
-
-'use strict';
-
-app.directive('header', function () {
-    return {
-        templateUrl: 'header.html',
-        scope: {},
-
-        link: function link(scope, element, attrs) {
-
-            var init = function init() {};
-
-            init();
         }
     };
 });
@@ -372,26 +372,6 @@ app.directive('paragraph', function ($sce) {
 
 'use strict';
 
-app.directive('quoteItem', function () {
-    return {
-        templateUrl: 'quote-item.html',
-        scope: {
-            content: '='
-        },
-
-        link: function link(scope, element, attrs) {
-
-            var init = function init() {};
-
-            init();
-
-            scope = _.assign(scope, {});
-        }
-    };
-});
-
-'use strict';
-
 app.directive('preview', function (API, Post, $timeout) {
     return {
         templateUrl: 'preview.html',
@@ -433,6 +413,26 @@ app.directive('preview', function (API, Post, $timeout) {
 
             scope.getReverseClass = getReverseClass;
             scope.getPost = getPost;
+        }
+    };
+});
+
+'use strict';
+
+app.directive('quoteItem', function () {
+    return {
+        templateUrl: 'quote-item.html',
+        scope: {
+            content: '='
+        },
+
+        link: function link(scope, element, attrs) {
+
+            var init = function init() {};
+
+            init();
+
+            scope = _.assign(scope, {});
         }
     };
 });

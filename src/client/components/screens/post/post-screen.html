@@ -1,18 +1,19 @@
 <script type="text/ng-template" id="post-screen.html">
     <div screen>
-        <hero post-id="getId()" post="true"></hero>
+        <article>
 
-        <div style="background: #ffffff;padding: 30px 0">
-            <div ng-repeat="content in getPost().getContent() track by $index">
-                <heading ng-if="content.type == 'heading'" text="content.text"></heading>
-                <paragraph ng-if="content.type == 'paragraph'" text="content.text"></paragraph>
-                <vid ng-if="content.type == 'vid'" src="content.src"></vid>
-                <image-item ng-if="content.type == 'image'" content="content"></image-item>
-                <quote-item ng-if="content.type == 'quote'" content="content"></quote-item>
+            <hero post-id="getId()" post="true"></hero>
+
+            <div style="background: #ffffff;padding: 30px 0">
+                <div ng-repeat="content in getPost().getContent() track by $index">
+                    <heading ng-if="content.type == 'heading'" text="content.text"></heading>
+                    <paragraph ng-if="content.type == 'paragraph'" text="content.text"></paragraph>
+                    <vid ng-if="content.type == 'vid'" src="content.src"></vid>
+                    <image-item ng-if="content.type == 'image'" content="content"></image-item>
+                    <quote-item ng-if="content.type == 'quote'" content="content"></quote-item>
+                </div>
             </div>
 
-
-        </div>
-
+        </article>
     </div>
 </script>

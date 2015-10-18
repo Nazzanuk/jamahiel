@@ -3,7 +3,7 @@
         <div class="hero" ng-class="{active:ready}">
             <div class="hero-image" style="background-image: url('{{getPost().getImage()}}')"></div>
             <div class="hero-back"></div>
-            <div class="hero-text">
+            <div class="hero-text" ng-class="{active:ready, post:!post}">
                 <h1>
                     <i class="fa fa-{{getPost().getIcon()}}"></i>&nbsp;
                     {{getPost().getTitle()}}
@@ -15,6 +15,14 @@
                 <br/>
 
                 <div class="butn light" ng-if="!post" ui-sref="post({ id: postId })">Get Reading &nbsp; <i class="fa fa-angle-right"></i></div>
+
+            </div>
+
+            <div class="hero-profile" ng-if="post">
+                <div class="profile-container">
+                    <div class="profile-image" ng-class="{active:ready}" style="background-image: url('/public/img/profile.jpg')"></div>
+                    <div class="profile-name" ng-class="{active:ready}">By Nathan-Jamahiel Nelson</div>
+                </div>
 
             </div>
         </div>

@@ -208,6 +208,14 @@ p {
   [template=about] .about-image.active {
     opacity: 1; }
 
+[template=heading] {
+  background: #ffffff;
+  padding: 0 30px; }
+  [template=heading] .heading {
+    max-width: 700px;
+    margin: auto;
+    margin-top: 30px; }
+
 [template=header] .header {
   top: 0;
   left: 0;
@@ -265,14 +273,6 @@ p {
     @media (max-width: 767px) {
       [template=header] .header .menu {
         display: none; } }
-
-[template=heading] {
-  background: #ffffff;
-  padding: 0 30px; }
-  [template=heading] .heading {
-    max-width: 700px;
-    margin: auto;
-    margin-top: 30px; }
 
 [template=hero] .hero {
   height: 800px;

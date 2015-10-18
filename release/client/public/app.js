@@ -66,6 +66,21 @@ app.factory('Post', function ($timeout, $rootScope) {
     return Post;
 });
 
+app.controller('ScreenCtrl', function ($element, $timeout, State, $state) {
+
+    var init = function init() {
+        $timeout(function () {
+            return $element.find('[screen]').addClass('active');
+        }, 50);
+    };
+
+    $rootScope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams) {
+        $(document).scrollTop(0);
+    });
+
+    init();
+});
+
 app.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
 
     var resolve = {
@@ -94,21 +109,6 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
 
     $locationProvider.html5Mode(true);
 });
-app.controller('ScreenCtrl', function ($element, $timeout, State, $state) {
-
-    var init = function init() {
-        $timeout(function () {
-            return $element.find('[screen]').addClass('active');
-        }, 50);
-    };
-
-    $rootScope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams) {
-        $(document).scrollTop(0);
-    });
-
-    init();
-});
-
 'use strict';
 
 app.factory('Alert', function ($timeout, $rootScope) {
@@ -209,22 +209,6 @@ app.factory('API', function ($rootScope, $http) {
 });
 'use strict';
 
-app.directive('header', function () {
-    return {
-        templateUrl: 'header.html',
-        scope: {},
-
-        link: function link(scope, element, attrs) {
-
-            var init = function init() {};
-
-            init();
-        }
-    };
-});
-
-'use strict';
-
 app.directive('about', function ($timeout) {
     return {
         templateUrl: 'about.html',
@@ -260,6 +244,22 @@ app.directive('about', function ($timeout) {
                 getRandom: getRandom
 
             });
+        }
+    };
+});
+
+'use strict';
+
+app.directive('header', function () {
+    return {
+        templateUrl: 'header.html',
+        scope: {},
+
+        link: function link(scope, element, attrs) {
+
+            var init = function init() {};
+
+            init();
         }
     };
 });

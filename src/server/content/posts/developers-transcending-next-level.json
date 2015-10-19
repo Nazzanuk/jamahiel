@@ -7,7 +7,7 @@
   "content": [
     {
       "type": "paragraph",
-      "text": "I’m in the zone, super deep into my code refactoring. My phone vibrates, dammit. I take a quick look at the number, it’s unrecognised. I'm feeling a bit ominous as to who this could be, but I pick up anyway."
+      "text": "I’m in the zone, a few layers deep into my code refactoring. My phone vibrates, dammit. I take a quick look at the number, it’s unrecognised. I'm feeling a bit ominous as to who this could be, but I pick up anyway."
     },
     {
       "type": "paragraph",
@@ -39,7 +39,7 @@
     },
     {
       "type": "paragraph",
-      "text": "This is pretty much the daily state of affairs now, recruiters are relentless. But I remember when I was fresh out of university, and would literally have taken any IT related job. In fact, I did and it was to date the worst professional experience of my life (never work in banking)."
+      "text": "This is a pretty regular occurence nowadays. Recruiters are understandably relentless. But I remember when I was fresh out of university, and would probably have taken any IT related job. In fact, I did, and it was to date the worst professional experience of my life (never work in banking)."
     },
     {
       "type": "image",
@@ -56,7 +56,7 @@
     },
     {
       "type": "paragraph",
-      "text": "Here’s the deal, just literally doing your job - and only your job time and time again will not elevate your status. Saying that, in the past I have worked with people who give 100% all day with full focus from 9 till 5 - but who wants to have to work like a dog and toil all day long? "
+      "text": "Here’s the deal, just doing your job - and only your job time and time again will not elevate your status. Good programmers are at least a tinge lazy, and devs should be spending their time improving and optimising their own workflow to make their own life easier. "
     },
     {
       "type": "image",
@@ -64,7 +64,7 @@
     },
     {
       "type": "paragraph",
-      "text": "Good programmers are at least a tinge lazy, you should be spending your time optimising your own workflow to make your own life easier. Yes everyone wants a workhorse in their ranks who they can offload their tedious tasks to. That is not what you and I aspire to be my friend. Where you can add value to any business is going over and above expectations. "
+      "text": "In the past I have worked with people who somehow give 100%, all day long, fully focus from 9 till 5. It takes a lot of energy - and who wants to have to work like a dog and toil all day long for recognition? Yes everyone would like a workhorse in their ranks who they can offload their tedious tasks to. But that isn't promotion material. Where devs can concentrate on adding value to any business, is in providing unique insights or going over and above expectations. "
     },
     {
       "type": "quote",
@@ -73,23 +73,27 @@
     },
     {
       "type": "paragraph",
-      "text": "A great example: one company I was with had me doing a very tedious content updating task. Basically I had a list of new text and image assets, and I had to update the HTML to reflect the changes. This was a horrible manual process that many before me had worked on and complained about time after time."
+      "text": "<strong>A great example:</strong> one company I was with had me doing a very tedious content updating task. Basically I was given a list of new assets every week, and I had to go through a number of pages and update the HTML to reflect the changes. This was a horrible and infamously manual process that many before me had worked on, and complained about, time after time."
     },
     {
       "type": "paragraph",
-      "text": "I did the work, but I also spent approximately half the time building a customised super lightweight CMS in order to automate this whole task. After around a week, I had built something from scratch that made this tedious task pretty trivial, enjoyable even. I had also learnt a new language (Node.js) and some new concepts while doing it. "
+      "text": "I made sure I got the work done, but I also spent approximately half the time building a customised super lightweight CMS in order to automate this whole task. After around a week, I had built something from scratch that made this tedious task pretty trivial, enjoyable even. As part of the process I had also learnt a new language (Node.js) and some new concepts and ways of working. "
     },
     {
       "type": "paragraph",
-      "text": "Slowly over time I shared what I’d built with my colleagues and they loved it. My position changed from performing the updates to supporting the application. But the real gain for me was the impression I’d left of being an innovator. When the next project with Node came along you can guess who was first on the list to work on it."
+      "text": "Slowly over time I shared what I’d built with my colleagues and they really liked it. My role changed from performing the updates to supporting the application. But the real gain for me was the impression and perception I’d imposed of being an innovator. When the next project with Node came along you can guess who was first on the list to work on it."
     },
     {
       "type": "heading",
       "text": "Build Stuff"
     },
     {
+      "type": "quote",
+      "text": "You must have personal projects."
+    },
+    {
       "type": "paragraph",
-      "text": "I build stuff all the time. I have numerous  orphaned experiments, many of which I can’t even remember until the domain comes up for renewal again. <a href=\"http://wll.space\">WLL.space</a> is just an example, but each of the experiments that I’ve produced has taught me more about building, about design, about JavaScript etc. Learning on the job is fine, but it’s not enough to excel - I cannot emphasize this enough, you MUST have personal projects. "
+      "text": "I build stuff all the time. I have numerous  orphaned experiments, many of which I can’t even remember until the domain comes up for renewal again. <a href=\"http://wll.space\">WLL.space</a> is just an example, but each of the experiments that I’ve produced has taught me more about building, about design, about JavaScript etc. Learning on the job is fine, but it’s not enough to excel - I cannot emphasize this enough, you <strong>must</strong> have personal projects. "
     },
     {
       "type": "image",
@@ -98,11 +102,11 @@
     },
     {
       "type": "paragraph",
-      "text": "At work, unless you are working on an amazing digital product team like at Spotify or Uber, you are unlikely to be pushing the boundary of your digital or technical knowledge. Usually you are consigned to delivering whatever project the client needs. So if you don’t have personal projects, then you are a passenger on your technical development - at the whim of whatever language or framework your superior decides is right."
+      "text": "At work, unless you are working on an amazing digital product team like at Spotify or Uber, you are unlikely to be pushing the boundary of your digital or technical knowledge. Usually you are consigned to delivering whatever project the client needs. If you don’t have personal projects, you are therefore a passenger on your technical development - at the whim of whatever language or framework your superior decides is to be your destiny."
     },
     {
       "type": "paragraph",
-      "text": "Building stuff is in effect building yourself, taking charge of the path you want to take and being adept enough that when the opportunity comes, you can take on the work confidently or apply for that job in the area you want without being a total n00b."
+      "text": "Building projects is, then, in effect building yourself. Taking charge of the path you want to take and being adept enough that when the opportunity comes, you can take on the work confidently or apply for that job in the area you want without being a total n00b."
     },
     {
       "type": "heading",

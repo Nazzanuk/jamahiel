@@ -19,6 +19,34 @@ app.directive('ngEnter', function () {
         });
     };
 });
+app.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
+
+    var resolve = {
+        timeout: function timeout($timeout) {
+            $('[screen]').removeClass('active');
+            //$('.loading-logo').addClass('active');
+            return $timeout(300);
+        }
+    };
+
+    // For any unmatched url, redirect to /
+    $urlRouterProvider.otherwise("/");
+
+    // Now set up the states
+    $stateProvider.state('home', {
+        url: "/",
+        templateUrl: "home-screen.html",
+        controller: "HomeCtrl",
+        resolve: resolve
+    }).state('post', {
+        url: "/post/:id",
+        templateUrl: "post-screen.html",
+        controller: "PostCtrl",
+        resolve: resolve
+    });
+
+    $locationProvider.html5Mode(true);
+});
 'use strict';
 
 app.factory('Post', function ($timeout, $rootScope) {
@@ -66,34 +94,6 @@ app.factory('Post', function ($timeout, $rootScope) {
     return Post;
 });
 
-app.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
-
-    var resolve = {
-        timeout: function timeout($timeout) {
-            $('[screen]').removeClass('active');
-            //$('.loading-logo').addClass('active');
-            return $timeout(300);
-        }
-    };
-
-    // For any unmatched url, redirect to /
-    $urlRouterProvider.otherwise("/");
-
-    // Now set up the states
-    $stateProvider.state('home', {
-        url: "/",
-        templateUrl: "home-screen.html",
-        controller: "HomeCtrl",
-        resolve: resolve
-    }).state('post', {
-        url: "/post/:id",
-        templateUrl: "post-screen.html",
-        controller: "PostCtrl",
-        resolve: resolve
-    });
-
-    $locationProvider.html5Mode(true);
-});
 app.controller('ScreenCtrl', function ($element, $timeout, State, $state) {
 
     var init = function init() {
@@ -269,6 +269,26 @@ app.directive('about', function ($timeout) {
 
 'use strict';
 
+app.directive('heading', function () {
+    return {
+        templateUrl: 'heading.html',
+        scope: {
+            text: '='
+        },
+
+        link: function link(scope, element, attrs) {
+
+            var init = function init() {};
+
+            init();
+
+            scope = _.assign(scope, {});
+        }
+    };
+});
+
+'use strict';
+
 app.directive('header', function (State) {
     return {
         templateUrl: 'header.html',
@@ -284,26 +304,6 @@ app.directive('header', function (State) {
                 isMenuVisible: State.isMenuVisible,
                 toggleMenu: State.toggleMenu
             });
-        }
-    };
-});
-
-'use strict';
-
-app.directive('heading', function () {
-    return {
-        templateUrl: 'heading.html',
-        scope: {
-            text: '='
-        },
-
-        link: function link(scope, element, attrs) {
-
-            var init = function init() {};
-
-            init();
-
-            scope = _.assign(scope, {});
         }
     };
 });
@@ -350,52 +350,6 @@ app.directive('hero', function (API, Post, $timeout) {
 
 'use strict';
 
-app.directive('imageItem', function () {
-    return {
-        templateUrl: 'image-item.html',
-        scope: {
-            content: '='
-        },
-
-        link: function link(scope, element, attrs) {
-
-            var init = function init() {};
-
-            init();
-
-            scope = _.assign(scope, {});
-        }
-    };
-});
-
-'use strict';
-
-app.directive('paragraph', function ($sce) {
-    return {
-        templateUrl: 'paragraph.html',
-        scope: {
-            text: '='
-        },
-
-        link: function link(scope, element, attrs) {
-
-            var getText = function getText() {
-                return $sce.trustAsHtml(scope.text);
-            };
-
-            var init = function init() {};
-
-            init();
-
-            scope = _.assign(scope, {
-                getText: getText
-            });
-        }
-    };
-});
-
-'use strict';
-
 app.directive('menuOverlay', function ($timeout, State) {
     return {
         templateUrl: 'menu.html',
@@ -413,6 +367,26 @@ app.directive('menuOverlay', function ($timeout, State) {
                 isMenuVisible: State.isMenuVisible,
                 toggleMenu: State.toggleMenu
             });
+        }
+    };
+});
+
+'use strict';
+
+app.directive('imageItem', function () {
+    return {
+        templateUrl: 'image-item.html',
+        scope: {
+            content: '='
+        },
+
+        link: function link(scope, element, attrs) {
+
+            var init = function init() {};
+
+            init();
+
+            scope = _.assign(scope, {});
         }
     };
 });
@@ -466,6 +440,56 @@ app.directive('preview', function (API, Post, $timeout) {
 
 'use strict';
 
+app.directive('paragraph', function ($sce) {
+    return {
+        templateUrl: 'paragraph.html',
+        scope: {
+            text: '='
+        },
+
+        link: function link(scope, element, attrs) {
+
+            var getText = function getText() {
+                return $sce.trustAsHtml(scope.text);
+            };
+
+            var init = function init() {};
+
+            init();
+
+            scope = _.assign(scope, {
+                getText: getText
+            });
+        }
+    };
+});
+
+app.controller('HomeCtrl', function ($element, $timeout, API, $scope) {
+
+    var posts = [];
+
+    var getPosts = function getPosts() {
+        return posts;
+    };
+
+    var loadPosts = function loadPosts() {
+        return API.getPosts().then(function (response) {
+            posts = response;
+            $element.find('[screen]').addClass('active');
+        });
+    };
+
+    var init = function init() {
+        loadPosts();
+    };
+
+    init();
+
+    $scope.getPosts = getPosts;
+});
+
+'use strict';
+
 app.directive('quoteItem', function () {
     return {
         templateUrl: 'quote-item.html',
@@ -514,30 +538,6 @@ app.directive('vid', function () {
             });
         }
     };
-});
-
-app.controller('HomeCtrl', function ($element, $timeout, API, $scope) {
-
-    var posts = [];
-
-    var getPosts = function getPosts() {
-        return posts;
-    };
-
-    var loadPosts = function loadPosts() {
-        return API.getPosts().then(function (response) {
-            posts = response;
-            $element.find('[screen]').addClass('active');
-        });
-    };
-
-    var init = function init() {
-        loadPosts();
-    };
-
-    init();
-
-    $scope.getPosts = getPosts;
 });
 
 app.controller('PostCtrl', function ($element, $timeout, API, $scope, Post, $stateParams) {

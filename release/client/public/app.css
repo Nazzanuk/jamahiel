@@ -215,6 +215,14 @@ p {
   [template=about] .about-image.active {
     opacity: 1; }
 
+[template=heading] {
+  background: #ffffff;
+  padding: 0 30px; }
+  [template=heading] .heading {
+    max-width: 700px;
+    margin: auto;
+    margin-top: 30px; }
+
 [template=header] .header {
   top: 0;
   left: 0;
@@ -274,14 +282,6 @@ p {
     @media (max-width: 767px) {
       [template=header] .header .menu {
         right: 0; } }
-
-[template=heading] {
-  background: #ffffff;
-  padding: 0 30px; }
-  [template=heading] .heading {
-    max-width: 700px;
-    margin: auto;
-    margin-top: 30px; }
 
 [template=hero] .hero {
   height: 800px;
@@ -414,39 +414,6 @@ p {
         -ms-flex: 1;
             flex: 1; }
 
-[template=image-item] {
-  background: #ffffff;
-  padding: 0 30px; }
-  @media (max-width: 767px) {
-    [template=image-item] {
-      padding: 0; } }
-  [template=image-item] .image-item {
-    max-width: 1000px;
-    margin: auto;
-    margin-bottom: 30px;
-    border-radius: 4px;
-    text-align: center;
-    color: #999;
-    text-transform: uppercase; }
-    [template=image-item] .image-item img {
-      width: 100%; }
-    [template=image-item] .image-item h2 {
-      font-size: 40px; }
-
-[template=paragraph] {
-  background: #ffffff;
-  padding: 0 30px; }
-  [template=paragraph] .paragraph {
-    max-width: 700px;
-    margin: auto; }
-    [template=paragraph] .paragraph p {
-      font-size: 20px;
-      line-height: 40px; }
-      @media (max-width: 767px) {
-        [template=paragraph] .paragraph p {
-          font-size: 17px;
-          line-height: 35px; } }
-
 [template=menu] .menu {
   position: fixed;
   top: 0px;
@@ -556,6 +523,25 @@ p {
           letter-spacing: 0.5px;
           font-size: 16px; }
 
+[template=image-item] {
+  background: #ffffff;
+  padding: 0 30px; }
+  @media (max-width: 767px) {
+    [template=image-item] {
+      padding: 0; } }
+  [template=image-item] .image-item {
+    max-width: 1000px;
+    margin: auto;
+    margin-bottom: 30px;
+    border-radius: 4px;
+    text-align: center;
+    color: #999;
+    text-transform: uppercase; }
+    [template=image-item] .image-item img {
+      width: 100%; }
+    [template=image-item] .image-item h2 {
+      font-size: 40px; }
+
 [template=preview] .preview {
   background: white;
   position: relative;
@@ -637,6 +623,20 @@ p {
           border-color: #ffffff; }
           [template=preview] .preview.reverse .butn:hover {
             background: rgba(255, 255, 255, 0.1); } }
+
+[template=paragraph] {
+  background: #ffffff;
+  padding: 0 30px; }
+  [template=paragraph] .paragraph {
+    max-width: 700px;
+    margin: auto; }
+    [template=paragraph] .paragraph p {
+      font-size: 20px;
+      line-height: 40px; }
+      @media (max-width: 767px) {
+        [template=paragraph] .paragraph p {
+          font-size: 17px;
+          line-height: 35px; } }
 
 [template=quote-item] {
   background: #ffffff;

@@ -474,7 +474,8 @@ p {
             flex-wrap: wrap;
     margin: auto;
     overflow-y: auto;
-    max-height: 100%; }
+    max-height: 100%;
+    padding: 15px; }
     [template=menu] .menu .menu-boxes .menu-box {
       -webkit-flex: 1 1 33.3333333%;
           -ms-flex: 1 1 33.3333333%;
@@ -483,6 +484,15 @@ p {
       padding: 15px;
       max-width: 33.3333333%;
       padding-top: 33.3333333%; }
+      @media (max-width: 767px) {
+        [template=menu] .menu .menu-boxes .menu-box {
+          -webkit-flex: 1 1 50%;
+              -ms-flex: 1 1 50%;
+                  flex: 1 1 50%;
+          position: relative;
+          padding: 15px;
+          max-width: 50%;
+          padding-top: 50%; } }
       [template=menu] .menu .menu-boxes .menu-box .menu-item {
         background: #ffffff;
         background: rgba(255, 255, 255, 0.9);

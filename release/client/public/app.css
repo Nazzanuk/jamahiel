@@ -345,7 +345,7 @@ p {
     left: 0;
     right: 0;
     position: absolute;
-    z-index: 200; }
+    z-index: 4; }
     @media (max-width: 767px) {
       [template=hero] .hero .hero-profile {
         bottom: 55px; } }

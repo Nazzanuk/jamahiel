@@ -1,0 +1,119 @@
+{
+  "date": 20151019,
+  "image": "/public/img/startup.jpg",
+  "title": "Developers: Transcending To The Next Level",
+  "summary": "Climb that ladder quickly",
+  "icon": "code",
+  "content": [
+    {
+      "type": "paragraph",
+      "text": "I’m in the zone, deep into my code refactoring the Gulp file to increase my productivity while lowering the amount of effort I put in. My phone vibrates and I take a quick look at the number, it’s unrecognised. I have an ominous feeling as to who this could be, but I pick up anyway."
+    },
+    {
+      "type": "paragraph",
+      "text": "<em>“Hi, is that Nathan?”</em>"
+    },
+    {
+      "type": "paragraph",
+      "text": "<em>“Speaking.”</em>"
+    },
+    {
+      "type": "paragraph",
+      "text": "<em>“Hi there, I’m calling from <strong>NotARecruitmentAgency: Recruitment Specialists</strong>, your CV has <strong>just</strong> come up on my screen!”</em>"
+    },
+    {
+      "type": "paragraph",
+      "text": "<em>“Oh.”</em>"
+    },
+    {
+      "type": "paragraph",
+      "text": "<em>“Yep, I’m <strong>very keen</strong> to have a chat about a few roles I’m looking at now.”</em>"
+    },
+    {
+      "type": "paragraph",
+      "text": "<em>“Uh… Sorry I have to go”</em>"
+    },
+    {
+      "type": "paragraph",
+      "text": "<em>*click*</em>"
+    },
+    {
+      "type": "paragraph",
+      "text": "This is pretty much the daily state of affairs now, recruiters are relentless. But I remember when I was fresh out of university, and would literally have taken any IT related job. In fact, I did and it was to date the worst professional experience of my life (never work in banking)."
+    },
+    {
+      "type": "image",
+      "src": "http://static.standard.co.uk/s3fs-public/styles/story_large/public/thumbnails/image/2014/12/08/12/canarywharf2.jpg",
+      "caption": "Don't even think about it."
+    },
+    {
+      "type": "paragraph",
+      "text": "Right now I’m in a great role, and looking forward to my next one; where I’ll work less, earn more and have more freedom and influence. So how did I get to a point where I have a real abundance of opportunities to choose from and amazing people to work with."
+    },
+    {
+      "type": "heading",
+      "text": "Disrupt"
+    },
+    {
+      "type": "paragraph",
+      "text": "Here’s the deal, just literally doing your job - and only your job time and time again will not elevate your status. Saying that, in the past I have worked with people who give 100% all day with full focus from 9 till 5 - but who wants to have to work like a dog and toil all day long? "
+    },
+    {
+      "type": "paragraph",
+      "text": "Good programmers are at least a tinge lazy, you should be spending your time optimising your own workflow to make your own life easier. Yes everyone wants a workhorse in their ranks who they can offload their tedious tasks to. That is not what you and I aspire to be my friend. Where you can add value to any business is going over and above expectations. "
+    },
+    {
+      "type": "quote",
+      "text": "Overdeliver, innovate and generally just push.",
+      "by": "Nathan Nelson"
+    },
+    {
+      "type": "paragraph",
+      "text": "A great example: one company I was with had me doing a very tedious content updating task. Basically I had a list of new text and image assets, and I had to update the HTML to reflect the changes. This was a horrible manual process that many before me had worked on and complained about time after time."
+    },
+    {
+      "type": "paragraph",
+      "text": "I did the work, but I also spent approximately half the time building a customised super lightweight CMS in order to automate this whole task. After around a week, I had built something from scratch that made this tedious task pretty trivial, enjoyable even. I had also learnt a new language (Node.js) and some new concepts while doing it. "
+    },
+    {
+      "type": "paragraph",
+      "text": "Slowly over time I shared what I’d built with my colleagues and they loved it. My position changed from performing the updates to supporting the application. But the real gain for me was the impression I’d left of being an innovator. When the next project with Node came along you can guess who was first on the list to work on it."
+    },
+    {
+      "type": "heading",
+      "text": "Build Stuff"
+    },
+    {
+      "type": "paragraph",
+      "text": "I build stuff all the time. I have numerous  orphaned experiments, many of which I can’t even remember until the domain comes up for renewal again. <a href=\"http://wll.space\">WLL.space</a> is just an example, but each of the experiments that I’ve produced has taught me more about building, about design, about JavaScript etc. Learning on the job is fine, but it’s not enough to excel - I cannot emphasize this enough, you MUST have personal projects. "
+    },
+    {
+      "type": "paragraph",
+      "text": "At work, unless you are working on an amazing digital product team like at Spotify or Uber, you are unlikely to be pushing the boundary of your digital or technical knowledge. Usually you are consigned to delivering whatever project the client needs. So if you don’t have personal projects, then you are a passenger on your technical development - at the whim of whatever language or framework your superior decides is right."
+    },
+    {
+      "type": "paragraph",
+      "text": "Building stuff is in effect building yourself, taking charge of the path you want to take and being adept enough that when the opportunity comes, you can take on the work confidently or apply for that job in the area you want without being a total n00b."
+    },
+    {
+      "type": "heading",
+      "text": "Visibility, Assertiveness and Communication"
+    },
+    {
+      "type": "paragraph",
+      "text": "One of the major problems historically with developers is their communication skills. Some of my recent learnings have been around the power of speaking my mind. I am always trying to push the boundary and provide innovative solutions, and not always will you be recognised for your noble work. That’s absolutely fine, because if you don’t communicate the job you are doing then why should anyone else bother to take note?"
+    },
+    {
+      "type": "paragraph",
+      "text": "If you have built something, then take the time to show it to your colleagues. If you deserve a promotion, recognise it yourself and proceed to directly ask for it. If there is a problem with your project, some interesting (bad) tech decisions that could affect you later, challenge it, challenge it hard and do so often."
+    },
+    {
+      "type": "paragraph",
+      "text": "When you make your opinion known, people respect you for it.  It’s no good grumbling about this or that, if something is wrong, then say it. Honesty and clarity are usually appreciated. Your seniors may not always be so well informed, but they have to make decisions anyway. It enables others to take action on your behalf. "
+    },
+    {
+      "type": "paragraph",
+      "text": "Bear in mind, there are some simple nuances; being assertive is not the same as complaining or moaning it’s about clearly communicating your thoughts and wants. Ultimately you can only be respected and heard if you are providing value at the same time. Working effectively and great communication go hand in hand."
+    }
+  ]
+}

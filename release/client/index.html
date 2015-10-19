@@ -56,27 +56,6 @@
 
     </div>
 </script>
-<script type="text/ng-template" id="heading.html">
-    <div template="heading">
-        <div class="heading">
-            <h2>{{text}}</h2>
-        </div>
-
-    </div>
-</script>
-<script type="text/ng-template" id="header.html">
-    <div template="header">
-        <div class="header">
-            <div class="logo" ui-sref="home">Jamahiel</div>
-
-            <div class="menu" ng-click="toggleMenu()">
-                <div class="menu-item"><i class="fa fa-th"></i> &nbsp; Menu</div>
-            </div>
-        </div>
-
-
-    </div>
-</script>
 <script type="text/ng-template" id="hero.html">
     <div template="hero">
         <div class="hero" ng-class="{active:ready}">
@@ -107,6 +86,41 @@
 
             </div>
         </div>
+    </div>
+</script>
+<script type="text/ng-template" id="header.html">
+    <div template="header">
+        <div class="header">
+            <div class="logo" ui-sref="home">Jamahiel</div>
+
+            <div class="menu" ng-click="toggleMenu()">
+                <div class="menu-item"><i class="fa fa-th"></i> &nbsp; Menu</div>
+            </div>
+        </div>
+
+
+    </div>
+</script>
+<script type="text/ng-template" id="heading.html">
+    <div template="heading">
+        <div class="heading">
+            <h2>{{text}}</h2>
+        </div>
+
+    </div>
+</script>
+<script type="text/ng-template" id="image-item.html">
+    <div template="image-item">
+        <div class="image-item">
+            <p>
+                <img src="{{content.src}}"/>
+            </p>
+            <p ng-if="content.caption" ng-bind="content.caption">
+
+            </p>
+
+        </div>
+
     </div>
 </script>
 <script type="text/ng-template" id="menu.html">
@@ -156,16 +170,10 @@
 
     </div>
 </script>
-<script type="text/ng-template" id="image-item.html">
-    <div template="image-item">
-        <div class="image-item">
-            <p>
-                <img src="{{content.src}}"/>
-            </p>
-            <p ng-if="content.caption" ng-bind="content.caption">
-
-            </p>
-
+<script type="text/ng-template" id="paragraph.html">
+    <div template="paragraph">
+        <div class="paragraph">
+            <p ng-bind-html="getText()"></p>
         </div>
 
     </div>
@@ -182,34 +190,6 @@
                 <div class="butn" ng-if="!post" ui-sref="post({ id: postId })">Get Reading &nbsp; <i class="fa fa-angle-right"></i></div>
             </div>
         </div>
-    </div>
-</script>
-<script type="text/ng-template" id="paragraph.html">
-    <div template="paragraph">
-        <div class="paragraph">
-            <p ng-bind-html="getText()"></p>
-        </div>
-
-    </div>
-</script>
-<script type="text/ng-template" id="home-screen.html">
-    <div screen>
-        <div class="clearfix">
-            <div class="col-sm-7">
-                <div class="row">
-                    <hero ng-if="getPosts()[0]" post-id="getPosts()[0]"></hero>
-                </div>
-            </div>
-            <div class="col-sm-5">
-                <div class="row">
-                    <about></about>
-                </div>
-            </div>
-        </div>
-
-
-        <preview ng-if="$index != 0" ng-repeat="post in getPosts() track by $index" post-id="post" reverse="($index + 1) % 2"></preview>
-
     </div>
 </script>
 <script type="text/ng-template" id="quote-item.html">
@@ -234,6 +214,26 @@
             </p>
 
         </div>
+
+    </div>
+</script>
+<script type="text/ng-template" id="home-screen.html">
+    <div screen>
+        <div class="clearfix">
+            <div class="col-sm-7">
+                <div class="row">
+                    <hero ng-if="getPosts()[0]" post-id="getPosts()[0]"></hero>
+                </div>
+            </div>
+            <div class="col-sm-5">
+                <div class="row">
+                    <about></about>
+                </div>
+            </div>
+        </div>
+
+
+        <preview ng-if="$index != 0" ng-repeat="post in getPosts() track by $index" post-id="post" reverse="($index + 1) % 2"></preview>
 
     </div>
 </script>

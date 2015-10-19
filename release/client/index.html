@@ -170,6 +170,14 @@
 
     </div>
 </script>
+<script type="text/ng-template" id="paragraph.html">
+    <div template="paragraph">
+        <div class="paragraph">
+            <p ng-bind-html="getText()"></p>
+        </div>
+
+    </div>
+</script>
 <script type="text/ng-template" id="preview.html">
     <div template="preview">
         <div class="preview clearfix {{getReverseClass()}}">
@@ -182,14 +190,6 @@
                 <div class="butn" ng-if="!post" ui-sref="post({ id: postId })">Get Reading &nbsp; <i class="fa fa-angle-right"></i></div>
             </div>
         </div>
-    </div>
-</script>
-<script type="text/ng-template" id="paragraph.html">
-    <div template="paragraph">
-        <div class="paragraph">
-            <p ng-bind-html="getText()"></p>
-        </div>
-
     </div>
 </script>
 <script type="text/ng-template" id="quote-item.html">

@@ -208,14 +208,6 @@ p {
   [template=about] .about-image.active {
     opacity: 1; }
 
-[template=heading] {
-  background: #ffffff;
-  padding: 0 30px; }
-  [template=heading] .heading {
-    max-width: 700px;
-    margin: auto;
-    margin-top: 30px; }
-
 [template=header] .header {
   top: 0;
   left: 0;
@@ -275,6 +267,14 @@ p {
     @media (max-width: 767px) {
       [template=header] .header .menu {
         right: 0; } }
+
+[template=heading] {
+  background: #ffffff;
+  padding: 0 30px; }
+  [template=heading] .heading {
+    max-width: 700px;
+    margin: auto;
+    margin-top: 30px; }
 
 [template=hero] .hero {
   height: 800px;
@@ -442,16 +442,16 @@ p {
       -ms-flex-align: center;
           align-items: center;
   opacity: 0;
-  -webkit-transform: scale(1.2);
-          transform: scale(1.2);
+  -webkit-transform: translateY(-50px) scale(1.2);
+          transform: translateY(-50px) scale(1.2);
   transition: .3s;
-  will-change: transform;
+  will-change: transform, opacity;
   visibility: hidden; }
   [template=menu] .menu.active {
-    -webkit-transform: scale(1);
-            transform: scale(1);
     opacity: 1;
-    visibility: visible; }
+    visibility: visible;
+    -webkit-transform: translateY(0) scale(1);
+            transform: translateY(0) scale(1); }
   [template=menu] .menu .menu-background {
     position: absolute;
     top: 0px;
@@ -475,7 +475,7 @@ p {
     margin: auto;
     overflow-y: auto;
     max-height: 100%;
-    padding: 15px; }
+    padding: 0 45px; }
     [template=menu] .menu .menu-boxes .menu-box {
       -webkit-flex: 1 1 33.3333333%;
           -ms-flex: 1 1 33.3333333%;

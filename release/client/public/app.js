@@ -19,6 +19,21 @@ app.directive('ngEnter', function () {
         });
     };
 });
+app.controller('ScreenCtrl', function ($element, $timeout, State, $state) {
+
+    var init = function init() {
+        $timeout(function () {
+            return $element.find('[screen]').addClass('active');
+        }, 50);
+    };
+
+    $rootScope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams) {
+        $(document).scrollTop(0);
+    });
+
+    init();
+});
+
 'use strict';
 
 app.factory('Post', function ($timeout, $rootScope) {
@@ -211,21 +226,6 @@ app.factory('State', function ($rootScope) {
         toggleMenu: toggleMenu
     };
 });
-app.controller('ScreenCtrl', function ($element, $timeout, State, $state) {
-
-    var init = function init() {
-        $timeout(function () {
-            return $element.find('[screen]').addClass('active');
-        }, 50);
-    };
-
-    $rootScope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams) {
-        $(document).scrollTop(0);
-    });
-
-    init();
-});
-
 'use strict';
 
 app.directive('about', function ($timeout) {
@@ -269,26 +269,6 @@ app.directive('about', function ($timeout) {
 
 'use strict';
 
-app.directive('heading', function () {
-    return {
-        templateUrl: 'heading.html',
-        scope: {
-            text: '='
-        },
-
-        link: function link(scope, element, attrs) {
-
-            var init = function init() {};
-
-            init();
-
-            scope = _.assign(scope, {});
-        }
-    };
-});
-
-'use strict';
-
 app.directive('header', function (State) {
     return {
         templateUrl: 'header.html',
@@ -304,6 +284,26 @@ app.directive('header', function (State) {
                 isMenuVisible: State.isMenuVisible,
                 toggleMenu: State.toggleMenu
             });
+        }
+    };
+});
+
+'use strict';
+
+app.directive('heading', function () {
+    return {
+        templateUrl: 'heading.html',
+        scope: {
+            text: '='
+        },
+
+        link: function link(scope, element, attrs) {
+
+            var init = function init() {};
+
+            init();
+
+            scope = _.assign(scope, {});
         }
     };
 });

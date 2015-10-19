@@ -3,9 +3,9 @@
         <div class="menu" ng-class="{active:isMenuVisible()}">
             <div class="menu-background" ng-click="toggleMenu()"></div>
             <div style="height: 50px;"></div>
-            <div class="menu-boxes">
+            <div class="menu-boxes" ng-click="toggleMenu()">
                 <div class="menu-box">
-                    <div class="menu-item">
+                    <div class="menu-item" ui-sref="home">
                         <div class="menu-icon"><i class="fa fa-home fw"></i></div>
                         <div class="menu-text">Home</div>
                     </div>

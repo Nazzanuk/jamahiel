@@ -56,32 +56,24 @@
 
     </div>
 </script>
-<script type="text/ng-template" id="heading.html">
-    <div template="heading">
-        <div class="heading">
-            <h2>{{text}}</h2>
-        </div>
-
-    </div>
-</script>
 <script type="text/ng-template" id="header.html">
     <div template="header">
         <div class="header">
             <div class="logo" ui-sref="home">Jamahiel</div>
 
             <div class="menu" ng-click="toggleMenu()">
-                <!--<div class="menu-item"><i class="fa fa-code fw"></i> &nbsp;Code</div>-->
-                <!--<div class="menu-item"><i class="fa fa-briefcase fw"></i> &nbsp;Work</div>-->
-                <!--<div class="menu-item"><i class="fa fa-microphone fw"></i> &nbsp;Talk</div>-->
-                <!--<div class="menu-item"><i class="fa fa-cutlery fw"></i> &nbsp;Diet</div>-->
                 <div class="menu-item"><i class="fa fa-th"></i> &nbsp; Menu</div>
             </div>
-
-            <!--<div class="menu-icon">-->
-                <!--<i class="fa fa-th-large"></i>-->
-            <!--</div>-->
         </div>
 
+
+    </div>
+</script>
+<script type="text/ng-template" id="heading.html">
+    <div template="heading">
+        <div class="heading">
+            <h2>{{text}}</h2>
+        </div>
 
     </div>
 </script>
@@ -136,9 +128,9 @@
         <div class="menu" ng-class="{active:isMenuVisible()}">
             <div class="menu-background" ng-click="toggleMenu()"></div>
             <div style="height: 50px;"></div>
-            <div class="menu-boxes">
+            <div class="menu-boxes" ng-click="toggleMenu()">
                 <div class="menu-box">
-                    <div class="menu-item">
+                    <div class="menu-item" ui-sref="home">
                         <div class="menu-icon"><i class="fa fa-home fw"></i></div>
                         <div class="menu-text">Home</div>
                     </div>

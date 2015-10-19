@@ -48,7 +48,7 @@
     },
     {
       "type": "paragraph",
-      "text": "Right now I’m in a great role, and looking forward to my next one; where I’ll work less, earn more and have more freedom and influence. So how did I get to a point where I have a real abundance of opportunities to choose from and amazing people to work with."
+      "text": "Right now I’m in a great role, and looking forward to my next one; where I’ll work less, earn more and have more freedom and influence. So how did I get to a point where I have a real abundance of opportunities to choose from and amazing people to work with?"
     },
     {
       "type": "heading",
@@ -59,13 +59,17 @@
       "text": "Here’s the deal, just literally doing your job - and only your job time and time again will not elevate your status. Saying that, in the past I have worked with people who give 100% all day with full focus from 9 till 5 - but who wants to have to work like a dog and toil all day long? "
     },
     {
+      "type": "image",
+      "src": "http://sd.keepcalm-o-matic.co.uk/i/keep-calm-and-think-different-60.png"
+    },
+    {
       "type": "paragraph",
       "text": "Good programmers are at least a tinge lazy, you should be spending your time optimising your own workflow to make your own life easier. Yes everyone wants a workhorse in their ranks who they can offload their tedious tasks to. That is not what you and I aspire to be my friend. Where you can add value to any business is going over and above expectations. "
     },
     {
       "type": "quote",
       "text": "Overdeliver, innovate and generally just push.",
-      "by": "Nathan Nelson"
+      "by": ""
     },
     {
       "type": "paragraph",
@@ -88,6 +92,10 @@
       "text": "I build stuff all the time. I have numerous  orphaned experiments, many of which I can’t even remember until the domain comes up for renewal again. <a href=\"http://wll.space\">WLL.space</a> is just an example, but each of the experiments that I’ve produced has taught me more about building, about design, about JavaScript etc. Learning on the job is fine, but it’s not enough to excel - I cannot emphasize this enough, you MUST have personal projects. "
     },
     {
+      "type": "image",
+      "src": "http://bodyliterate.org/wp-content/uploads/2014/02/minecraft-build.jpeg"
+    },
+    {
       "type": "paragraph",
       "text": "At work, unless you are working on an amazing digital product team like at Spotify or Uber, you are unlikely to be pushing the boundary of your digital or technical knowledge. Usually you are consigned to delivering whatever project the client needs. So if you don’t have personal projects, then you are a passenger on your technical development - at the whim of whatever language or framework your superior decides is right."
     },
@@ -102,6 +110,11 @@
     {
       "type": "paragraph",
       "text": "One of the major problems historically with developers is their communication skills. Some of my recent learnings have been around the power of speaking my mind. I am always trying to push the boundary and provide innovative solutions, and not always will you be recognised for your noble work. That’s absolutely fine, because if you don’t communicate the job you are doing then why should anyone else bother to take note?"
+    },
+    {
+      "type": "quote",
+      "text": "Challenge, challenge hard and challenge often.",
+      "by": ""
     },
     {
       "type": "paragraph",

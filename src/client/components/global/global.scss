@@ -24,6 +24,7 @@ body {
   font-weight: 400;
   line-height: 1.7;
   overflow-x: hidden;
+  max-width: 100%;
 
 }
 
@@ -85,6 +86,8 @@ p {
   transition: .3s;
   display: block;
   will-change: opacity;
+  overflow-x: hidden;
+  max-width: 100%;
 
   &.active {
     opacity: 1;

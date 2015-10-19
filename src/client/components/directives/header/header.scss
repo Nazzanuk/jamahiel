@@ -73,17 +73,20 @@
       background: $light-back;
       color: #ffffff;
       //      box-shadow: 0 0 5px 0 rgba(0,0,0,0.1);
+      transition: .3s;
+      cursor: pointer;
 
       .menu-item {
         float: left;
-        padding: 0 30px;
+        padding: 0 15px;
         font-weight: 400;
         letter-spacing: 1px;
         text-transform: uppercase;
       }
 
       @media (max-width: 767px) {
-        display: none;
+//        display: none;
+        right: 0;
       }
     }
   }

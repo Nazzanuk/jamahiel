@@ -1,6 +1,6 @@
 'use strict';
 
-app.directive('header', () => {
+app.directive('header', (State) => {
     return {
         templateUrl: 'header.html',
         scope: {},
@@ -11,6 +11,11 @@ app.directive('header', () => {
             };
 
             init();
+
+            scope = _.assign(scope, {
+                isMenuVisible: State.isMenuVisible,
+                toggleMenu: State.toggleMenu
+            });
         }
     }
 });

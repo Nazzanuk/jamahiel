@@ -209,6 +209,25 @@ app.factory('API', function ($rootScope, $http) {
 });
 'use strict';
 
+app.factory('State', function ($rootScope) {
+
+    var menuVisible = false;
+
+    var isMenuVisible = function isMenuVisible() {
+        return menuVisible;
+    };
+
+    var toggleMenu = function toggleMenu() {
+        menuVisible = !menuVisible;
+    };
+
+    return {
+        isMenuVisible: isMenuVisible,
+        toggleMenu: toggleMenu
+    };
+});
+'use strict';
+
 app.directive('about', function ($timeout) {
     return {
         templateUrl: 'about.html',
@@ -270,7 +289,7 @@ app.directive('heading', function () {
 
 'use strict';
 
-app.directive('header', function () {
+app.directive('header', function (State) {
     return {
         templateUrl: 'header.html',
         scope: {},
@@ -280,6 +299,11 @@ app.directive('header', function () {
             var init = function init() {};
 
             init();
+
+            scope = _.assign(scope, {
+                isMenuVisible: State.isMenuVisible,
+                toggleMenu: State.toggleMenu
+            });
         }
     };
 });
@@ -346,6 +370,29 @@ app.directive('imageItem', function () {
 
 'use strict';
 
+app.directive('menuOverlay', function ($timeout, State) {
+    return {
+        templateUrl: 'menu.html',
+        scope: {
+            reverse: '='
+        },
+
+        link: function link(scope, element, attrs) {
+
+            var init = function init() {};
+
+            init();
+
+            scope = _.assign(scope, {
+                isMenuVisible: State.isMenuVisible,
+                toggleMenu: State.toggleMenu
+            });
+        }
+    };
+});
+
+'use strict';
+
 app.directive('paragraph', function ($sce) {
     return {
         templateUrl: 'paragraph.html',
@@ -366,6 +413,26 @@ app.directive('paragraph', function ($sce) {
             scope = _.assign(scope, {
                 getText: getText
             });
+        }
+    };
+});
+
+'use strict';
+
+app.directive('quoteItem', function () {
+    return {
+        templateUrl: 'quote-item.html',
+        scope: {
+            content: '='
+        },
+
+        link: function link(scope, element, attrs) {
+
+            var init = function init() {};
+
+            init();
+
+            scope = _.assign(scope, {});
         }
     };
 });
@@ -413,26 +480,6 @@ app.directive('preview', function (API, Post, $timeout) {
 
             scope.getReverseClass = getReverseClass;
             scope.getPost = getPost;
-        }
-    };
-});
-
-'use strict';
-
-app.directive('quoteItem', function () {
-    return {
-        templateUrl: 'quote-item.html',
-        scope: {
-            content: '='
-        },
-
-        link: function link(scope, element, attrs) {
-
-            var init = function init() {};
-
-            init();
-
-            scope = _.assign(scope, {});
         }
     };
 });

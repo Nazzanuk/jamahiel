@@ -136,6 +136,16 @@
         &.active {
           transform: translateY(0);
         }
+
+        .fa-twitter {
+          color: #55acee;
+          transform: scale(1.2);
+          transition: .3s;
+
+          &:hover {
+            transform: scale(1.6);
+          }
+        }
       }
     }
 

@@ -56,14 +56,6 @@
 
     </div>
 </script>
-<script type="text/ng-template" id="heading.html">
-    <div template="heading">
-        <div class="heading">
-            <h2>{{text}}</h2>
-        </div>
-
-    </div>
-</script>
 <script type="text/ng-template" id="header.html">
     <div template="header">
         <div class="header">
@@ -74,6 +66,14 @@
             </div>
         </div>
 
+
+    </div>
+</script>
+<script type="text/ng-template" id="heading.html">
+    <div template="heading">
+        <div class="heading">
+            <h2>{{text}}</h2>
+        </div>
 
     </div>
 </script>
@@ -131,34 +131,6 @@
 
     </div>
 </script>
-<script type="text/ng-template" id="preview.html">
-    <div template="preview">
-        <div class="preview clearfix {{getReverseClass()}}">
-            <div class="preview-hero" ng-class="{active:ready}" ui-sref="post({ id: postId })" style="background-image: url('{{getPost().getImage()}}')"></div>
-            <div class="preview-content" ng-class="{active:ready2}">
-                <h2 ui-sref="post({ id: postId })"><i class="fa fa-{{getPost().getIcon()}}"></i> {{getPost().getTitle()}}</h2>
-
-                <p>{{getPost().getSummary()}}</p>
-                <br/>
-                <div class="butn" ng-if="!post" ui-sref="post({ id: postId })">Get Reading &nbsp; <i class="fa fa-angle-right"></i></div>
-            </div>
-        </div>
-    </div>
-</script>
-<script type="text/ng-template" id="quote-item.html">
-    <div template="quote-item">
-        <div class="quote-item">
-            <div class="quote-text">
-                <i class="fa fa-quote-left"></i>
-                {{content.text}}
-                <!--<i class="fa fa-quote-right"></i>-->
-            </div>
-            <div class="quote-by" ng-bind="content.by"></div>
-
-        </div>
-
-    </div>
-</script>
 <script type="text/ng-template" id="menu.html">
     <div template="menu">
         <div class="menu" ng-class="{active:isMenuVisible()}">
@@ -202,6 +174,34 @@
                     </div>
                 </div>
             </div>
+        </div>
+
+    </div>
+</script>
+<script type="text/ng-template" id="preview.html">
+    <div template="preview">
+        <div class="preview clearfix {{getReverseClass()}}">
+            <div class="preview-hero" ng-class="{active:ready}" ui-sref="post({ id: postId })" style="background-image: url('{{getPost().getImage()}}')"></div>
+            <div class="preview-content" ng-class="{active:ready2}">
+                <h2 ui-sref="post({ id: postId })"><i class="fa fa-{{getPost().getIcon()}}"></i> {{getPost().getTitle()}}</h2>
+
+                <p>{{getPost().getSummary()}}</p>
+                <br/>
+                <div class="butn" ng-if="!post" ui-sref="post({ id: postId })">Get Reading &nbsp; <i class="fa fa-angle-right"></i></div>
+            </div>
+        </div>
+    </div>
+</script>
+<script type="text/ng-template" id="quote-item.html">
+    <div template="quote-item">
+        <div class="quote-item">
+            <div class="quote-text">
+                <i class="fa fa-quote-left"></i>
+                {{content.text}}
+                <!--<i class="fa fa-quote-right"></i>-->
+            </div>
+            <div class="quote-by" ng-bind="content.by"></div>
+
         </div>
 
     </div>

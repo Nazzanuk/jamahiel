@@ -269,26 +269,6 @@ app.directive('about', function ($timeout) {
 
 'use strict';
 
-app.directive('heading', function () {
-    return {
-        templateUrl: 'heading.html',
-        scope: {
-            text: '='
-        },
-
-        link: function link(scope, element, attrs) {
-
-            var init = function init() {};
-
-            init();
-
-            scope = _.assign(scope, {});
-        }
-    };
-});
-
-'use strict';
-
 app.directive('header', function (State) {
     return {
         templateUrl: 'header.html',
@@ -304,6 +284,26 @@ app.directive('header', function (State) {
                 isMenuVisible: State.isMenuVisible,
                 toggleMenu: State.toggleMenu
             });
+        }
+    };
+});
+
+'use strict';
+
+app.directive('heading', function () {
+    return {
+        templateUrl: 'heading.html',
+        scope: {
+            text: '='
+        },
+
+        link: function link(scope, element, attrs) {
+
+            var init = function init() {};
+
+            init();
+
+            scope = _.assign(scope, {});
         }
     };
 });
@@ -396,6 +396,29 @@ app.directive('paragraph', function ($sce) {
 
 'use strict';
 
+app.directive('menuOverlay', function ($timeout, State) {
+    return {
+        templateUrl: 'menu.html',
+        scope: {
+            reverse: '='
+        },
+
+        link: function link(scope, element, attrs) {
+
+            var init = function init() {};
+
+            init();
+
+            scope = _.assign(scope, {
+                isMenuVisible: State.isMenuVisible,
+                toggleMenu: State.toggleMenu
+            });
+        }
+    };
+});
+
+'use strict';
+
 app.directive('preview', function (API, Post, $timeout) {
     return {
         templateUrl: 'preview.html',
@@ -457,29 +480,6 @@ app.directive('quoteItem', function () {
             init();
 
             scope = _.assign(scope, {});
-        }
-    };
-});
-
-'use strict';
-
-app.directive('menuOverlay', function ($timeout, State) {
-    return {
-        templateUrl: 'menu.html',
-        scope: {
-            reverse: '='
-        },
-
-        link: function link(scope, element, attrs) {
-
-            var init = function init() {};
-
-            init();
-
-            scope = _.assign(scope, {
-                isMenuVisible: State.isMenuVisible,
-                toggleMenu: State.toggleMenu
-            });
         }
     };
 });

@@ -16,6 +16,7 @@ app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(express['static']('../client'));
+app.set('view engine', 'ejs');
 
 var server = app.listen(port, function () {
     var host = server.address().address;

@@ -51,8 +51,8 @@ gulp.task("gen-client-html", function () {
         "src/client/components/**/!(footer)*.html",
         "src/client/components/footer/footer.html"
     ])
-        .pipe(concat("index.html"))
-        .pipe(gulp.dest('release/client'));
+        .pipe(concat("index.ejs"))
+        .pipe(gulp.dest('release/server/views'));
 });
 
 gulp.task('gen-client-js', function () {

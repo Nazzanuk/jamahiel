@@ -10,6 +10,8 @@ module.exports = {
         app.get('/api/posts/', GET.posts);
         app.get('/api/posts/id/:id', GET.post);
 
+        app.get('/post/:id', GET.postContent);
+
         app.get('*', GET.index);
     }
 };

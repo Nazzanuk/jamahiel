@@ -1,6 +1,17 @@
 'use strict';
 
 var fs = require('fs');
+var _ = require('underscore');
+
+var standardData = {
+    title: "Jamahiel - Powerful Code and Efficient Living with Nathan Jamahiel Nelson",
+    ogTitle: "Powerful Code and Efficient Living with Nathan Jamahiel Nelson",
+    ogSiteName: "Jamahiel",
+    ogUrl: "http://www.jamahiel.com",
+    ogImage: "http://www.jamahiel.com/public/img/hero-india.jpg",
+    ogDescription: "A full-stack developer/designer with a passion for powerful, minimal code and efficient living.",
+    ogType: "website"
+};
 
 module.exports = {
 
@@ -31,10 +42,24 @@ module.exports = {
         res.send(file);
     },
 
+    postContent: function postContent(req, res) {
+        var file = require(process.cwd() + '/content/posts/' + req.params.id + '.json');
+
+        if (file == undefined) res.render('index', standardData);
+
+        var data = _.clone(standardData);
+        data.title = file.title + " | Jamahiel";
+        data.ogTitle = file.title;
+        data.ogUrl = 'http://www.jamahiel.com/post/' + req.params.id;
+        data.ogImage = file.image;
+        data.ogDescription = file.summary;
+        data.ogType = "article";
+        data.response = file;
+
+        res.render('index', data);
+    },
+
     index: function index(req, res) {
-        var dir = process.cwd() + '/../client/index.html';
-        fs.readFile(dir, 'utf8', function (err, text) {
-            res.send(text);
-        });
+        res.render('index', standardData);
     }
 };

@@ -433,6 +433,20 @@ p {
     [template=image-item] .image-item h2 {
       font-size: 40px; }
 
+[template=paragraph] {
+  background: #ffffff;
+  padding: 0 30px; }
+  [template=paragraph] .paragraph {
+    max-width: 700px;
+    margin: auto; }
+    [template=paragraph] .paragraph p {
+      font-size: 20px;
+      line-height: 40px; }
+      @media (max-width: 767px) {
+        [template=paragraph] .paragraph p {
+          font-size: 17px;
+          line-height: 35px; } }
+
 [template=menu] .menu {
   position: fixed;
   top: 0px;
@@ -541,20 +555,6 @@ p {
           line-height: 40px;
           letter-spacing: 0.5px;
           font-size: 16px; }
-
-[template=paragraph] {
-  background: #ffffff;
-  padding: 0 30px; }
-  [template=paragraph] .paragraph {
-    max-width: 700px;
-    margin: auto; }
-    [template=paragraph] .paragraph p {
-      font-size: 20px;
-      line-height: 40px; }
-      @media (max-width: 767px) {
-        [template=paragraph] .paragraph p {
-          font-size: 17px;
-          line-height: 35px; } }
 
 [template=preview] .preview {
   background: white;

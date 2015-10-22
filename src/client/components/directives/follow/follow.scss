@@ -1,0 +1,59 @@
+[template=follow] {
+  .follow-container {
+    width: 800px;
+    margin: auto;
+    text-align: center;
+    padding: 30px 0;
+
+    @media (max-width: 767px) {
+      height: 600px;
+    }
+  }
+
+  .follow {
+    background: #000000;
+    padding: 30px;
+    order:2;
+
+    h2, p {
+      color: #ffffff;
+    }
+
+    h2 .fa {
+
+      opacity: 1.1;
+      animation: pulse 1s infinite;
+    }
+
+    p {
+      font-size: 20px;
+    }
+
+
+    opacity:0;
+    transition: .9s opacity;
+    will-change:opacity;
+
+    &.active {
+      opacity: 1;
+    }
+
+    .follow-content {
+      margin-bottom: 30px;
+    }
+
+    .follow-buttons {
+      font-size: 20px;
+      .butn {
+        font-size: 25px;
+      }
+
+    }
+  }
+}
+
+@keyframes pulse {
+  0% { transform: scale(0.9); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(0.9); }
+}

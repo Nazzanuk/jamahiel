@@ -142,6 +142,13 @@ p {
     }
   }
 
+  &.block {
+    min-width: auto;
+    min-width: initial;
+    display: block;
+    padding: 0;
+  }
+
   &.light {
     color: #ffffff;
     border-color: #ffffff;

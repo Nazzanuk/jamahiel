@@ -228,27 +228,6 @@ app.factory('State', function ($rootScope) {
 });
 'use strict';
 
-app.directive('header', function (State) {
-    return {
-        templateUrl: 'header.html',
-        scope: {},
-
-        link: function link(scope, element, attrs) {
-
-            var init = function init() {};
-
-            init();
-
-            scope = _.assign(scope, {
-                isMenuVisible: State.isMenuVisible,
-                toggleMenu: State.toggleMenu
-            });
-        }
-    };
-});
-
-'use strict';
-
 app.directive('about', function ($timeout) {
     return {
         templateUrl: 'about.html',
@@ -284,6 +263,128 @@ app.directive('about', function ($timeout) {
                 getRandom: getRandom
 
             });
+        }
+    };
+});
+
+'use strict';
+
+app.directive('comments', function ($timeout) {
+    return {
+        templateUrl: 'comments.html',
+        scope: {
+            id: '=',
+            title: '=theTitle'
+        },
+
+        link: function link(scope, element, attrs) {
+
+            var init = function init() {
+                var disqus_config = function disqus_config() {
+                    this.page.url = 'http://www.jamahiel.com/post/' + scope.id; // Replace PAGE_URL with your page's canonical URL variable
+                    this.page.identifier = scope.id; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                };
+
+                var d = document,
+                    s = d.createElement('script');
+
+                s.src = '//jamahiel.disqus.com/embed.js';
+
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            };
+
+            init();
+
+            scope = _.assign(scope, {});
+        }
+    };
+});
+
+'use strict';
+
+app.directive('follow', function ($timeout) {
+    return {
+        templateUrl: 'follow.html',
+        scope: {
+            id: '=',
+            title: '=theTitle'
+
+        },
+
+        link: function link(scope, element, attrs) {
+
+            console.log('sc', scope.summary);
+            console.log('sc', scope);
+            console.log('sc', attrs);
+
+            var random = _.random(0, 500);
+
+            var getReverseClass = function getReverseClass() {
+                return scope.reverse ? 'reverse' : '';
+            };
+
+            var getRandom = function getRandom() {
+                return random;
+            };
+
+            var init = function init() {
+                $timeout(function () {
+                    return scope.ready = true;
+                }, _.random(500));
+                $timeout(function () {
+                    return scope.ready2 = true;
+                }, _.random(500));
+            };
+
+            init();
+
+            scope = _.assign(scope, {
+                getReverseClass: getReverseClass,
+                getRandom: getRandom
+
+            });
+        }
+    };
+});
+
+'use strict';
+
+app.directive('header', function (State) {
+    return {
+        templateUrl: 'header.html',
+        scope: {},
+
+        link: function link(scope, element, attrs) {
+
+            var init = function init() {};
+
+            init();
+
+            scope = _.assign(scope, {
+                isMenuVisible: State.isMenuVisible,
+                toggleMenu: State.toggleMenu
+            });
+        }
+    };
+});
+
+'use strict';
+
+app.directive('heading', function () {
+    return {
+        templateUrl: 'heading.html',
+        scope: {
+            text: '='
+        },
+
+        link: function link(scope, element, attrs) {
+
+            var init = function init() {};
+
+            init();
+
+            scope = _.assign(scope, {});
         }
     };
 });
@@ -350,11 +451,11 @@ app.directive('imageItem', function () {
 
 'use strict';
 
-app.directive('heading', function () {
+app.directive('menuOverlay', function ($timeout, State) {
     return {
-        templateUrl: 'heading.html',
+        templateUrl: 'menu.html',
         scope: {
-            text: '='
+            reverse: '='
         },
 
         link: function link(scope, element, attrs) {
@@ -363,7 +464,10 @@ app.directive('heading', function () {
 
             init();
 
-            scope = _.assign(scope, {});
+            scope = _.assign(scope, {
+                isMenuVisible: State.isMenuVisible,
+                toggleMenu: State.toggleMenu
+            });
         }
     };
 });
@@ -389,81 +493,6 @@ app.directive('paragraph', function ($sce) {
 
             scope = _.assign(scope, {
                 getText: getText
-            });
-        }
-    };
-});
-
-'use strict';
-
-app.directive('menuOverlay', function ($timeout, State) {
-    return {
-        templateUrl: 'menu.html',
-        scope: {
-            reverse: '='
-        },
-
-        link: function link(scope, element, attrs) {
-
-            var init = function init() {};
-
-            init();
-
-            scope = _.assign(scope, {
-                isMenuVisible: State.isMenuVisible,
-                toggleMenu: State.toggleMenu
-            });
-        }
-    };
-});
-
-'use strict';
-
-app.directive('quoteItem', function () {
-    return {
-        templateUrl: 'quote-item.html',
-        scope: {
-            content: '='
-        },
-
-        link: function link(scope, element, attrs) {
-
-            var init = function init() {};
-
-            init();
-
-            scope = _.assign(scope, {});
-        }
-    };
-});
-
-'use strict';
-
-app.directive('vid', function () {
-    return {
-        templateUrl: 'vid.html',
-        scope: {
-            src: '='
-        },
-
-        link: function link(scope, element, attrs) {
-
-            var play = function play($event) {
-                $($event.currentTarget).find('video')[0].play();
-            };
-
-            var pause = function pause($event) {
-                $($event.currentTarget).find('video')[0].pause();
-            };
-
-            var init = function init() {};
-
-            init();
-
-            scope = _.assign(scope, {
-                play: play,
-                pause: pause
-
             });
         }
     };
@@ -516,6 +545,129 @@ app.directive('preview', function (API, Post, $timeout) {
     };
 });
 
+'use strict';
+
+app.directive('quoteItem', function () {
+    return {
+        templateUrl: 'quote-item.html',
+        scope: {
+            content: '='
+        },
+
+        link: function link(scope, element, attrs) {
+
+            var init = function init() {};
+
+            init();
+
+            scope = _.assign(scope, {});
+        }
+    };
+});
+
+'use strict';
+
+app.directive('share', function ($timeout) {
+    return {
+        templateUrl: 'share.html',
+        scope: {
+            id: '=',
+            title: '=theTitle'
+
+        },
+
+        link: function link(scope, element, attrs) {
+
+            console.log('sc', scope.summary);
+            console.log('sc', scope);
+            console.log('sc', attrs);
+
+            var random = _.random(0, 500);
+
+            var getReverseClass = function getReverseClass() {
+                return scope.reverse ? 'reverse' : '';
+            };
+
+            var getRandom = function getRandom() {
+                return random;
+            };
+
+            var init = function init() {
+                $timeout(function () {
+                    return scope.ready = true;
+                }, _.random(500));
+                $timeout(function () {
+                    return scope.ready2 = true;
+                }, _.random(500));
+            };
+
+            init();
+
+            scope = _.assign(scope, {
+                getReverseClass: getReverseClass,
+                getRandom: getRandom
+
+            });
+        }
+    };
+});
+
+'use strict';
+
+app.directive('vid', function () {
+    return {
+        templateUrl: 'vid.html',
+        scope: {
+            src: '='
+        },
+
+        link: function link(scope, element, attrs) {
+
+            var play = function play($event) {
+                $($event.currentTarget).find('video')[0].play();
+            };
+
+            var pause = function pause($event) {
+                $($event.currentTarget).find('video')[0].pause();
+            };
+
+            var init = function init() {};
+
+            init();
+
+            scope = _.assign(scope, {
+                play: play,
+                pause: pause
+
+            });
+        }
+    };
+});
+
+app.controller('HomeCtrl', function ($element, $timeout, API, $scope) {
+
+    var posts = [];
+
+    var getPosts = function getPosts() {
+        return posts;
+    };
+
+    var loadPosts = function loadPosts() {
+        return API.getPosts().then(function (response) {
+            posts = response;
+            $element.find('[screen]').addClass('active');
+        });
+    };
+
+    var init = function init() {
+        loadPosts();
+    };
+
+    init();
+
+    $scope.getPosts = getPosts;
+});
+
 app.controller('PostCtrl', function ($element, $timeout, API, $scope, Post, $stateParams) {
 
     var post = {};
@@ -544,28 +696,4 @@ app.controller('PostCtrl', function ($element, $timeout, API, $scope, Post, $sta
 
     $scope.getPost = getPost;
     $scope.getId = getId;
-});
-
-app.controller('HomeCtrl', function ($element, $timeout, API, $scope) {
-
-    var posts = [];
-
-    var getPosts = function getPosts() {
-        return posts;
-    };
-
-    var loadPosts = function loadPosts() {
-        return API.getPosts().then(function (response) {
-            posts = response;
-            $element.find('[screen]').addClass('active');
-        });
-    };
-
-    var init = function init() {
-        loadPosts();
-    };
-
-    init();
-
-    $scope.getPosts = getPosts;
 });

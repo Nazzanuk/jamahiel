@@ -1,7 +1,7 @@
 {
   "date": 20151019,
   "image": "http://www.jamahiel.com/public/img/startup.jpg",
-  "title": "Developers: Transcending To The Next Level",
+  "title": "Developers: The Definitive Guide To Developing Yourself.",
   "summary": "Started from the bottom...",
   "icon": "code",
   "content": [
@@ -39,7 +39,7 @@
     },
     {
       "type": "paragraph",
-      "text": "This is a pretty regular occurence nowadays. Recruiters are understandably relentless. But I remember when I was fresh out of university, and would probably have taken any IT related job. In fact, I did, and it was to date the worst professional experience of my life (never work in banking)."
+      "text": "This is a pretty regular occurrence nowadays. Recruiters are understandably relentless. But I remember when I was fresh out of university, and would probably have taken any IT related job. In fact, I did, and it was to date the worst professional experience of my life (never work in banking)."
     },
     {
       "type": "image",
@@ -56,19 +56,19 @@
     },
     {
       "type": "paragraph",
-      "text": "Here’s the deal, just doing your job - and only your job time and time again will not elevate your status. Good programmers are at least a tinge lazy, and devs should be spending their time improving and optimising their own workflow to make their own life easier. "
+      "text": "Just doing your job - and only your job time and time again will not elevate your status. Good programmers are at least a tinge lazy, and devs should be spending their time improving and creatively optimising their own workflow to make their own life easier. "
     },
     {
       "type": "image",
-      "src": "https://s-media-cache-ak0.pinimg.com/originals/85/b4/fc/85b4fc25c80ad2bdd5cbd07001776da3.jpg"
+      "src": "http://media.viralwriter.com/2013/11/Think-Different.jpg"
     },
     {
       "type": "paragraph",
-      "text": "In the past I have worked with people who somehow give 100%, all day long, fully focus from 9 till 5. It takes a lot of energy - and who wants to have to work like a dog and toil all day long for recognition? Yes everyone would like a workhorse in their ranks who they can offload their tedious tasks to. But that isn't promotion material. Where devs can concentrate on adding value to any business, is in providing unique insights or going over and above expectations. "
+      "text": "In the past I have worked with people who  give 100%, all day long, fully focused from 9 till 5. It takes a lot of energy - and who wants to have to work like a dog and toil all day long for recognition? Yes, everyone enjoys having a workhorse in their ranks who they can offload their tedious tasks to. But that isn't promotion material. Where devs can concentrate on adding value to any business, is in providing unique insights or going over and above expectations. "
     },
     {
       "type": "quote",
-      "text": "Overdeliver, innovate and generally just push.",
+      "text": "Innovate, impress and inspire.",
       "by": ""
     },
     {
@@ -93,7 +93,7 @@
     },
     {
       "type": "paragraph",
-      "text": "I build stuff all the time. I have numerous  orphaned experiments, many of which I can’t even remember until the domain comes up for renewal again. <a href=\"http://wll.space\">WLL.space</a> is just an example, but each of the experiments that I’ve produced has taught me more about building, about design, about JavaScript etc. Learning on the job is fine, but it’s not enough to excel - I cannot emphasize this enough, you <strong>must</strong> have personal projects. "
+      "text": "I build stuff all the time. I have numerous  orphaned experiments, many of which I can’t even remember until the domain comes up for renewal again. <a href=\"http://wll.space\">WLL.space</a> is a good example, but each of the experiments that I’ve produced has taught me more about building, about design, about code and so on. Learning on the job is fine, but it’s not enough to excel - I cannot emphasize this enough, you <strong>must</strong> have personal projects. "
     },
     {
       "type": "image",
@@ -106,7 +106,7 @@
     },
     {
       "type": "paragraph",
-      "text": "Building projects is, then, in effect building ourself. Taking charge of the path we want to take and being adept enough that when the opportunity comes, we can take on the work confidently or apply for that job in the area we want without being a total n00b."
+      "text": "Building projects is, then, in effect building oneself. Taking charge of the path we want to take and being adept enough that when the opportunity comes, we can take on the work confidently or apply for that job in the area we want without being a total n00b."
     },
     {
       "type": "heading",
@@ -114,7 +114,7 @@
     },
     {
       "type": "paragraph",
-      "text": "One of the major problems historically with developers is their communication skills. Some of my recent learnings have been around the power of speaking my mind. I am always trying to push the boundary and provide innovative solutions, but it isn't always the case that I'll be recognised for my very noble work. That’s absolutely fine, because if I don’t communicate the job I am doing then why should anyone else bother to take note?"
+      "text": "An oft-quoted problem with developers is their communication skills. Some of my recent findings have been around the power of speaking my mind. I am always trying to push the boundary and provide innovative solutions, but it isn't always the case that I'll be recognised for my very noble work. That’s absolutely fine, because if I don’t communicate the job I am doing then why should anyone else bother to take note?"
     },
     {
       "type": "quote",
@@ -123,7 +123,7 @@
     },
     {
       "type": "paragraph",
-      "text": "If you have built something, then take the time to show it to your colleagues. If you deserve a promotion, recognise it yourself and proceed to directly ask for it. If there is a problem with your project, some interesting (bad) tech decisions that could affect you later, challenge it, challenge it hard and do so often."
+      "text": "If you have built something, then try and take the time to show it to your colleagues and superiors. If you deserve a promotion, recognise it yourself and proceed to directly ask for it. If there is an issue with your project, like a bad tech decision that could affect you later, challenge it, challenge it hard and do so often."
     },
     {
       "type": "paragraph",
@@ -131,7 +131,44 @@
     },
     {
       "type": "paragraph",
-      "text": "Bear in mind, there are some simple nuances; being assertive is not the same as complaining or moaning it’s about clearly communicating our thoughts and wants. Ultimately we can only be respected and heard if we are providing value at the same time. Working effectively and great communication go hand in hand."
+      "text": "Bear in mind, there are some simple nuances; being assertive is not the same as complaining or moaning it’s about clearly communicating our thoughts and wants. Ultimately we can only be respected and influential if we are first providing value at the same time."
+    },
+    {
+      "type": "heading",
+      "text": "Move. Often."
+    },
+    {
+      "type": "paragraph",
+      "text": "Maybe a bit controversial - but in my experience an essential part of growing is having that diversity of experiences to draw from. I was lucky, when I started working - I was a freelancer. I didn't hand over design work to designers, or database work to back-end guys. I did design, ops and everything in between. This enabled me to have a really good understandding of the whole tech stack before \"fullstack\" was even a thing."
+    },
+    {
+      "type": "paragraph",
+      "text": "<blockquote class=\"twitter-tweet\" data-conversation=\"none\" lang=\"en\"><p lang=\"en\" dir=\"ltr\">2 years each at your last two jobs?&#10;&#10;2010:&#10;Unlikeable. Risky hire. &#10;&#10;2015:&#10;Driven. Has in-demand skills.</p>&mdash; Adam Khan (@Khanoisseur) <a href=\"https://twitter.com/Khanoisseur/status/604312494392348673\">May 29, 2015</a></blockquote>\n<script async src=\"//platform.twitter.com/widgets.js\" charset=\"utf-8\"></script>"
+    },
+    {
+      "type": "paragraph",
+      "text": "Change is almost always a good thing. It is much easier to promote yourself by changing jobs, than it is staying put and trying to convince your existing boss that you deserve one. Companies have structures and hierarchies, and it usually will take pretty exceptional circumstances to move from junior to senior in a short period of time. "
+    },
+    {
+      "type": "image",
+      "src": "https://paraphrasinglife.files.wordpress.com/2014/08/no-1-alternative.jpg?w=1500&h=1000",
+      "caption": "Adios!"
+    },
+    {
+      "type": "paragraph",
+      "text": "You may be in a great job now, but still be on the look out. Nothing lasts for ever, and comfort and complacency will just ultimately stifle growth and innovation. There are a huge variety of problems and different ways of working and soon enough if you stay in the same place too long you may find that the world has actually moved on without you, and the skills you have are not so valuable anymore."
+    },
+    {
+      "type": "heading",
+      "text": "Cultivate Good Relationships"
+    },
+    {
+      "type": "paragraph",
+      "text": "In the meantime here's a tip you can use straight away"
+    },
+    {
+      "type": "paragraph",
+      "text": "Did you find some great strategies of your own in this article? What are the exciting ways you have been growth hacking your own career?<br><br>\nLet me know in the comments."
     }
   ]
 }

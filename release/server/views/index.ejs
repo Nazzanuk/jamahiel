@@ -56,17 +56,6 @@
 
     </div>
 </script>
-<script type="text/ng-template" id="comments.html">
-    <div template="comments">
-        <div class="comments">
-            <div class="comments-container">
-
-                <div id="disqus_thread"></div>
-            </div>
-        </div>
-
-    </div>
-</script>
 <script type="text/ng-template" id="follow.html">
     <div template="follow">
         <div class="follow" ng-class="{active:ready}" ng-click="ready = false">
@@ -103,10 +92,13 @@
 
     </div>
 </script>
-<script type="text/ng-template" id="heading.html">
-    <div template="heading">
-        <div class="heading">
-            <h2>{{text}}</h2>
+<script type="text/ng-template" id="comments.html">
+    <div template="comments">
+        <div class="comments">
+            <div class="comments-container">
+
+                <div id="disqus_thread"></div>
+            </div>
         </div>
 
     </div>
@@ -121,6 +113,14 @@
             </div>
         </div>
 
+
+    </div>
+</script>
+<script type="text/ng-template" id="heading.html">
+    <div template="heading">
+        <div class="heading">
+            <h2>{{text}}</h2>
+        </div>
 
     </div>
 </script>
@@ -225,6 +225,20 @@
 
     </div>
 </script>
+<script type="text/ng-template" id="quote-item.html">
+    <div template="quote-item">
+        <div class="quote-item">
+            <div class="quote-text">
+                <i class="fa fa-quote-left"></i>
+                {{content.text}}
+                <!--<i class="fa fa-quote-right"></i>-->
+            </div>
+            <div class="quote-by" ng-bind="content.by"></div>
+
+        </div>
+
+    </div>
+</script>
 <script type="text/ng-template" id="preview.html">
     <div template="preview">
         <div class="preview clearfix {{getReverseClass()}}">
@@ -239,17 +253,34 @@
         </div>
     </div>
 </script>
-<script type="text/ng-template" id="quote-item.html">
-    <div template="quote-item">
-        <div class="quote-item">
-            <div class="quote-text">
-                <i class="fa fa-quote-left"></i>
-                {{content.text}}
-                <!--<i class="fa fa-quote-right"></i>-->
-            </div>
-            <div class="quote-by" ng-bind="content.by"></div>
+<script type="text/ng-template" id="vid.html">
+    <div template="vid">
+        <div class="vid" ng-mouseover="play($event)" ng-mouseleave="pause($event)">
+            <p>
+                <video src="{{src}}" loop="loop"  muted="muted" ng-attr-autoplay="{{play}}"></video>
+            </p>
 
         </div>
+
+    </div>
+</script>
+<script type="text/ng-template" id="home-screen.html">
+    <div screen>
+        <div class="clearfix">
+            <div class="col-sm-7">
+                <div class="row">
+                    <hero ng-if="getPosts()[0]" post-id="getPosts()[0]"></hero>
+                </div>
+            </div>
+            <div class="col-sm-5">
+                <div class="row">
+                    <about></about>
+                </div>
+            </div>
+        </div>
+
+
+        <preview ng-if="$index != 0" ng-repeat="post in getPosts() track by $index" post-id="post" reverse="($index + 1) % 2"></preview>
 
     </div>
 </script>
@@ -294,37 +325,6 @@
             </div>
 
         </div>
-
-    </div>
-</script>
-<script type="text/ng-template" id="vid.html">
-    <div template="vid">
-        <div class="vid" ng-mouseover="play($event)" ng-mouseleave="pause($event)">
-            <p>
-                <video src="{{src}}" loop="loop"  muted="muted" ng-attr-autoplay="{{play}}"></video>
-            </p>
-
-        </div>
-
-    </div>
-</script>
-<script type="text/ng-template" id="home-screen.html">
-    <div screen>
-        <div class="clearfix">
-            <div class="col-sm-7">
-                <div class="row">
-                    <hero ng-if="getPosts()[0]" post-id="getPosts()[0]"></hero>
-                </div>
-            </div>
-            <div class="col-sm-5">
-                <div class="row">
-                    <about></about>
-                </div>
-            </div>
-        </div>
-
-
-        <preview ng-if="$index != 0" ng-repeat="post in getPosts() track by $index" post-id="post" reverse="($index + 1) % 2"></preview>
 
     </div>
 </script>

@@ -19,6 +19,21 @@ app.directive('ngEnter', function () {
         });
     };
 });
+app.controller('ScreenCtrl', function ($element, $timeout, State, $state) {
+
+    var init = function init() {
+        $timeout(function () {
+            return $element.find('[screen]').addClass('active');
+        }, 50);
+    };
+
+    $rootScope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams) {
+        $(document).scrollTop(0);
+    });
+
+    init();
+});
+
 'use strict';
 
 app.factory('Post', function ($timeout, $rootScope) {
@@ -94,21 +109,6 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
 
     $locationProvider.html5Mode(true);
 });
-app.controller('ScreenCtrl', function ($element, $timeout, State, $state) {
-
-    var init = function init() {
-        $timeout(function () {
-            return $element.find('[screen]').addClass('active');
-        }, 50);
-    };
-
-    $rootScope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams) {
-        $(document).scrollTop(0);
-    });
-
-    init();
-});
-
 'use strict';
 
 app.factory('Alert', function ($timeout, $rootScope) {
@@ -269,6 +269,28 @@ app.directive('about', function ($timeout) {
 
 'use strict';
 
+app.directive('follow', function ($timeout) {
+    return {
+        templateUrl: 'follow.html',
+        scope: {},
+
+        link: function link(scope, element, attrs) {
+
+            var init = function init() {
+                $timeout(function () {
+                    return scope.ready = true;
+                }, 30000);
+            };
+
+            init();
+
+            scope = _.assign(scope, {});
+        }
+    };
+});
+
+'use strict';
+
 app.directive('comments', function ($timeout) {
     return {
         templateUrl: 'comments.html',
@@ -303,22 +325,21 @@ app.directive('comments', function ($timeout) {
 
 'use strict';
 
-app.directive('follow', function ($timeout) {
+app.directive('header', function (State) {
     return {
-        templateUrl: 'follow.html',
+        templateUrl: 'header.html',
         scope: {},
 
         link: function link(scope, element, attrs) {
 
-            var init = function init() {
-                $timeout(function () {
-                    return scope.ready = true;
-                }, 30000);
-            };
+            var init = function init() {};
 
             init();
 
-            scope = _.assign(scope, {});
+            scope = _.assign(scope, {
+                isMenuVisible: State.isMenuVisible,
+                toggleMenu: State.toggleMenu
+            });
         }
     };
 });
@@ -339,27 +360,6 @@ app.directive('heading', function () {
             init();
 
             scope = _.assign(scope, {});
-        }
-    };
-});
-
-'use strict';
-
-app.directive('header', function (State) {
-    return {
-        templateUrl: 'header.html',
-        scope: {},
-
-        link: function link(scope, element, attrs) {
-
-            var init = function init() {};
-
-            init();
-
-            scope = _.assign(scope, {
-                isMenuVisible: State.isMenuVisible,
-                toggleMenu: State.toggleMenu
-            });
         }
     };
 });
@@ -475,6 +475,26 @@ app.directive('paragraph', function ($sce) {
 
 'use strict';
 
+app.directive('quoteItem', function () {
+    return {
+        templateUrl: 'quote-item.html',
+        scope: {
+            content: '='
+        },
+
+        link: function link(scope, element, attrs) {
+
+            var init = function init() {};
+
+            init();
+
+            scope = _.assign(scope, {});
+        }
+    };
+});
+
+'use strict';
+
 app.directive('preview', function (API, Post, $timeout) {
     return {
         templateUrl: 'preview.html',
@@ -516,73 +536,6 @@ app.directive('preview', function (API, Post, $timeout) {
 
             scope.getReverseClass = getReverseClass;
             scope.getPost = getPost;
-        }
-    };
-});
-
-'use strict';
-
-app.directive('quoteItem', function () {
-    return {
-        templateUrl: 'quote-item.html',
-        scope: {
-            content: '='
-        },
-
-        link: function link(scope, element, attrs) {
-
-            var init = function init() {};
-
-            init();
-
-            scope = _.assign(scope, {});
-        }
-    };
-});
-
-'use strict';
-
-app.directive('share', function ($timeout) {
-    return {
-        templateUrl: 'share.html',
-        scope: {
-            id: '=',
-            title: '=theTitle'
-
-        },
-
-        link: function link(scope, element, attrs) {
-
-            console.log('sc', scope.summary);
-            console.log('sc', scope);
-            console.log('sc', attrs);
-
-            var random = _.random(0, 500);
-
-            var getReverseClass = function getReverseClass() {
-                return scope.reverse ? 'reverse' : '';
-            };
-
-            var getRandom = function getRandom() {
-                return random;
-            };
-
-            var init = function init() {
-                $timeout(function () {
-                    return scope.ready = true;
-                }, _.random(500));
-                $timeout(function () {
-                    return scope.ready2 = true;
-                }, _.random(500));
-            };
-
-            init();
-
-            scope = _.assign(scope, {
-                getReverseClass: getReverseClass,
-                getRandom: getRandom
-
-            });
         }
     };
 });
@@ -641,6 +594,53 @@ app.controller('HomeCtrl', function ($element, $timeout, API, $scope) {
     init();
 
     $scope.getPosts = getPosts;
+});
+
+'use strict';
+
+app.directive('share', function ($timeout) {
+    return {
+        templateUrl: 'share.html',
+        scope: {
+            id: '=',
+            title: '=theTitle'
+
+        },
+
+        link: function link(scope, element, attrs) {
+
+            console.log('sc', scope.summary);
+            console.log('sc', scope);
+            console.log('sc', attrs);
+
+            var random = _.random(0, 500);
+
+            var getReverseClass = function getReverseClass() {
+                return scope.reverse ? 'reverse' : '';
+            };
+
+            var getRandom = function getRandom() {
+                return random;
+            };
+
+            var init = function init() {
+                $timeout(function () {
+                    return scope.ready = true;
+                }, _.random(500));
+                $timeout(function () {
+                    return scope.ready2 = true;
+                }, _.random(500));
+            };
+
+            init();
+
+            scope = _.assign(scope, {
+                getReverseClass: getReverseClass,
+                getRandom: getRandom
+
+            });
+        }
+    };
 });
 
 app.controller('PostCtrl', function ($element, $timeout, API, $scope, Post, $stateParams) {

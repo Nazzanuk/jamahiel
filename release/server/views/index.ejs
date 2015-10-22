@@ -308,6 +308,26 @@
 
     </div>
 </script>
+<script type="text/ng-template" id="home-screen.html">
+    <div screen>
+        <div class="clearfix">
+            <div class="col-sm-7">
+                <div class="row">
+                    <hero ng-if="getPosts()[0]" post-id="getPosts()[0]"></hero>
+                </div>
+            </div>
+            <div class="col-sm-5">
+                <div class="row">
+                    <about></about>
+                </div>
+            </div>
+        </div>
+
+
+        <preview ng-if="$index != 0" ng-repeat="post in getPosts() track by $index" post-id="post" reverse="($index + 1) % 2"></preview>
+
+    </div>
+</script>
 <script type="text/ng-template" id="post-screen.html">
     <div screen>
         <follow></follow>
@@ -329,26 +349,6 @@
             <comments id="getId()" the-title="getPost().getTitle()"></comments>
 
         </article>
-    </div>
-</script>
-<script type="text/ng-template" id="home-screen.html">
-    <div screen>
-        <div class="clearfix">
-            <div class="col-sm-7">
-                <div class="row">
-                    <hero ng-if="getPosts()[0]" post-id="getPosts()[0]"></hero>
-                </div>
-            </div>
-            <div class="col-sm-5">
-                <div class="row">
-                    <about></about>
-                </div>
-            </div>
-        </div>
-
-
-        <preview ng-if="$index != 0" ng-repeat="post in getPosts() track by $index" post-id="post" reverse="($index + 1) % 2"></preview>
-
     </div>
 </script>
 <div data-template="footer">

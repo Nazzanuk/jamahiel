@@ -4,8 +4,8 @@ var fs = require('fs');
 var _ = require('underscore');
 
 var standardData = {
-    title: "Jamahiel - Powerful Code and Efficient Living with Nathan Jamahiel Nelson",
-    ogTitle: "Powerful Code and Efficient Living with Nathan Jamahiel Nelson",
+    title: "Nathan-Jamahiel Nelson - Powerful Code and Efficient Living with Nathan Jamahiel Nelson",
+    ogTitle: "Powerful Code and Efficient Living with Nathan-Jamahiel Nelson",
     ogSiteName: "Jamahiel",
     ogUrl: "http://www.jamahiel.com",
     ogImage: "http://www.jamahiel.com/public/img/hero-india.jpg",
@@ -48,8 +48,8 @@ module.exports = {
         if (file == undefined) res.render('index', standardData);
 
         var data = _.clone(standardData);
-        data.title = file.title + " | Jamahiel";
-        data.ogTitle = file.title;
+        data.title = file.title + " | Nathan-Jamahiel Nelson";
+        data.ogTitle = file.title + " | Nathan-Jamahiel Nelson";
         data.ogUrl = 'http://www.jamahiel.com/post/' + req.params.id;
         data.ogImage = file.image;
         data.ogDescription = file.summary;

@@ -9,15 +9,12 @@ app.directive('follow', ($timeout) => {
         link(scope, element, attrs) {
 
             var init = () => {
-                $timeout(() => scope.ready = true, 5000);
+                $timeout(() => scope.ready = true, 30000);
             };
 
             init();
 
             scope = _.assign(scope, {
-                getReverseClass: getReverseClass,
-                getRandom: getRandom
-
             });
         }
     }

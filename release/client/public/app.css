@@ -479,6 +479,23 @@ p {
         -ms-flex: 1;
             flex: 1; }
 
+[template=image-item] {
+  background: #ffffff; }
+  @media (max-width: 767px) {
+    [template=image-item] {
+      padding: 0; } }
+  [template=image-item] .image-item {
+    max-width: 1200px;
+    margin: auto;
+    border-radius: 4px;
+    text-align: center;
+    color: #999;
+    text-transform: uppercase; }
+    [template=image-item] .image-item img {
+      width: 100%; }
+    [template=image-item] .image-item h2 {
+      font-size: 40px; }
+
 [template=menu] .menu {
   position: fixed;
   top: 0px;
@@ -587,23 +604,6 @@ p {
           line-height: 40px;
           letter-spacing: 0.5px;
           font-size: 16px; }
-
-[template=image-item] {
-  background: #ffffff; }
-  @media (max-width: 767px) {
-    [template=image-item] {
-      padding: 0; } }
-  [template=image-item] .image-item {
-    max-width: 1200px;
-    margin: auto;
-    border-radius: 4px;
-    text-align: center;
-    color: #999;
-    text-transform: uppercase; }
-    [template=image-item] .image-item img {
-      width: 100%; }
-    [template=image-item] .image-item h2 {
-      font-size: 40px; }
 
 [template=paragraph] {
   background: #ffffff;
@@ -774,7 +774,8 @@ p {
   [template=share] .share .share-buttons {
     font-size: 20px; }
     [template=share] .share .share-buttons .butn {
-      font-size: 25px; }
+      font-size: 25px;
+      border: none; }
 
 @-webkit-keyframes pulse {
   0% {

@@ -69,14 +69,15 @@
 </script>
 <script type="text/ng-template" id="follow.html">
     <div template="follow">
-        <div class="follow" ng-class="{active:ready}">
+        <div class="follow" ng-class="{active:ready}" ng-click="ready = false">
             <div class="follow-x" ng-click="ready = false"><i class="fa fa-times"></i></div>
             <div class="follow-content">
                 <div class="follow-title">I like you, let's stay in touch.</div>
                 <p></p>
-                <p>
+                <p ng-click="ready = false">
                     <a class="twitter-follow-button butn"
                        href="https://twitter.com/jamahiel" target="_blank"
+
                        data-size="large">
                         Follow @Jamahiel</a>
                 </p>
@@ -155,6 +156,20 @@
         </div>
     </div>
 </script>
+<script type="text/ng-template" id="image-item.html">
+    <div template="image-item">
+        <div class="image-item">
+            <p>
+                <img src="{{content.src}}"/>
+            </p>
+            <p ng-if="content.caption" ng-bind="content.caption">
+
+            </p>
+
+        </div>
+
+    </div>
+</script>
 <script type="text/ng-template" id="menu.html">
     <div template="menu">
         <div class="menu" ng-class="{active:isMenuVisible()}">
@@ -198,20 +213,6 @@
                     </div>
                 </div>
             </div>
-        </div>
-
-    </div>
-</script>
-<script type="text/ng-template" id="image-item.html">
-    <div template="image-item">
-        <div class="image-item">
-            <p>
-                <img src="{{content.src}}"/>
-            </p>
-            <p ng-if="content.caption" ng-bind="content.caption">
-
-            </p>
-
         </div>
 
     </div>

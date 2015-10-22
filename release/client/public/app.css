@@ -223,6 +223,18 @@ p {
   [template=about] .about-image.active {
     opacity: 1; }
 
+[template=comments] .comments {
+  background: #ffffff;
+  padding: 60px 30px; }
+
+[template=comments] .comments-container {
+  max-width: 800px;
+  margin: auto;
+  text-align: center; }
+  @media (max-width: 767px) {
+    [template=comments] .comments-container {
+      height: 600px; } }
+
 [template=follow] .follow {
   position: fixed;
   top: 0;
@@ -265,18 +277,6 @@ p {
   [template=follow] .follow.active {
     opacity: 1;
     visibility: visible; }
-
-[template=comments] .comments {
-  background: #ffffff;
-  padding: 60px 30px; }
-
-[template=comments] .comments-container {
-  max-width: 800px;
-  margin: auto;
-  text-align: center; }
-  @media (max-width: 767px) {
-    [template=comments] .comments-container {
-      height: 600px; } }
 
 [template=header] .header {
   top: 0;
@@ -605,47 +605,6 @@ p {
           letter-spacing: 0.5px;
           font-size: 16px; }
 
-[template=paragraph] {
-  background: #ffffff;
-  padding: 0 30px; }
-  [template=paragraph] .paragraph {
-    max-width: 700px;
-    margin: auto; }
-    [template=paragraph] .paragraph p {
-      font-size: 20px;
-      line-height: 40px; }
-      @media (max-width: 767px) {
-        [template=paragraph] .paragraph p {
-          font-size: 17px;
-          line-height: 35px; } }
-
-[template=quote-item] {
-  background: #ffffff;
-  padding: 0 30px; }
-  @media (max-width: 767px) {
-    [template=quote-item] {
-      padding: 0 30px; } }
-  [template=quote-item] .quote-item {
-    max-width: 600px;
-    margin: auto;
-    margin: 30px auto 60px;
-    text-align: center;
-    line-height: 1.3; }
-    [template=quote-item] .quote-item .quote-text {
-      font-weight: 700;
-      font-size: 30px;
-      margin-bottom: 15px; }
-      [template=quote-item] .quote-item .quote-text .fa {
-        color: #ddd;
-        margin: 0 5px;
-        line-height: inherit; }
-      [template=quote-item] .quote-item .quote-text .fa-quote-right {
-        position: relative;
-        top: 7px; }
-    [template=quote-item] .quote-item .quote-by {
-      color: #999;
-      text-transform: uppercase; }
-
 [template=preview] .preview {
   background: white;
   position: relative;
@@ -728,18 +687,46 @@ p {
           [template=preview] .preview.reverse .butn:hover {
             background: rgba(255, 255, 255, 0.1); } }
 
-[template=vid] {
+[template=paragraph] {
   background: #ffffff;
   padding: 0 30px; }
-  [template=vid] .vid {
-    max-width: 1000px;
+  [template=paragraph] .paragraph {
+    max-width: 700px;
+    margin: auto; }
+    [template=paragraph] .paragraph p {
+      font-size: 20px;
+      line-height: 40px; }
+      @media (max-width: 767px) {
+        [template=paragraph] .paragraph p {
+          font-size: 17px;
+          line-height: 35px; } }
+
+[template=quote-item] {
+  background: #ffffff;
+  padding: 0 30px; }
+  @media (max-width: 767px) {
+    [template=quote-item] {
+      padding: 0 30px; } }
+  [template=quote-item] .quote-item {
+    max-width: 600px;
     margin: auto;
-    margin-top: 30px;
-    border-radius: 4px; }
-    [template=vid] .vid video {
-      width: 100%; }
-    [template=vid] .vid h2 {
-      font-size: 40px; }
+    margin: 30px auto 60px;
+    text-align: center;
+    line-height: 1.3; }
+    [template=quote-item] .quote-item .quote-text {
+      font-weight: 700;
+      font-size: 30px;
+      margin-bottom: 15px; }
+      [template=quote-item] .quote-item .quote-text .fa {
+        color: #ddd;
+        margin: 0 5px;
+        line-height: inherit; }
+      [template=quote-item] .quote-item .quote-text .fa-quote-right {
+        position: relative;
+        top: 7px; }
+    [template=quote-item] .quote-item .quote-by {
+      color: #999;
+      text-transform: uppercase; }
 
 [template=share] .share-container {
   max-width: 800px;
@@ -811,3 +798,16 @@ p {
   100% {
     -webkit-transform: scale(0.9);
             transform: scale(0.9); } }
+
+[template=vid] {
+  background: #ffffff;
+  padding: 0 30px; }
+  [template=vid] .vid {
+    max-width: 1000px;
+    margin: auto;
+    margin-top: 30px;
+    border-radius: 4px; }
+    [template=vid] .vid video {
+      width: 100%; }
+    [template=vid] .vid h2 {
+      font-size: 40px; }

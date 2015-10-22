@@ -3,19 +3,22 @@
 app.directive('follow', ($timeout) => {
     return {
         templateUrl: 'follow.html',
-        scope: {
-        },
+        scope: {},
 
         link(scope, element, attrs) {
 
             var init = () => {
-                $timeout(() => scope.ready = true, 30000);
+                $timeout(() => {
+                    if (localStorage.getItem('follow') != true) {
+                        scope.ready = true;
+                    }
+                    localStorage.setItem('follow', true);
+                }, 30000);
             };
 
             init();
 
-            scope = _.assign(scope, {
-            });
+            scope = _.assign(scope, {});
         }
     }
 });

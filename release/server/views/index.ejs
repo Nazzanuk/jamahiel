@@ -56,12 +56,23 @@
 
     </div>
 </script>
+<script type="text/ng-template" id="comments.html">
+    <div template="comments">
+        <div class="comments">
+            <div class="comments-container">
+
+                <div id="disqus_thread"></div>
+            </div>
+        </div>
+
+    </div>
+</script>
 <script type="text/ng-template" id="follow.html">
     <div template="follow">
         <div class="follow" ng-class="{active:ready}" ng-click="ready = false">
             <div class="follow-x" ng-click="ready = false"><i class="fa fa-times"></i></div>
             <div class="follow-content">
-                <div class="follow-title">I like you, let's stay in touch.</div>
+                <div class="follow-title">I'd like to keep you updated with similar articles. Let's stay in touch.</div>
                 <p></p>
                 <p ng-click="ready = false">
                     <a class="twitter-follow-button butn"
@@ -89,17 +100,6 @@
 
             return t;
         }(document, "script", "twitter-wjs"));</script>
-
-    </div>
-</script>
-<script type="text/ng-template" id="comments.html">
-    <div template="comments">
-        <div class="comments">
-            <div class="comments-container">
-
-                <div id="disqus_thread"></div>
-            </div>
-        </div>
 
     </div>
 </script>
@@ -217,6 +217,20 @@
 
     </div>
 </script>
+<script type="text/ng-template" id="preview.html">
+    <div template="preview">
+        <div class="preview clearfix {{getReverseClass()}}">
+            <div class="preview-hero" ng-class="{active:ready}" ui-sref="post({ id: postId })" style="background-image: url('{{getPost().getImage()}}')"></div>
+            <div class="preview-content" ng-class="{active:ready2}">
+                <h2 ui-sref="post({ id: postId })"><i class="fa fa-{{getPost().getIcon()}}"></i> {{getPost().getTitle()}}</h2>
+
+                <p>{{getPost().getSummary()}}</p>
+                <br/>
+                <div class="butn" ng-if="!post" ui-sref="post({ id: postId })">Get Reading &nbsp; <i class="fa fa-angle-right"></i></div>
+            </div>
+        </div>
+    </div>
+</script>
 <script type="text/ng-template" id="paragraph.html">
     <div template="paragraph">
         <div class="paragraph">
@@ -236,51 +250,6 @@
             <div class="quote-by" ng-bind="content.by"></div>
 
         </div>
-
-    </div>
-</script>
-<script type="text/ng-template" id="preview.html">
-    <div template="preview">
-        <div class="preview clearfix {{getReverseClass()}}">
-            <div class="preview-hero" ng-class="{active:ready}" ui-sref="post({ id: postId })" style="background-image: url('{{getPost().getImage()}}')"></div>
-            <div class="preview-content" ng-class="{active:ready2}">
-                <h2 ui-sref="post({ id: postId })"><i class="fa fa-{{getPost().getIcon()}}"></i> {{getPost().getTitle()}}</h2>
-
-                <p>{{getPost().getSummary()}}</p>
-                <br/>
-                <div class="butn" ng-if="!post" ui-sref="post({ id: postId })">Get Reading &nbsp; <i class="fa fa-angle-right"></i></div>
-            </div>
-        </div>
-    </div>
-</script>
-<script type="text/ng-template" id="vid.html">
-    <div template="vid">
-        <div class="vid" ng-mouseover="play($event)" ng-mouseleave="pause($event)">
-            <p>
-                <video src="{{src}}" loop="loop"  muted="muted" ng-attr-autoplay="{{play}}"></video>
-            </p>
-
-        </div>
-
-    </div>
-</script>
-<script type="text/ng-template" id="home-screen.html">
-    <div screen>
-        <div class="clearfix">
-            <div class="col-sm-7">
-                <div class="row">
-                    <hero ng-if="getPosts()[0]" post-id="getPosts()[0]"></hero>
-                </div>
-            </div>
-            <div class="col-sm-5">
-                <div class="row">
-                    <about></about>
-                </div>
-            </div>
-        </div>
-
-
-        <preview ng-if="$index != 0" ng-repeat="post in getPosts() track by $index" post-id="post" reverse="($index + 1) % 2"></preview>
 
     </div>
 </script>
@@ -328,6 +297,17 @@
 
     </div>
 </script>
+<script type="text/ng-template" id="vid.html">
+    <div template="vid">
+        <div class="vid" ng-mouseover="play($event)" ng-mouseleave="pause($event)">
+            <p>
+                <video src="{{src}}" loop="loop"  muted="muted" ng-attr-autoplay="{{play}}"></video>
+            </p>
+
+        </div>
+
+    </div>
+</script>
 <script type="text/ng-template" id="post-screen.html">
     <div screen>
         <follow></follow>
@@ -349,6 +329,26 @@
             <comments id="getId()" the-title="getPost().getTitle()"></comments>
 
         </article>
+    </div>
+</script>
+<script type="text/ng-template" id="home-screen.html">
+    <div screen>
+        <div class="clearfix">
+            <div class="col-sm-7">
+                <div class="row">
+                    <hero ng-if="getPosts()[0]" post-id="getPosts()[0]"></hero>
+                </div>
+            </div>
+            <div class="col-sm-5">
+                <div class="row">
+                    <about></about>
+                </div>
+            </div>
+        </div>
+
+
+        <preview ng-if="$index != 0" ng-repeat="post in getPosts() track by $index" post-id="post" reverse="($index + 1) % 2"></preview>
+
     </div>
 </script>
 <div data-template="footer">

@@ -303,27 +303,6 @@ app.directive('comments', function ($timeout) {
 
 'use strict';
 
-app.directive('header', function (State) {
-    return {
-        templateUrl: 'header.html',
-        scope: {},
-
-        link: function link(scope, element, attrs) {
-
-            var init = function init() {};
-
-            init();
-
-            scope = _.assign(scope, {
-                isMenuVisible: State.isMenuVisible,
-                toggleMenu: State.toggleMenu
-            });
-        }
-    };
-});
-
-'use strict';
-
 app.directive('follow', function ($timeout) {
     return {
         templateUrl: 'follow.html',
@@ -360,6 +339,27 @@ app.directive('heading', function () {
             init();
 
             scope = _.assign(scope, {});
+        }
+    };
+});
+
+'use strict';
+
+app.directive('header', function (State) {
+    return {
+        templateUrl: 'header.html',
+        scope: {},
+
+        link: function link(scope, element, attrs) {
+
+            var init = function init() {};
+
+            init();
+
+            scope = _.assign(scope, {
+                isMenuVisible: State.isMenuVisible,
+                toggleMenu: State.toggleMenu
+            });
         }
     };
 });
@@ -619,30 +619,6 @@ app.directive('vid', function () {
     };
 });
 
-app.controller('HomeCtrl', function ($element, $timeout, API, $scope) {
-
-    var posts = [];
-
-    var getPosts = function getPosts() {
-        return posts;
-    };
-
-    var loadPosts = function loadPosts() {
-        return API.getPosts().then(function (response) {
-            posts = response;
-            $element.find('[screen]').addClass('active');
-        });
-    };
-
-    var init = function init() {
-        loadPosts();
-    };
-
-    init();
-
-    $scope.getPosts = getPosts;
-});
-
 app.controller('PostCtrl', function ($element, $timeout, API, $scope, Post, $stateParams) {
 
     var post = {};
@@ -671,4 +647,28 @@ app.controller('PostCtrl', function ($element, $timeout, API, $scope, Post, $sta
 
     $scope.getPost = getPost;
     $scope.getId = getId;
+});
+
+app.controller('HomeCtrl', function ($element, $timeout, API, $scope) {
+
+    var posts = [];
+
+    var getPosts = function getPosts() {
+        return posts;
+    };
+
+    var loadPosts = function loadPosts() {
+        return API.getPosts().then(function (response) {
+            posts = response;
+            $element.find('[screen]').addClass('active');
+        });
+    };
+
+    var init = function init() {
+        loadPosts();
+    };
+
+    init();
+
+    $scope.getPosts = getPosts;
 });

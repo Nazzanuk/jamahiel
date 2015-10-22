@@ -67,19 +67,6 @@
 
     </div>
 </script>
-<script type="text/ng-template" id="header.html">
-    <div template="header">
-        <div class="header">
-            <div class="logo" ui-sref="home">Jamahiel</div>
-
-            <div class="menu" ng-click="toggleMenu()">
-                <div class="menu-item"><i class="fa fa-th"></i> &nbsp; Menu</div>
-            </div>
-        </div>
-
-
-    </div>
-</script>
 <script type="text/ng-template" id="follow.html">
     <div template="follow">
         <div class="follow" ng-class="{active:ready}" ng-click="ready = false">
@@ -121,6 +108,19 @@
         <div class="heading">
             <h2>{{text}}</h2>
         </div>
+
+    </div>
+</script>
+<script type="text/ng-template" id="header.html">
+    <div template="header">
+        <div class="header">
+            <div class="logo" ui-sref="home">Jamahiel</div>
+
+            <div class="menu" ng-click="toggleMenu()">
+                <div class="menu-item"><i class="fa fa-th"></i> &nbsp; Menu</div>
+            </div>
+        </div>
+
 
     </div>
 </script>
@@ -308,26 +308,6 @@
 
     </div>
 </script>
-<script type="text/ng-template" id="home-screen.html">
-    <div screen>
-        <div class="clearfix">
-            <div class="col-sm-7">
-                <div class="row">
-                    <hero ng-if="getPosts()[0]" post-id="getPosts()[0]"></hero>
-                </div>
-            </div>
-            <div class="col-sm-5">
-                <div class="row">
-                    <about></about>
-                </div>
-            </div>
-        </div>
-
-
-        <preview ng-if="$index != 0" ng-repeat="post in getPosts() track by $index" post-id="post" reverse="($index + 1) % 2"></preview>
-
-    </div>
-</script>
 <script type="text/ng-template" id="post-screen.html">
     <div screen>
         <follow></follow>
@@ -349,6 +329,26 @@
             <comments id="getId()" the-title="getPost().getTitle()"></comments>
 
         </article>
+    </div>
+</script>
+<script type="text/ng-template" id="home-screen.html">
+    <div screen>
+        <div class="clearfix">
+            <div class="col-sm-7">
+                <div class="row">
+                    <hero ng-if="getPosts()[0]" post-id="getPosts()[0]"></hero>
+                </div>
+            </div>
+            <div class="col-sm-5">
+                <div class="row">
+                    <about></about>
+                </div>
+            </div>
+        </div>
+
+
+        <preview ng-if="$index != 0" ng-repeat="post in getPosts() track by $index" post-id="post" reverse="($index + 1) % 2"></preview>
+
     </div>
 </script>
 <div data-template="footer">

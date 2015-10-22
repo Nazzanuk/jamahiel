@@ -69,32 +69,36 @@
 </script>
 <script type="text/ng-template" id="follow.html">
     <div template="follow">
-        <div class="follow-container">
-            <div class="follow" ng-class="{active:ready}">
-                <div class="follow-content">
-                    <h2>follow the &nbsp;<i class="fa fa-heart" style="font-size: inherit;opacity: inherit"></i></h2>
-                    <p>If you enjoyed this post, I’d be very grateful if you’d help it spread by emailing it to a friend, or sharing it on Twitter or Facebook. Thank you!</p>
-                </div>
-                <div class="follow-buttons">
-                    <div class="row">
-                        <div class="col-xs-3">
-                            <a class="butn light block" target="_blank" ng-href="http://www.facebook.com/followr.php?u=http://www.jamahiel.com/post/{{id}}" style="background: #3b5998;"><i class="fa fa-fw fa-facebook"></i></a>
-                        </div>
-                        <div class="col-xs-3">
-                            <a class="butn light block" target="_blank" ng-href="http://twitter.com/follow?url=http://www.jamahiel.com/post/{{id}}&text={{title}}" style="background: #55acee;"><i class="fa fa-fw fa-twitter"></i></a>
-                        </div>
-                        <div class="col-xs-3">
-                            <a class="butn light block" target="_blank" ng-href="https://plusone.google.com/_/+1/confirm?hl=en&url=http://www.jamahiel.com/post/{{id}}" style="background: #dc4e41;"><i class="fa fa-fw fa-google-plus"></i></a>
-                        </div>
-                        <div class="col-xs-3">
-                            <a class="butn light block" target="_blank" ng-href="mailto:?subject={{title}}&body=http://www.jamahiel.com/post/{{id}}" style="background: #333;"><i class="fa fa-fw fa-envelope"></i></a>
-                        </div>
-                    </div>
-
-                </div>
+        <div class="follow" ng-class="{active:ready}">
+            <div class="follow-x" ng-click="ready = false"><i class="fa fa-times"></i></div>
+            <div class="follow-content">
+                <div class="follow-title">I like you, let's stay in touch.</div>
+                <p></p>
+                <p>
+                    <a class="twitter-follow-button butn"
+                       href="https://twitter.com/jamahiel" target="_blank"
+                       data-size="large">
+                        Follow @Jamahiel</a>
+                </p>
             </div>
-
         </div>
+
+        <script>window.twttr = (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0],
+                    t = window.twttr || {};
+            if (d.getElementById(id)) return t;
+            js = d.createElement(s);
+            js.id = id;
+            js.src = "https://platform.twitter.com/widgets.js";
+            fjs.parentNode.insertBefore(js, fjs);
+
+            t._e = [];
+            t.ready = function(f) {
+                t._e.push(f);
+            };
+
+            return t;
+        }(document, "script", "twitter-wjs"));</script>
 
     </div>
 </script>
@@ -151,20 +155,6 @@
         </div>
     </div>
 </script>
-<script type="text/ng-template" id="image-item.html">
-    <div template="image-item">
-        <div class="image-item">
-            <p>
-                <img src="{{content.src}}"/>
-            </p>
-            <p ng-if="content.caption" ng-bind="content.caption">
-
-            </p>
-
-        </div>
-
-    </div>
-</script>
 <script type="text/ng-template" id="menu.html">
     <div template="menu">
         <div class="menu" ng-class="{active:isMenuVisible()}">
@@ -208,6 +198,20 @@
                     </div>
                 </div>
             </div>
+        </div>
+
+    </div>
+</script>
+<script type="text/ng-template" id="image-item.html">
+    <div template="image-item">
+        <div class="image-item">
+            <p>
+                <img src="{{content.src}}"/>
+            </p>
+            <p ng-if="content.caption" ng-bind="content.caption">
+
+            </p>
+
         </div>
 
     </div>
@@ -325,6 +329,7 @@
 </script>
 <script type="text/ng-template" id="post-screen.html">
     <div screen>
+        <follow></follow>
         <article>
 
             <hero post-id="getId()" post="true"></hero>
@@ -360,6 +365,8 @@
     ga('send', 'pageview');
 
 </script>
+
+
 
 <script src="/public/lib.js"></script>
 <script src="/public/app.js"></script>

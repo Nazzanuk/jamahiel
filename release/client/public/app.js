@@ -306,35 +306,14 @@ app.directive('comments', function ($timeout) {
 app.directive('follow', function ($timeout) {
     return {
         templateUrl: 'follow.html',
-        scope: {
-            id: '=',
-            title: '=theTitle'
-
-        },
+        scope: {},
 
         link: function link(scope, element, attrs) {
-
-            console.log('sc', scope.summary);
-            console.log('sc', scope);
-            console.log('sc', attrs);
-
-            var random = _.random(0, 500);
-
-            var getReverseClass = function getReverseClass() {
-                return scope.reverse ? 'reverse' : '';
-            };
-
-            var getRandom = function getRandom() {
-                return random;
-            };
 
             var init = function init() {
                 $timeout(function () {
                     return scope.ready = true;
-                }, _.random(500));
-                $timeout(function () {
-                    return scope.ready2 = true;
-                }, _.random(500));
+                }, 5000);
             };
 
             init();
@@ -431,26 +410,6 @@ app.directive('hero', function (API, Post, $timeout) {
 
 'use strict';
 
-app.directive('imageItem', function () {
-    return {
-        templateUrl: 'image-item.html',
-        scope: {
-            content: '='
-        },
-
-        link: function link(scope, element, attrs) {
-
-            var init = function init() {};
-
-            init();
-
-            scope = _.assign(scope, {});
-        }
-    };
-});
-
-'use strict';
-
 app.directive('menuOverlay', function ($timeout, State) {
     return {
         templateUrl: 'menu.html',
@@ -468,6 +427,26 @@ app.directive('menuOverlay', function ($timeout, State) {
                 isMenuVisible: State.isMenuVisible,
                 toggleMenu: State.toggleMenu
             });
+        }
+    };
+});
+
+'use strict';
+
+app.directive('imageItem', function () {
+    return {
+        templateUrl: 'image-item.html',
+        scope: {
+            content: '='
+        },
+
+        link: function link(scope, element, attrs) {
+
+            var init = function init() {};
+
+            init();
+
+            scope = _.assign(scope, {});
         }
     };
 });

@@ -9,7 +9,7 @@ app.directive('follow', ($timeout) => {
 
             var init = () => {
                 $timeout(() => {
-                    if (localStorage.getItem('follow') != true) {
+                    if (localStorage.getItem('follow') != "true") {
                         scope.ready = true;
                     }
                     localStorage.setItem('follow', true);

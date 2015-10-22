@@ -239,20 +239,6 @@
         </div>
     </div>
 </script>
-<script type="text/ng-template" id="quote-item.html">
-    <div template="quote-item">
-        <div class="quote-item">
-            <div class="quote-text">
-                <i class="fa fa-quote-left"></i>
-                {{content.text}}
-                <!--<i class="fa fa-quote-right"></i>-->
-            </div>
-            <div class="quote-by" ng-bind="content.by"></div>
-
-        </div>
-
-    </div>
-</script>
 <script type="text/ng-template" id="share.html">
     <div template="share">
         <div class="share-float">
@@ -303,6 +289,20 @@
             <p>
                 <video src="{{src}}" loop="loop"  muted="muted" ng-attr-autoplay="{{play}}"></video>
             </p>
+
+        </div>
+
+    </div>
+</script>
+<script type="text/ng-template" id="quote-item.html">
+    <div template="quote-item">
+        <div class="quote-item">
+            <div class="quote-text">
+                <i class="fa fa-quote-left"></i>
+                {{content.text}}
+                <!--<i class="fa fa-quote-right"></i>-->
+            </div>
+            <div class="quote-by" ng-bind="content.by"></div>
 
         </div>
 

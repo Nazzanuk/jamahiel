@@ -67,6 +67,19 @@
 
     </div>
 </script>
+<script type="text/ng-template" id="header.html">
+    <div template="header">
+        <div class="header">
+            <div class="logo" ui-sref="home">Jamahiel</div>
+
+            <div class="menu" ng-click="toggleMenu()">
+                <div class="menu-item"><i class="fa fa-th"></i> &nbsp; Menu</div>
+            </div>
+        </div>
+
+
+    </div>
+</script>
 <script type="text/ng-template" id="follow.html">
     <div template="follow">
         <div class="follow" ng-class="{active:ready}" ng-click="ready = false">
@@ -100,19 +113,6 @@
 
             return t;
         }(document, "script", "twitter-wjs"));</script>
-
-    </div>
-</script>
-<script type="text/ng-template" id="header.html">
-    <div template="header">
-        <div class="header">
-            <div class="logo" ui-sref="home">Jamahiel</div>
-
-            <div class="menu" ng-click="toggleMenu()">
-                <div class="menu-item"><i class="fa fa-th"></i> &nbsp; Menu</div>
-            </div>
-        </div>
-
 
     </div>
 </script>
@@ -259,7 +259,7 @@
             <div class="share-buttons">
                 <a class="butn light block" target="_blank" ng-href="http://www.facebook.com/sharer.php?u=http://www.jamahiel.com/post/{{id}}" style="background: #3b5998;"><i class="fa fa-fw fa-facebook"></i></a>
 
-                <a class="butn light block" target="_blank" ng-href="http://twitter.com/share?url=http://www.jamahiel.com/post/{{id}}&text={{title}}" style="background: #55acee;"><i class="fa fa-fw fa-twitter"></i></a>
+                <a class="butn light block" target="_blank" ng-href="http://twitter.com/share?url=http://www.jamahiel.com/post/{{id}}&text={{title}} by @Jamahiel" style="background: #55acee;"><i class="fa fa-fw fa-twitter"></i></a>
 
                 <a class="butn light block" target="_blank" ng-href="https://plusone.google.com/_/+1/confirm?hl=en&url=http://www.jamahiel.com/post/{{id}}" style="background: #dc4e41;"><i class="fa fa-fw fa-google-plus"></i></a>
 
@@ -280,7 +280,7 @@
                             <a class="butn light block" target="_blank" ng-href="http://www.facebook.com/sharer.php?u=http://www.jamahiel.com/post/{{id}}" style="background: #3b5998;"><i class="fa fa-fw fa-facebook"></i></a>
                         </div>
                         <div class="col-xs-3">
-                            <a class="butn light block" target="_blank" ng-href="http://twitter.com/share?url=http://www.jamahiel.com/post/{{id}}&text={{title}}" style="background: #55acee;"><i class="fa fa-fw fa-twitter"></i></a>
+                            <a class="butn light block" target="_blank" ng-href="http://twitter.com/share?url=http://www.jamahiel.com/post/{{id}}&text={{title}} by @Jamahiel" style="background: #55acee;"><i class="fa fa-fw fa-twitter"></i></a>
                         </div>
                         <div class="col-xs-3">
                             <a class="butn light block" target="_blank" ng-href="https://plusone.google.com/_/+1/confirm?hl=en&url=http://www.jamahiel.com/post/{{id}}" style="background: #dc4e41;"><i class="fa fa-fw fa-google-plus"></i></a>

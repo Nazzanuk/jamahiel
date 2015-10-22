@@ -303,6 +303,27 @@ app.directive('comments', function ($timeout) {
 
 'use strict';
 
+app.directive('header', function (State) {
+    return {
+        templateUrl: 'header.html',
+        scope: {},
+
+        link: function link(scope, element, attrs) {
+
+            var init = function init() {};
+
+            init();
+
+            scope = _.assign(scope, {
+                isMenuVisible: State.isMenuVisible,
+                toggleMenu: State.toggleMenu
+            });
+        }
+    };
+});
+
+'use strict';
+
 app.directive('follow', function ($timeout) {
     return {
         templateUrl: 'follow.html',
@@ -319,27 +340,6 @@ app.directive('follow', function ($timeout) {
             init();
 
             scope = _.assign(scope, {});
-        }
-    };
-});
-
-'use strict';
-
-app.directive('header', function (State) {
-    return {
-        templateUrl: 'header.html',
-        scope: {},
-
-        link: function link(scope, element, attrs) {
-
-            var init = function init() {};
-
-            init();
-
-            scope = _.assign(scope, {
-                isMenuVisible: State.isMenuVisible,
-                toggleMenu: State.toggleMenu
-            });
         }
     };
 });

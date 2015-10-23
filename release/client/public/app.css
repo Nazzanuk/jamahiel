@@ -235,6 +235,16 @@ p {
     [template=comments] .comments-container {
       height: 600px; } }
 
+[template=heading] {
+  background: #ffffff;
+  padding: 0 30px; }
+  [template=heading] .heading {
+    max-width: 700px;
+    margin: auto;
+    margin-top: 30px; }
+    [template=heading] .heading h2 {
+      font-size: 45px; }
+
 [template=follow] .follow {
   position: fixed;
   top: 0;
@@ -337,16 +347,6 @@ p {
     @media (max-width: 767px) {
       [template=header] .header .menu {
         right: 0; } }
-
-[template=heading] {
-  background: #ffffff;
-  padding: 0 30px; }
-  [template=heading] .heading {
-    max-width: 700px;
-    margin: auto;
-    margin-top: 30px; }
-    [template=heading] .heading h2 {
-      font-size: 45px; }
 
 [template=hero] .hero {
   height: 800px;
@@ -479,6 +479,23 @@ p {
         -ms-flex: 1;
             flex: 1; }
 
+[template=image-item] {
+  background: #ffffff; }
+  @media (max-width: 767px) {
+    [template=image-item] {
+      padding: 0; } }
+  [template=image-item] .image-item {
+    max-width: 1200px;
+    margin: auto;
+    border-radius: 4px;
+    text-align: center;
+    color: #999;
+    text-transform: uppercase; }
+    [template=image-item] .image-item img {
+      width: 100%; }
+    [template=image-item] .image-item h2 {
+      font-size: 40px; }
+
 [template=menu] .menu {
   position: fixed;
   top: 0px;
@@ -587,23 +604,9 @@ p {
           line-height: 40px;
           letter-spacing: 0.5px;
           font-size: 16px; }
-
-[template=image-item] {
-  background: #ffffff; }
-  @media (max-width: 767px) {
-    [template=image-item] {
-      padding: 0; } }
-  [template=image-item] .image-item {
-    max-width: 1200px;
-    margin: auto;
-    border-radius: 4px;
-    text-align: center;
-    color: #999;
-    text-transform: uppercase; }
-    [template=image-item] .image-item img {
-      width: 100%; }
-    [template=image-item] .image-item h2 {
-      font-size: 40px; }
+          @media (max-width: 767px) {
+            [template=menu] .menu .menu-boxes .menu-box .menu-item .menu-text {
+              font-size: 13px; } }
 
 [template=paragraph] {
   background: #ffffff;

@@ -303,27 +303,6 @@ app.directive('comments', function ($timeout) {
 
 'use strict';
 
-app.directive('header', function (State) {
-    return {
-        templateUrl: 'header.html',
-        scope: {},
-
-        link: function link(scope, element, attrs) {
-
-            var init = function init() {};
-
-            init();
-
-            scope = _.assign(scope, {
-                isMenuVisible: State.isMenuVisible,
-                toggleMenu: State.toggleMenu
-            });
-        }
-    };
-});
-
-'use strict';
-
 app.directive('follow', function ($timeout) {
     return {
         templateUrl: 'follow.html',
@@ -343,6 +322,27 @@ app.directive('follow', function ($timeout) {
             init();
 
             scope = _.assign(scope, {});
+        }
+    };
+});
+
+'use strict';
+
+app.directive('header', function (State) {
+    return {
+        templateUrl: 'header.html',
+        scope: {},
+
+        link: function link(scope, element, attrs) {
+
+            var init = function init() {};
+
+            init();
+
+            scope = _.assign(scope, {
+                isMenuVisible: State.isMenuVisible,
+                toggleMenu: State.toggleMenu
+            });
         }
     };
 });
@@ -409,26 +409,6 @@ app.directive('hero', function (API, Post, $timeout) {
 
 'use strict';
 
-app.directive('imageItem', function () {
-    return {
-        templateUrl: 'image-item.html',
-        scope: {
-            content: '='
-        },
-
-        link: function link(scope, element, attrs) {
-
-            var init = function init() {};
-
-            init();
-
-            scope = _.assign(scope, {});
-        }
-    };
-});
-
-'use strict';
-
 app.directive('menuOverlay', function ($timeout, State) {
     return {
         templateUrl: 'menu.html',
@@ -446,6 +426,26 @@ app.directive('menuOverlay', function ($timeout, State) {
                 isMenuVisible: State.isMenuVisible,
                 toggleMenu: State.toggleMenu
             });
+        }
+    };
+});
+
+'use strict';
+
+app.directive('imageItem', function () {
+    return {
+        templateUrl: 'image-item.html',
+        scope: {
+            content: '='
+        },
+
+        link: function link(scope, element, attrs) {
+
+            var init = function init() {};
+
+            init();
+
+            scope = _.assign(scope, {});
         }
     };
 });
@@ -525,6 +525,26 @@ app.directive('preview', function (API, Post, $timeout) {
 
 'use strict';
 
+app.directive('quoteItem', function () {
+    return {
+        templateUrl: 'quote-item.html',
+        scope: {
+            content: '='
+        },
+
+        link: function link(scope, element, attrs) {
+
+            var init = function init() {};
+
+            init();
+
+            scope = _.assign(scope, {});
+        }
+    };
+});
+
+'use strict';
+
 app.directive('share', function ($timeout) {
     return {
         templateUrl: 'share.html',
@@ -598,26 +618,6 @@ app.directive('vid', function () {
                 pause: pause
 
             });
-        }
-    };
-});
-
-'use strict';
-
-app.directive('quoteItem', function () {
-    return {
-        templateUrl: 'quote-item.html',
-        scope: {
-            content: '='
-        },
-
-        link: function link(scope, element, attrs) {
-
-            var init = function init() {};
-
-            init();
-
-            scope = _.assign(scope, {});
         }
     };
 });

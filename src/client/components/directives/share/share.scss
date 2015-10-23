@@ -6,6 +6,7 @@
     padding: 30px 0;
 
     @media (max-width: 767px) {
+
     }
   }
 
@@ -23,6 +24,14 @@
 
       &:hover {
         opacity: 1;
+      }
+    }
+
+    @media (max-width: 767px) {
+      width: 100%;
+      .butn {
+        float: left;
+        width: 25%;
       }
     }
 

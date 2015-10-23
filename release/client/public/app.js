@@ -303,26 +303,6 @@ app.directive('comments', function ($timeout) {
 
 'use strict';
 
-app.directive('heading', function () {
-    return {
-        templateUrl: 'heading.html',
-        scope: {
-            text: '='
-        },
-
-        link: function link(scope, element, attrs) {
-
-            var init = function init() {};
-
-            init();
-
-            scope = _.assign(scope, {});
-        }
-    };
-});
-
-'use strict';
-
 app.directive('follow', function ($timeout) {
     return {
         templateUrl: 'follow.html',
@@ -363,6 +343,26 @@ app.directive('header', function (State) {
                 isMenuVisible: State.isMenuVisible,
                 toggleMenu: State.toggleMenu
             });
+        }
+    };
+});
+
+'use strict';
+
+app.directive('heading', function () {
+    return {
+        templateUrl: 'heading.html',
+        scope: {
+            text: '='
+        },
+
+        link: function link(scope, element, attrs) {
+
+            var init = function init() {};
+
+            init();
+
+            scope = _.assign(scope, {});
         }
     };
 });

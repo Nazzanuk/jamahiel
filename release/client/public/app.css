@@ -231,19 +231,6 @@ p {
   max-width: 800px;
   margin: auto;
   text-align: center; }
-  @media (max-width: 767px) {
-    [template=comments] .comments-container {
-      height: 600px; } }
-
-[template=heading] {
-  background: #ffffff;
-  padding: 0 30px; }
-  [template=heading] .heading {
-    max-width: 700px;
-    margin: auto;
-    margin-top: 30px; }
-    [template=heading] .heading h2 {
-      font-size: 45px; }
 
 [template=follow] .follow {
   position: fixed;
@@ -347,6 +334,16 @@ p {
     @media (max-width: 767px) {
       [template=header] .header .menu {
         right: 0; } }
+
+[template=heading] {
+  background: #ffffff;
+  padding: 0 30px; }
+  [template=heading] .heading {
+    max-width: 700px;
+    margin: auto;
+    margin-top: 30px; }
+    [template=heading] .heading h2 {
+      font-size: 45px; }
 
 [template=hero] .hero {
   height: 800px;
